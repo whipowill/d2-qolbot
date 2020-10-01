@@ -2,12 +2,13 @@
 
 A botting application for Diablo II LOD ``1.13d`` w/ PlugY support.
 
-This is a fork of an older branch of Kolbot, modified with all the necessary changes and provided here with all the necessary instructions to get it working on your singpleplayer PlugY version of the game.
+This is a fork of an older branch of Kolbot, modified with all the necessary changes and provided here with all the necessary instructions to get it working on your SP PlugY version of the game.
 
 ## Prerequisites
 
-- [Microsoft Visual C++ 2010 Redistributable Package (x86)](https://www.microsoft.com/en-us/download/details.aspx?id=5555)
-- [Microsoft .NET Framework 4.0 (or higher)](https://dotnet.microsoft.com/download/dotnet-framework)
+- Make sure these are installed:
+	- [Microsoft Visual C++ 2010 Redistributable Package (x86)](https://www.microsoft.com/en-us/download/details.aspx?id=5555)
+	- [Microsoft .NET Framework 4.0 (or higher)](https://dotnet.microsoft.com/download/dotnet-framework)
 - Make sure you're using ``DDraw`` and not ``Glide``.
 	- Check this [guide](https://github.com/whipowill/d2-plugy-qol/blob/master/Guides/Video.md) for info about video libraries.
 - Modify your ``PlugY.ini`` file:
@@ -34,7 +35,6 @@ This is a fork of an older branch of Kolbot, modified with all the necessary cha
 - Create a new pickit:
 	- These files are found in ``C:\your\path\to\d2-qolbot\src\d2bs\kolbot\pickit\``.
 	- These control what items your character picks up and keeps.
-	- ``QOL.nip`` is my custom profile for PlugY users.
 	- Modifying these files is optional.
 	- These files are referenced in your character script.
 - Select the manager profile and hit ``Start``.
@@ -48,7 +48,7 @@ This is a fork of an older branch of Kolbot, modified with all the necessary cha
 
 - It's best to use a Sorceress for Teleport speed runs.
 
-## Credits
+## References
 
 - [Kolbot](https://github.com/kolton/d2bot-with-kolbot/tree/patch-113d-core15) - the original code repository.
 - [Issue #338](https://github.com/kolton/d2bot-with-kolbot/issues/338) - instructions on modifications.
