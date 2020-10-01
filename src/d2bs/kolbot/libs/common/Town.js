@@ -1531,6 +1531,13 @@ MainLoop:
 
 		if (items) {
 			for (i = 0; i < items.length; i += 1) {
+				if (!Storage.Stash.CanFit(items[i])){				
+					say("/insertpage");				
+					say("/swap 1");
+					D2Bot.printToConsole("New Stash Created! =)", 7);
+				}
+
+				
 				if (this.canStash(items[i])) {
 					result = (Pickit.checkItem(items[i]).result > 0 && Pickit.checkItem(items[i]).result < 4) || Cubing.keepItem(items[i]) || Runewords.keepItem(items[i]) || CraftingSystem.keepItem(items[i]);
 

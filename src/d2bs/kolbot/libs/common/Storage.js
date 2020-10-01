@@ -290,10 +290,10 @@ Loop:
 
 var Storage = new function () {
 	this.Init = function () {
-		this.StashY = me.gametype === 0 ? 4 : 8;
+		this.StashY = me.gametype === 0 ? 4 : 10;
 		this.Inventory = new Container("Inventory", 10, 4, 3);
 		this.TradeScreen = new Container("Inventory", 10, 4, 5);
-		this.Stash = new Container("Stash", 6, this.StashY, 7);
+		this.Stash = new Container("Stash", 10, this.StashY, 7);
 		this.Belt = new Container("Belt", 4 * this.BeltSize(), 1, 2);
 		this.Cube = new Container("Horadric Cube", 3, 4, 6);
 		this.InvRef = [];
