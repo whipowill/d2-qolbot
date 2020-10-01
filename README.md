@@ -16,7 +16,7 @@ This is a fork of an older branch of Kolbot, modified with all the necessary cha
 
 ## Install
 
-- Download this [zipfile](https://github.com/whipowill/d2-qolbotl/archive/master.zip) and extract it.
+- Download this [zipfile](https://github.com/whipowill/d2-qolbot/archive/master.zip) and extract it.
 - Modify ``D2bot.exe`` to run as administrator for all users.
 - Run ``D2bot.exe``.
 - Create a new profile:
