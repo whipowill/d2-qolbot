@@ -23,7 +23,7 @@ This is a fork of an older branch of Kolbot, modified with all the necessary cha
 	- ``Profile Name`` is ``Yourprofilename``.
 	- ``Character`` is ``Yourcharactername``.
 	- ``Mode`` is ``Single Player``.
-	- Parameters are ``-direct -txt -ns -w``.
+	- ``Parameters`` are ``-direct -txt -ns -w``.
 		- The ``-w`` has to be in there or it won't work!
 	- ``Diablo Path`` is ``C:\your\path\to\Diablo II\Game.exe``.
 	- ``Entry Script`` is ``C:\your\path\to\d2-qolbot\src\d2bs\kolbot\D2BotLead.dbj``
@@ -39,14 +39,14 @@ This is a fork of an older branch of Kolbot, modified with all the necessary cha
 	- These files are referenced in your character script.
 - Select the manager profile and hit ``Start``.
 
+## Tips
+
+- It's best to use a Sorceress for Teleport speed runs.
+
 ## Known Issues
 
 - This doesn't work w/ Wine, no matter how hard you try.
 - Hovering over found items in the manager normally will show a screenshot of the item, but sometimes it gives an error.  Just hit continue and everything will be fine.
-
-## Tips
-
-- It's best to use a Sorceress for Teleport speed runs.
 
 ## References
 
