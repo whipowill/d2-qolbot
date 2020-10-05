@@ -46,8 +46,8 @@ var Town = {
 	],
 
 	ignoredItemTypes: [ // Items that won't be stashed
-		5, // Arrows
-		6, // Bolts
+		//5, // Arrows
+		//6, // Bolts
 		18, // Book (Tome)
 		22, // Scroll
 		38, // Missile Potion
@@ -1531,13 +1531,13 @@ MainLoop:
 
 		if (items) {
 			for (i = 0; i < items.length; i += 1) {
-				if (!Storage.Stash.CanFit(items[i])){				
-					say("/insertpage");				
+				if (!Storage.Stash.CanFit(items[i])){
+					say("/insertpage");
 					say("/swap 1");
 					D2Bot.printToConsole("New Stash Created! =)", 7);
 				}
 
-				
+
 				if (this.canStash(items[i])) {
 					result = (Pickit.checkItem(items[i]).result > 0 && Pickit.checkItem(items[i]).result < 4) || Cubing.keepItem(items[i]) || Runewords.keepItem(items[i]) || CraftingSystem.keepItem(items[i]);
 
@@ -1895,24 +1895,34 @@ MainLoop:
 		for (i = 0; !!items && i < items.length; i += 1) {
 			if ([18, 41, 76, 77, 78].indexOf(items[i].itemType) === -1 && // Don't drop tomes, keys or potions
 					// Keep some quest items
+
+					// act1
 					items[i].classid !== 524 && // Scroll of Inifuss
 					items[i].classid !== 525 && // Key to Cairn Stones
+					items[i].classid !== 89 && // Horadric Malus
+					// act2
+					items[i].classid !== 552 && // Book of Skill
 					items[i].classid !== 549 && // Horadric Cube
 					items[i].classid !== 92 && // Staff of Kings
 					items[i].classid !== 521 && // Viper Amulet
 					items[i].classid !== 91 && // Horadric Staff
-					items[i].classid !== 552 && // Book of Skill
-					items[i].classid !== 545 && // Potion of Life
+					// act3
 					items[i].classid !== 546 && // A Jade Figurine
 					items[i].classid !== 547 && // The Golden Bird
+					items[i].classid !== 545 && // Potion of Life
+					items[i].classid !== 87 && // The Gidbinn
 					items[i].classid !== 548 && // Lam Esen's Tome
 					items[i].classid !== 553 && // Khalim's Eye
-					items[i].classid !== 554 && // Khalim's Heart 
+					items[i].classid !== 554 && // Khalim's Heart
 					items[i].classid !== 555 && // Khalim's Brain
 					items[i].classid !== 173 && // Khalim's Flail
 					items[i].classid !== 174 && // Khalim's Will
+					// act4
+					items[i].classid !== 90 && // Hellforge Hammer
+					// act5
 					items[i].classid !== 644 && // Malah's Potion
 					items[i].classid !== 646 && // Scroll of Resistance
+
 					//
 					(items[i].code !== 529 || !!me.findItem(518, 0, 3)) && // Don't throw scrolls if no tome is found (obsolete code?)
 					(items[i].code !== 530 || !!me.findItem(519, 0, 3)) && // Don't throw scrolls if no tome is found (obsolete code?)

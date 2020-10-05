@@ -32,21 +32,20 @@ This is a fork of an older branch of Kolbot, modified with all the necessary cha
 	- These files are found in ``C:\your\path\to\d2-qolbot\src\d2bs\kolbot\libs\config\``.
 	- Copy ``Sorceress.js`` and rename as ``Sorceress.Yourcharactername.js``.
 	- Make edits to the profile as you see fit.
-- Create a new pickit:
+- Create a new pickit (optional):
 	- These files are found in ``C:\your\path\to\d2-qolbot\src\d2bs\kolbot\pickit\``.
 	- These control what items your character picks up and keeps.
-	- Modifying these files is optional.
 	- These files are referenced in your character script.
-- Select the manager profile and hit ``Start``.
+- Select your profile and click the ``Start`` button.
 
 ## Tips
 
-- It's best to use a Sorceress for Teleport speed runs.
+- Press NUMPAD + key to bring up ingame console.
+- Sorceress is by far the best character to use for farming.
 
 ## Known Issues
 
 - This doesn't work w/ Wine, no matter how hard you try.
-- Hovering over found items in the manager normally will show a screenshot of the item, but sometimes it gives an error.  Just hit continue and everything will be fine.
 
 ## References
 

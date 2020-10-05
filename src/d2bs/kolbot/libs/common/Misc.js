@@ -582,30 +582,30 @@ var Item = {
 			bodyLoc = 1;
 
 			break;
-		case 24: // 
-		case 25: // 
-		case 26: // 
-		case 27: // 
-		case 28: // 
-		case 29: // 
-		case 30: // 
-		case 31: // 
-		case 32: // 
-		case 33: // 
-		case 34: // 
-		case 35: // 
-		case 36: // 
-		case 42: // 
-		case 43: // 
-		case 44: // 
+		case 24: //
+		case 25: //
+		case 26: //
+		case 27: //
+		case 28: //
+		case 29: //
+		case 30: //
+		case 31: //
+		case 32: //
+		case 33: //
+		case 34: //
+		case 35: //
+		case 36: //
+		case 42: //
+		case 43: //
+		case 44: //
 		case 67: // Handtohand (Assasin Claw)
-		case 68: // 
-		case 69: // 
-		case 72: // 
-		case 85: // 
-		case 86: // 
-		case 87: // 
-		case 88: // 
+		case 68: //
+		case 69: //
+		case 72: //
+		case 85: //
+		case 86: //
+		case 87: //
+		case 88: //
 			bodyLoc = 4;
 
 			break;
@@ -1167,7 +1167,8 @@ var Misc = {
 		}
 
 		if (desc[desc.length - 1]) {
-			desc[desc.length - 1] = desc[desc.length - 1].trim() + " (" + unit.ilvl + ")";
+			//desc[desc.length - 1] = desc[desc.length - 1].trim() + " (" + unit.ilvl + ")";
+			desc[desc.length - 1] = desc[desc.length - 1].trim();
 		}
 
 		desc = desc.reverse().join("\n");
