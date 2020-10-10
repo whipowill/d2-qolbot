@@ -1506,7 +1506,30 @@ MainLoop:
 	},
 
 	canStash: function (item) {
-		var ignoredClassids = [91, 174]; // Some quest items that have to be in inventory or equipped
+		var ignoredClassids = [
+			524, // scroll of inifuss
+			525, // key to the cairn stones
+			89, // horaldric malus
+			552, // book of skill
+			//549, // horaldric cube
+			//92, // shaftofthehoradricstaff
+			//521, // topofthehoradricstaff
+			91, // horadricstaff
+			546, // ajadefigurine
+			547, // thegoldenbird
+			545, // potionoflife
+			87, // thegidbinn
+			548, // lamesen'stome
+			//553, // khalim'seye
+			//554, // khalim'sheart
+			//555, // khalim'sbrain
+			//173, // khalim'sflail
+			174, // khalim'swill
+			551, // mephisto'ssoulstone
+			90, // hellforgehammer
+			644, // malah'spotion
+			646, // scrollofresistance
+		]; // Some quest items that have to be in inventory or equipped
 
 		if (this.ignoredItemTypes.indexOf(item.itemType) > -1 || ignoredClassids.indexOf(item.classid) > -1 || !Storage.Stash.CanFit(item)) {
 			return false;
