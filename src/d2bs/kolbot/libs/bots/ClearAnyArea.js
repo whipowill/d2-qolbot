@@ -7,7 +7,8 @@
 function ClearAnyArea() {
 	var i;
 
-	Town.doChores();
+	if (!Config.Questing)
+		Town.doChores();
 
 	for (i = 0; i < Config.ClearAnyArea.AreaList.length; i += 1) {
 		if (Pather.journeyTo(Config.ClearAnyArea.AreaList[i])) {
