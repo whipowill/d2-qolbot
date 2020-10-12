@@ -117,7 +117,7 @@ var Precast = new function () {
 			break;
 		}
 
-		print("ÿc4Precastÿc0: Current " + sumCurr + ", Swap " + sumSwap);
+		//print("Ã¿c4PrecastÃ¿c0: Current " + sumCurr + ", Swap " + sumSwap);
 
 		return sumSwap > sumCurr ? Math.abs(me.weaponswitch - 1) : me.weaponswitch;
 	};
@@ -131,7 +131,8 @@ var Precast = new function () {
 		}
 
 		this.weaponSwitch(slot);
-		Skill.cast(skillId, 0);
+		if (me.getSkill(skillId, 0))
+			Skill.cast(skillId, 0);
 
 		if (swapped) {
 			this.weaponSwitch(Math.abs(slot - 1));
@@ -311,7 +312,7 @@ var Precast = new function () {
 			}
 
 			if (!me.getState(158) || force) {
-				Skill.cast(277, 0); // Blade Shield	
+				Skill.cast(277, 0); // Blade Shield
 			}
 
 			if (!Config.UseFade && Config.UseBoS && (!me.getState(157) || force)) {
