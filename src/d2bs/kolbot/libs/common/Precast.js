@@ -239,22 +239,16 @@ var Precast = new function () {
 				this.summon(221); // Raven
 			}
 
-			switch (Config.SummonAnimal) {
-			case 1:
-			case "Spirit Wolf":
+			if (Config.SummonSpiritWolf) {
 				buffSummons = this.summon(227) || buffSummons; // Summon Spirit Wolf
+			}
 
-				break;
-			case 2:
-			case "Dire Wolf":
+			if (Config.SummonDireWolf) {
 				buffSummons = this.summon(237) || buffSummons; // Summon Dire Wolf
+			}
 
-				break;
-			case 3:
-			case "Grizzly":
+			if (Config.SummonGrizzly) {
 				buffSummons = this.summon(247) || buffSummons; // Summon Grizzly
-
-				break;
 			}
 
 			switch (Config.SummonVine) {
