@@ -90,7 +90,7 @@ var ClassAttack = {
 	},
 
 	afterAttack: function () {
-		Misc.unShift();
+		//Misc.unShift();
 		Precast.doPrecast(false);
 	},
 
@@ -110,7 +110,7 @@ var ClassAttack = {
 
 			// Teleport closer
 			if (Math.ceil(getDistance(me, unit)) > 10) {
-				Misc.unShift();
+				//Misc.unShift();
 
 				if (!Attack.getIntoPosition(unit, 10, 0x4)) {
 					return 0;
@@ -139,7 +139,7 @@ var ClassAttack = {
 
 			// Teleport closer
 			if (Math.ceil(getDistance(me, unit)) > 10) {
-				Misc.unShift();
+				//Misc.unShift();
 
 				if (!Attack.getIntoPosition(unit, 10, 0x4)) {
 					return 0;
