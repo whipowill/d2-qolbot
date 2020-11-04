@@ -731,6 +731,7 @@ var Attack = {
 
 	// Clear an entire area based on monster spectype
 	clearLevel: function (spectype) {
+
 		if (Config.MFLeader) {
 			Pather.makePortal();
 			say("clearlevel " + getArea().name);
@@ -781,6 +782,34 @@ var Attack = {
 				Pather.moveTo(result[0], result[1], 3, spectype);
 				//this.countUniques();
 
+				if (Config.Questing) {
+					// detect need for repairs
+					var repairAction = Town.needRepair();
+					if (!repairAction || !repairAction.length) {
+					}
+					else {
+						print('Go town town an repair.');
+						Town.visitTown();
+					}
+
+					// detect hostile monsters (tombs vipers, undead dolls)
+					var retreat = false;
+					if (Config.ViperCheck && getUnit(1, 597)) retreat = true;
+					if (Config.DollsCheck && (getUnit(1, 690) || getUnit(1, 691) || getUnit(1, 215) || getUnit(1, 216))) retreat = true;
+					if (retreat) {
+						// report
+						print('Detected hostile monsters.');
+
+						// go to town
+						Town.visitTown();
+
+						// idle...
+						print('Idle.');
+						while (1) delay(1000);
+					}
+				}
+
+				// clear room
 				if (!this.clear(40, spectype)) {
 					break;
 				}
