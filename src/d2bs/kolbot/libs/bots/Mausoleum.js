@@ -13,6 +13,8 @@ function Mausoleum() {
 		throw new Error("Failed to move to Burial Grounds");
 	}
 
+	if (Config.Questing) Attack.clearLevel();
+
 	if (Config.Mausoleum.KillBloodRaven) {
 		Pather.moveToPreset(17, 1, 805);
 		Attack.kill(getLocaleString(3111)); // Blood Raven

@@ -50,7 +50,8 @@ function Tristram() {
 		stones = [getUnit(2, 17), getUnit(2, 18), getUnit(2, 19), getUnit(2, 20), getUnit(2, 21)];
 	}
 
-	Attack.clear(15, 0, getLocaleString(2872)); // Rakanishu
+	//Attack.clear(15, 0, getLocaleString(2872)); // Rakanishu (error if he is already dead)
+	Attack.clear(20);
 
 	while (!me.getQuest(4, 4)) {
 		stones.forEach(function (stone) {

@@ -13,7 +13,8 @@ function Radament() {
 		throw new Error("Failed to move to Radament");
 	}
 
-	Attack.kill(229); // Radament
+	//Attack.kill(229); // Radament
+	Attack.clear(20); // focusing only on radament gets you killed
 	Pickit.pickItems();
 	Attack.openChests(20);
 
