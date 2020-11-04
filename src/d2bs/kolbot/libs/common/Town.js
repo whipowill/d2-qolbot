@@ -1556,7 +1556,9 @@ MainLoop:
 			for (i = 0; i < items.length; i += 1) {
 				if (!Storage.Stash.CanFit(items[i])){
 					say("/insertpage");
+					delay(1000);
 					say("/swap 1");
+					delay(1000);
 					D2Bot.printToConsole("New Stash Created! =)", 7);
 				}
 
