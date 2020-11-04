@@ -31,24 +31,41 @@ This is a fork of an older branch of Kolbot, modified with all the necessary cha
 - Create a new script:
 	- These files are found in ``C:\your\path\to\d2-qolbot\src\d2bs\kolbot\libs\config\``.
 	- Copy ``Sorceress.js`` and rename as ``Sorceress.Yourcharactername.js``.
-	- Make edits to the profile as you see fit.
-- Create a new pickit (optional):
+	- This file controls where your character goes and how it fights.
+	- The setting ``Scripts.UserAddon`` must be set to ``false``.
+	- Use this handy [skill sheet](https://user.xmission.com/~trevin/DiabloIIv1.09_Skills.html) to look up attack skill IDs.
+- Create a new pickit rulset (optional):
 	- These files are found in ``C:\your\path\to\d2-qolbot\src\d2bs\kolbot\pickit\``.
-	- These control what items your character picks up and keeps.
+	- These files control what items your character picks up and keeps.
 	- These files are referenced in your character script.
+	- I recommend using the ``QOL.nip`` file.
 - Select your profile and click the ``Start`` button.
 
-## Tips
-
-- Press NUMPAD + key to bring up ingame console.
-- Sorceress is by far the best character to use for farming.
-
-## Known Issues
+### Wine
 
 - This doesn't work w/ Wine, no matter how hard you try.
+
+## Questing
+
+I programmed the ``Questing.js`` file to do all the quests in the game.  This is a work in progress:
+
+- It won't auto-equip or auto-skill (todo).
+- It will idle the character at the end of every act.
+- You must model your character script after the ``Sorceress.Questing.js`` example.
+- Very likely to die on HC.
+
+## Commands
+
+- Press ``Pause/Break`` key to pause the bot.
+- Press ``NUMPAD+`` key to bring up ingame console.
+	- Type ``reload`` to reload the bot / restart quests.
+	- Type ``getMouseCoords(1)`` to get X,Y location of cursor on map.
 
 ## References
 
 - [Kolbot](https://github.com/kolton/d2bot-with-kolbot/tree/patch-113d-core15) - the original code repository.
 - [Issue #338](https://github.com/kolton/d2bot-with-kolbot/issues/338) - instructions on modifications.
-- [Pickit](https://github.com/blizzhackers/pickits/tree/master/custom) - downloable pickit rulesets.
+- [Documentation](https://github.com/blizzhackers/documentation/blob/master/kolbot/Hotkeys.md/#hotkeys) - official documentation.
+- [API Documentation](https://github.com/noah-/d2bs) - more documentation.
+- [D2 Skills Chart](https://user.xmission.com/~trevin/DiabloIIv1.09_Skills.html) - list of skills w/ ID numbers.
+- [Pickit Files](https://github.com/blizzhackers/pickits/tree/master/custom) - downloable pickit rulesets.
