@@ -782,13 +782,20 @@ var Attack = {
 				Pather.moveTo(result[0], result[1], 3, spectype);
 				//this.countUniques();
 
+				// deletect curses...
+				if (Town.needHealing()) {
+					print('Go to town and heal (clear level).');
+					Town.visitTown();
+				}
+
+				// if questing...
 				if (Config.Questing) {
 					// detect need for repairs
 					var repairAction = Town.needRepair();
 					if (!repairAction || !repairAction.length) {
 					}
 					else {
-						print('Go town town an repair.');
+						print('Go to town and repair (clear level).');
 						Town.visitTown();
 					}
 

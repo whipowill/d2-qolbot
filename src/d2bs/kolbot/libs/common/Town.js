@@ -2229,7 +2229,7 @@ MainLoop:
 		return true;
 	},
 
-	visitTown: function () {
+	visitTown: function (is_chicken) {
 		if (me.inTown) {
 			this.doChores();
 			this.move("stash");
@@ -2244,6 +2244,12 @@ MainLoop:
 			this.goToTown();
 		} catch (e) {
 			return false;
+		}
+
+		// if chicken...
+		if (is_chicken) {
+			print('Go to town and heal (chicken).');
+			this.initNPC("Heal", "heal");
 		}
 
 		this.doChores();

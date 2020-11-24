@@ -91,7 +91,7 @@ function main() {
 
 			try {
 				me.overhead("Going to town");
-				Town.visitTown();
+				Town.visitTown(true);
 			} catch (e) {
 				Misc.errorReport(e, "TownChicken.js");
 				scriptBroadcast("quit");
