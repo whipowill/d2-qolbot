@@ -126,6 +126,10 @@ var Pather = {
 		pop - remove last node
 	*/
 	moveTo: function (x, y, retry, clearPath, pop) {
+
+		// method override
+		clearPath = Config.ClearPath;
+
 		if (me.dead) { // Abort if dead
 			return false;
 		}
