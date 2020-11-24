@@ -1,0 +1,83 @@
+// .................................................
+// QOL Pickit Ruleset - For Tier 2 (Nightmare)
+// by whipowill
+// .................................................
+
+// helms
+[name] == warhat && [quality] == unique // peasant crown
+[name] == sallet && [quality] == unique // rockstopper
+[name] == casque && [quality] == unique // stealskull
+[name] == deathmask && [quality] == unique // blackhorn's face
+[name] == grandcrown && [quality] == unique // crown of thieves
+[name] == grimhelm && [quality] == unique // vampire gaze
+
+// armors
+[name] == ghostarmor && [quality] == unique // the spirit shroud
+[name] == serpentskinarmor && [quality] == unique // skin of the vipermagi
+[name] == trellisedarmor && [quality] == unique // iron pelt
+[name] == cuirass && [quality] == unique // duriel's shell
+[name] == mesharmor && [quality] == unique // shaftstop
+[name] == trellisedarmor && [quality] == normal && [flag] != ethereal # [sockets] != 1 // duress, fortitude
+[name] == mageplate && [quality] == normal && [flag] != ethereal # [sockets] != 1 // duress, fortitude
+
+// belts
+[name] == demonhidesash && [quality] == unique // string of ears
+[name] == sharkskinbelt && [quality] == unique // razortail
+[name] == warbelt && [quality] == unique // thundergod's vigor
+[name] == sharkskinbelt && [quality] == set // m'avina's tenet
+
+// boots
+[name] == meshboots && [quality] == unique // silkweave
+[name] == battleboots && [quality] == unique // war traveler
+[name] == warboots && [quality] == unique // gore rider
+[name] == battleboots && [quality] == set // aldur's advance
+
+// gloves
+[name] == demonhidegloves && [quality] == unique // venom grip
+[name] == battlegauntlets && [quality] == unique // lava gout
+[name] == battlegauntlets && [quality] == set // m'avina's icy clutch
+
+// shields
+[name] == roundshield && [quality] == unique // moser's blessed circle
+[name] == dragonshield && [quality] == unique // tiamat's rebuke
+[name] == grimshield && [quality] == unique // lidless wall
+[name] == dragonshield && [quality] == normal && [flag] != ethereal # [sockets] != 1
+
+// polearms
+[name] == warspear && [quality] == unique // the impaler
+[name] == yari && [quality] == unique // hone sundan
+[name] == lance && [quality] == unique // spire of honor
+[name] == battlescythe && [quality] == normal && [flag] == ethereal # [sockets] != 1 // eth insight
+[name] == battlescythe && [quality] == normal && [flag] != ethereal # [sockets] != 1 // insight
+
+// swords
+[name] == tulwar && [quality] == unique // blade of ali baba
+
+// axes
+// ?
+
+// maces
+[name] == cudgel && [quality] == unique // dark clan crusher
+[name] == holywatersprinkler && [quality] == unique // the fetid sprinkler
+[name] == jaggedstar && [quality] == set // aldur's rhythm
+
+// bows
+[name] == edgebow && [quality] == unique // skystrike
+[name] == cedarbow && [quality] == unique // kuko shakaku
+[name] == doublebow && [quality] == unique // endlesshail
+[name] == shortsiegebow && [quality] == unique // witchwild string
+[name] == largesiegebow && [quality] == unique // cliffkiller
+[name] == runebow && [quality] == unique // magewrath
+[name] == gothicbow && [quality] == unique // goldstrike arch
+
+// staves
+[name] == quarterstaff && [quality] == unique // ribcracker
+
+// wands
+[name] == burntwand && [quality] == unique // suicide branch
+
+// orphan's call
+[name] == wingedhelm && [quality] == set // guillaume's face
+[name] == roundshield && [quality] == set // whistan's guard
+[name] == sharkskingloves && [quality] == set // magnus' skin
+[name] == battlebelt && [quality] == set // wilhelm's pride

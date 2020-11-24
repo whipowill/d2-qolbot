@@ -1,193 +1,7 @@
 // .................................................
-// QOL Pickit Ruleset - For Ladder
+// QOL Pickit Ruleset - For Rares
 // by whipowill
 // .................................................
-
-// =================================================
-// HELMS
-// =================================================
-
-// unique
-[name] == furyvisor && [quality] == unique // wolfhowl
-[name] == skyspirit && [quality] == unique // ravenlore
-[name] == corona && [quality] == unique // crown of ages
-[name] == diadem && [quality] == unique // griffon's eye
-[name] == warhat && [quality] == unique // peasant crown
-[name] == tiara && [quality] == unique // kira's guardian
-[name] == grimhelm && [quality] == unique // vampire gaze
-[name] == shako && [quality] == unique // harlequin crest
-[name] == bonevisage && [quality] == unique // giant skull
-[name] == wingedhelm && [quality] == unique // valkyrie wing
-[name] == totemicmask && [quality] == unique // jalal's mane
-[name] == slayerguard && [quality] == unique // arreat's face
-[name] == grandcrown && [quality] == unique // crown of thieves
-[name] == demonhead && [quality] == unique // andariel's visage
-[name] == spiredhelm && [quality] == unique // nightwing's veil
-[name] == destroyerhelm && [quality] == unique // demonhorn's edge
-[name] == conquerorcrown && [quality] == unique // halaberd's reign
-
-// set
-[name] == corona && [quality] == set // griswold's valor
-[name] == grimhelm && [quality] == set // natalya's totem
-[name] == diadem && [quality] == set // m'avina's true sight
-[name] == avengerguard && [quality] == set // immortal king's will
-[name] == deathmask && [quality] == set // tal rasha's horadric crest
-
-// =================================================
-// ARMORS
-// =================================================
-
-// unique
-[name] == mesharmor && [quality] == unique // shaftstop
-[name] == krakenshell && [quality] == unique // leviathan
-[name] == cuirass && [quality] == unique // duriel's shell
-[name] == duskshroud && [quality] == unique // ormus' robes
-[name] == sacredarmor && [quality] == unique // tyrael's might
-[name] == studdedleather && [quality] == unique // twitchthroe
-[name] == russetarmor && [quality] == unique // skullder's ire
-[name] == templarcoat && [quality] == unique // guardian angel
-[name] == balrogskin && [quality] == unique // arkaine's valor
-[name] == sacredarmor && [quality] == unique // templar's might
-[name] == ghostarmor && [quality] == unique // the spirit shroud
-[name] == wirefleece && [quality] == unique // the gladiator's bane
-[name] == serpentskinarmor && [quality] == unique // skin of the vipermagi
-
-// set
-[name] == ornateplate && [quality] == set // griswold's heart
-[name] == chaosarmor && [quality] == set // trang-oul's scales
-[name] == sacredarmor && [quality] == set // immortal king's soul cage
-[name] == lacqueredplate && [quality] == set // tal rasha's guardianship
-
-// =================================================
-// SHIELDS
-// =================================================
-
-// unique
-[name] == ward && [quality] == unique // spirit ward
-[name] == monarch && [quality] == unique // stormshield
-[name] == kiteshield && [quality] == unique // steelclash
-[name] == gothicshield && [quality] == unique // the ward
-[name] == grimshield && [quality] == unique // lidless wall
-[name] == sacredrondache && [quality] == unique // alma negra
-[name] == hierophanttrophy && [quality] == unique // homunculus
-[name] == trollnest && [quality] == unique // head hunter's glory
-[name] == bloodlordskull && [quality] == unique // darkforce spawn
-[name] == gildedshield && [quality] == unique // herald of zakarum
-[name] == roundshield && [quality] == unique // moser's blessed circle
-
-// set
-[name] == cantortrophy && [quality] == set // trang-oul's wing
-[name] == vortexshield && [quality] == set // griswold's honor
-
-// magic
-[name] == monarch && [quality] == magic # [sockets] == 4 && [fbr] == 30 // jmod
-[name] == monarch && [quality] == magic # [sockets] == 4 && [fhr] == 17 // jmoe
-[name] == monarch && [quality] == magic # [sockets] == 4 && [maxhp] >= 41 // jmoc
-[name] == monarch && [quality] == magic # [sockets] == 4 && [itemreqpercent] == -30 // jmos
-
-// =================================================
-// GLOVES
-// =================================================
-
-// unique
-[name] == lightgauntlets && [quality] == unique // magefist
-[name] == ogregauntlets && [quality] == unique // steelrend
-[name] == chaingloves && [quality] == unique // chance guards
-[name] == vampirebonegloves && [quality] == unique // dracul's grasp
-
-// set
-[name] == bramblemitts && [quality] == set // laying of hands
-[name] == heavybracers && [quality] == set // trang-oul's claws
-[name] == wargauntlets && [quality] == set // immortal king's forge
-
-// magic
-[type] == gloves && [quality] == magic # [ias] == 20 && [javelinandspearskilltab] == 3
-
-// =================================================
-// BOOTS
-// =================================================
-
-// unique
-[name] == greaves && [quality] == unique // tearhaunch
-[name] == meshboots && [quality] == unique // silkweave
-[name] == warboots && [quality] == unique // gore rider
-[name] == battleboots && [quality] == unique // war traveler
-[name] == sharkskinboots && [quality] == unique // waterwalk
-[name] == boneweaveboots && [quality] == unique // marrowwalk
-[name] == lightplatedboots && [quality] == unique // goblin toe
-[name] == demonhideboots && [quality] == unique // infernostride
-[name] == myrmidongreaves && [quality] == unique // shadow dancer
-[name] == scarabshellboots && [quality] == unique // sandstorm trek
-
-// set
-[name] == meshboots && [quality] == set // natalya's soul
-[name] == heavyboots && [quality] == set // sander's riprap
-[name] == battleboots && [quality] == set // aldur's advance
-[name] == warboots && [quality] == set // immortal king's pillar
-
-// =================================================
-// BELTS
-// =================================================
-
-// unique
-[name] == belt && [quality] == unique // nightsmoke
-[name] == heavybelt && [quality] == unique // goldwrap
-[name] == battlebelt && [quality] == unique // snowclash
-[name] == platedbelt && [quality] == unique // bladebuckle
-[name] == sharkskinbelt && [quality] == unique // razortail
-[name] == warbelt && [quality] == unique // thundergod's vigor
-[name] == spiderwebsash && [quality] == unique // arachnid mesh
-[name] == demonhidesash && [quality] == unique // string of ears
-[name] == vampirefangbelt && [quality] == unique // nosferatu's coil
-[name] == mithrilcoil && [quality] == unique // verdungo's hearty cord
-
-// set
-[name] == mithrilcoil && [quality] == set // credendum
-[name] == trollbelt && [quality] == set // trang-oul's girth
-[name] == warbelt && [quality] == set // immortal king's detail
-[name] == meshbelt && [quality] == set // tal rasha's fine-spun cloth
-
-// =================================================
-// WEAPONS
-// =================================================
-
-// unique
-[name] == ogreaxe && [quality] == unique // bonehew
-[name] == yari && [quality] == unique // hone sundan
-[name] == scourge && [quality] == unique // stormlash
-[name] == wardbow && [quality] == unique // widowmaker
-[name] == hydrabow && [quality] == unique // windforce
-[name] == lichwand && [quality] == unique // boneshade
-[name] == ettinaxe && [quality] == unique // rune master
-[name] == boneknife && [quality] == unique // wizardspike
-[name] == tyrantclub && [quality] == unique // demon limb
-[name] == phaseblade && [quality] == unique // azurewrath
-[name] == crypticaxe && [quality] == unique // tomb reaver
-[name] == tulwar && [quality] == unique // blade of ali baba
-[name] == burntwand && [quality] == unique // suicide branch
-[name] == petrifiedwand && [quality] == unique // carin shard
-[name] == elderstaff && [quality] == unique // ondal's wisdom
-[name] == unearthedwand && [quality] == unique // death's web
-[name] == swirlingcrystal && [quality] == unique // the oculus
-[name] == thresher && [quality] == unique // the reaper's toll
-[name] == berserkeraxe && [quality] == unique // death cleaver
-[name] == tombwand && [quality] == unique // arm of king leoric
-[name] == mightyscepter && [quality] == unique // heaven's light
-[name] == eldritchorb && [quality] == unique // eschuta's temper
-[name] == hyperionspear && [quality] == unique // arioc's needle
-[name] == colossusblade && [quality] == unique // the grandfather
-[name] == thundermaul && [quality] == unique // the cranium basher
-[name] == shortsiegebow && [quality] == unique // witchwild string
-[name] == archonstaff && [quality] == unique // mang song's lesson
-[name] == dimensionalshard && [quality] == unique // death's fathom
-[name] == matriarchaljavelin && [quality] == unique // thunderstroke
-[name] == ceremonialjavelin && [quality] == unique // titan's revenge
-[name] == greatertalons && [quality] == unique // bartuc's cut-throat
-
-// set
-[name] == caduceus && [quality] == set // griswold's redemption
-[name] == ogremaul && [quality] == set // immortal king's stone crusher
-[name] == swirlingcrystal && [quality] == set // tal rasha's lidless eye
 
 // =================================================
 // RARES
@@ -903,8 +717,6 @@
 // https://raw.githubusercontent.com/blizzhackers/pickits/master/custom/earlyladder1.nip
 
 // rings
-[type] == ring && [quality] == unique
-[type] == ring && [quality] == set
 [type] == ring && [quality] >= rare # [attackrate] >= 75 && [hpregen] >= 4 && ([maxhp] >= 4 || [strength] == 2 || [dexterity] == 2 || [strength]+[dexterity] >= 2 ||[lightresist]+[fireresist] >= 20 || [lightresist]+[coldresist] >= 20 || [fireresist]+[coldresist] >= 20) && [itemlevelreq] <= 9
 [type] == ring && [quality] >= rare # [attackrate] >= 75 && [maxhp] >= 4 && [strength] == 2 && ([dexterity] == 2 || [lightresist]+[fireresist] >= 20 || [lightresist]+[coldresist] >= 20 || [fireresist]+[coldresist] >= 20) && [itemlevelreq] <= 9
 [type] == ring && [quality] >= rare # [attackrate] >= 75 && [maxhp] >= 4 && [dexterity] == 2 && ([dexterity] == 2 ||[lightresist]+[fireresist] >= 20 || [lightresist]+[coldresist] >= 20 || [fireresist]+[coldresist] >= 20) && [itemlevelreq] <= 9
@@ -949,8 +761,6 @@
 [type] == ring && [quality] >= rare # [attackrate] >= 100 && [lifeleech] >= 10 && ([maxhp] >= 20 || [strength] >= 10 || [dexterity] >= 8 || [strength]+[dexterity] >= 15 ||[fireresist]+[lightresist]+[coldresist] >= 15 || [lightresist]+[fireresist] >= 10 || [lightresist]+[coldresist] >= 10 || [fireresist]+[coldresist] >= 10 || [hpregen] >= 3 || [dexterity] == 18)
 
 // ammys
-[type] == amulet && [quality] == unique
-[type] == amulet && [quality] == set
 [type] == amulet && [quality] >= rare # [itemaddclassskills] >= 2 && [fcr] >= 10 && [strength] >= 20 && ([dexterity] >= 15 || [maxmana] >= 60 || [maxhp] >= 40 || [itemmagicbonus] >= 40 || [itemdamagetomana] >= 12)
 [type] == amulet && [quality] >= rare # [itemaddclassskills] >= 2 && [fcr] >= 10 && [strength] >= 20 && (([fireresist] >= 31 && [coldresist] >= 31) || ([fireresist] >= 31 && [lightresist] >= 31) || ([coldresist] >= 31 && [lightresist] >= 31))
 [type] == amulet && [quality] >= rare # [itemaddclassskills] >= 2 && [fcr] >= 10 && [strength] >= 20 && [coldresist] >= 15 && [lightresist] >= 15 && [fireresist] >= 15 && [poisonresist] >= 15

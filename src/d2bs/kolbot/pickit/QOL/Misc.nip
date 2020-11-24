@@ -35,25 +35,25 @@
 // RUNES
 // =================================================
 
-//[name] == elrune # # [maxquantity] == 2
-//[name] == eldrune # # [maxquantity] == 2
-//[name] == tirrune # # [maxquantity] == 2
-//[name] == nefrune # # [maxquantity] == 2
-//[name] == ethrune # # [maxquantity] == 2
-//[name] == ithrune # # [maxquantity] == 2
-//[name] == talrune # # [maxquantity] == 2
-//[name] == ralrune # # [maxquantity] == 2
-//[name] == ortrune # # [maxquantity] == 2
-//[name] == thulrune # # [maxquantity] == 2
-//[name] == amnrune # # [maxquantity] == 2
-//[name] == solrune # # [maxquantity] == 2
-//[name] == shaelrune # # [maxquantity] == 2
-//[name] == dolrune # # [maxquantity] == 2
-//[name] == helrune # # [maxquantity] == 2
-//[name] == iorune # # [maxquantity] == 2
-[name] == lumrune # # [maxquantity] == 2
-[name] == korune # # [maxquantity] == 2
-[name] == falrune # # [maxquantity] == 2
+[name] == elrune
+[name] == eldrune
+[name] == tirrune
+[name] == nefrune
+[name] == ethrune
+[name] == ithrune
+[name] == talrune
+[name] == ralrune
+[name] == ortrune
+[name] == thulrune
+[name] == amnrune
+[name] == solrune
+[name] == shaelrune
+[name] == dolrune
+[name] == helrune
+[name] == iorune
+[name] == lumrune
+[name] == korune
+[name] == falrune
 [name] == lemrune
 [name] == pulrune
 [name] == umrune
@@ -124,9 +124,6 @@
 // JEWELS
 // =================================================
 // https://github.com/blizzhackers/pickits/blob/master/custom/jewels.nip
-
-// keep all (for crafting)
-[type] == jewel && [quality] == magic
 
 // perfect jewels
 [type] == jewel && [quality] == magic # [defense] >= 64 && ([ias] >= 15 || [maxdamage] >= 15 || [mindamage] >= 10 || [fhr] >= 7 || [itemgoldbonus] >= 30 || [itemmagicbonus] >= 10 || [maxhp] >= 20 || [itemreqpercent] == -15 || [dexterity] >= 9 || [strength] >= 9 || [energy] >= 9)
@@ -274,7 +271,7 @@
 
 // pandemonium
 [name] == keyofhate # # [maxquantity] == 3
-[name] == keyofterror # # [maxquantity] == 3
+//[name] == keyofterror # # [maxquantity] == 3
 [name] == keyofdestruction # # [maxquantity] == 3
 [name] == diablo'shorn
 [name] == mephisto'sbrain
@@ -285,7 +282,7 @@
 // =================================================
 
 [name] == arrows && [quality] >= magic # [ias] >= 10 || ([amazonskills] >= 1 || [bowandcrossbowskilltab] >= 1)
-[name] == bolts && [quality] >= magic # [ias] >= 10 || ([amazonskills] >= 1 || [bowandcrossbowskilltab] >= 1)
+//[name] == bolts && [quality] >= magic # [ias] >= 10 || ([amazonskills] >= 1 || [bowandcrossbowskilltab] >= 1)
 
 // =================================================
 // CHARMS
@@ -566,6 +563,16 @@
 // CRAFTS
 // =================================================
 // https://github.com/blizzhackers/pickits/blob/master/custom/craft.nip
+
+// ingredients
+//[type] == jewel && [quality] == magic
+//[type] == ring && [quality] == magic && [level] >= 70
+//[type] == amulet && [quality] == magic && [level] >= 70
+//[name] == ralrune
+//[name] == solrune
+
+// keep all
+//[quality] == crafted
 
 // rings
 [type] == ring && [quality] == crafted # [fcr] >= 10 && ([strength] >= 20 || [strength]+[dexterity] >= 20 || [dexterity] >= 15)

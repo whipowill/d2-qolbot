@@ -1,0 +1,95 @@
+// .................................................
+// QOL Pickit Ruleset - For Tier 3 (Normal)
+// by whipowill
+// .................................................
+
+// anything remotely descent
+[type] == (ring || amulet) && [quality] == magic # ([lifeleech] >= 3 || [manaleech] >= 3)
+[type] == (ring || amulet) && [quality] == magic # ([fireresist] >= 20 || [coldresist] >= 20 || [lightresist] >= 20 || [poisonresist] >= 20)
+[level] < 20 && [quality] == rare # ([lifeleech] >= 3 || [manaleech] >= 3)
+[level] < 20 && [quality] == rare # ([fireresist] >= 20 || [coldresist] >= 20 || [lightresist] >= 20 || [poisonresist] >= 20)
+
+// rings
+[name] == ring && [quality] == unique // nagelring, manald heal
+[type] == ring && [quality] == set # [lifeleech] == 6 && [normaldamagereduction] == 2 // cathan's seal
+
+// amulets
+[name] == amulet && [quality] == unique // nokozan relic, mahim-oak curio
+
+// helms
+[name] == cap && [quality] == unique // biggin's bonnet
+[name] == fullhelm && [quality] == unique // duskdeep
+//[name] == mask && [quality] == set // cathan's visage
+[type] == (circlet || helm) && [quality] == normal # [sockets] == 2 // lore
+
+// armors
+[name] == quiltedarmor && [quality] == unique // greyform
+[name] == studdedleather && [quality] == unique // twitchthroe
+[name] == splintmail && [quality] == unique // iceblink
+[name] == platemail && [quality] == unique // boneflesh
+[name] == fullplatemail && [quality] == unique // goldskin
+[name] == (hardleatherarmor || studdedleather) && [quality] == normal && [flag] != ethereal # [sockets] == 2 // stealth
+
+// belts
+[name] == heavybelt && [quality] == unique // goldwrap
+[name] == platedbelt && [quality] == unique // bladebuckle
+
+// boots
+[name] == heavyboots && [quality] == unique // gorefoot
+[name] == lightplatedboots && [quality] == unique // goblin toe
+[name] == lightplatedboots && [quality] == set // vidala's fetlock
+[name] == heavyboots && [quality] == set # [dexterity] == 10 && [strength] == 5 // sander's riprap
+
+// gloves
+[name] == leathergloves && [quality] == unique // the hand of broc
+[name] == heavygloves && [quality] == unique // bloodfist
+[name] == chaingloves && [quality] == unique // chance guards
+[name] == lightgauntlets && [quality] == unique // magefist
+//[name] == gauntlets && [quality] == unique // frostburn
+
+// shields
+[name] == smallshield && [quality] == unique // umbral disk
+[name] == kiteshield && [quality] == unique // steelclash
+[name] == gothicshield && [quality] == unique // the ward
+//[name] == kiteshield && [quality] == normal && [flag] != ethereal # [sockets] == 3 // ancient's pledge
+
+// polearms
+[name] == bardiche && [quality] == unique // dimoak's hew
+[name] == brandistock && [quality] == unique // bloodthief
+[name] == scythe && [quality] == normal # [sockets] == 3 // malice
+[name] == scythe && [quality] == normal && [flag] == ethereal # [sockets] == 4 // eth insight
+[name] == scythe && [quality] == normal && [flag] != ethereal # [sockets] == 4 // insight
+
+// swords
+[name] == (crystalsword || broadsword || longsword) && [quality] == normal # [sockets] == 4 // spirit
+
+// axes
+// ?
+
+// maces
+[name] == morningstar && [quality] == unique // bloodrise
+[name] == flail && [quality] == unique // the general's tan do li ga
+[name] == grandscepter && [quality] == unique // rusthandle
+[name] == maul && [quality] == unique // bonesnap
+
+// bows
+[name] == hunter'sbow && [quality] == unique // witherstring
+
+// daggers
+[name] == dagger && [quality] == unique // gull
+[name] == blade && [quality] == unique // spectral shard
+
+// staves
+[name] == longstaff && [quality] == unique // serpent lord
+[name] == (shortstaff || longstaff || gnarledstaff) && [quality] == normal # [sockets] == 2 // leaf
+
+// death's disguise
+[name] == warsword && [quality] == set // death's touch
+[name] == leathergloves && [quality] == set // death's hand
+[name] == sash && [quality] == set // death's guard
+
+// iratha's finery
+[name] == heavybelt && [quality] == set # [mindamage] == 5 // iratha's cord
+[name] == crown && [quality] == set # [fireresist] == 30 && [lightresist] == 30 // iratha's coil
+[type] == amulet && [quality] == set # [poisonresist] == 30 && [poisonlength] == -75 // iratha's collar
+[name] == lightgauntlets && [quality] == set # [coldresist] == 30 // iratha's cuff

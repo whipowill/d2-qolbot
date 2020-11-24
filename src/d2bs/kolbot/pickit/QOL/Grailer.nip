@@ -15,13 +15,13 @@
 [name] == fullhelm && [quality] == unique // duskdeep
 [name] == greathelm && [quality] == unique // howltusk
 [name] == mask && [quality] == unique // the face of horror
-//[name] == crown && [quality] == unique // undead crown
+[name] == crown && [quality] == unique // undead crown
 [name] == bonehelm && [quality] == unique // wormskull
 // ---
 [name] == warhat && [quality] == unique // peasant crown
 [name] == sallet && [quality] == unique // rockstopper
 [name] == casque && [quality] == unique // stealskull
-//[name] == basinet && [quality] == unique // darksight helm
+[name] == basinet && [quality] == unique // darksight helm
 [name] == wingedhelm && [quality] == unique // valkyrie wing
 [name] == deathmask && [quality] == unique // blackhorn's face
 [name] == grandcrown && [quality] == unique // crown of thieves
@@ -40,17 +40,17 @@
 // armors
 [name] == quiltedarmor && [quality] == unique // greyform
 [name] == leatherarmor && [quality] == unique // blinkbat's form
-//[name] == hardleatherarmor && [quality] == unique // the centurion
+[name] == hardleatherarmor && [quality] == unique // the centurion
 [name] == studdedleather && [quality] == unique // twitchthroe
-//[name] == ringmail && [quality] == unique // darkglow
-//[name] == scalemail && [quality] == unique // hawkmail
-//[name] == breastplate && [quality] == unique // venom ward
-//[name] == chainmail && [quality] == unique // sparking mail
-//[name] == splintmail && [quality] == unique // iceblink
-//[name] == lightplate && [quality] == unique // heavenly garb
+[name] == ringmail && [quality] == unique // darkglow
+[name] == scalemail && [quality] == unique // hawkmail
+[name] == breastplate && [quality] == unique // venom ward
+[name] == chainmail && [quality] == unique // sparking mail
+[name] == splintmail && [quality] == unique // iceblink
+[name] == lightplate && [quality] == unique // heavenly garb
 [name] == fieldplate && [quality] == unique // rockfleece
 [name] == platemail && [quality] == unique // boneflesh
-//[name] == gothicplate && [quality] == unique // rattlecage
+[name] == gothicplate && [quality] == unique // rattlecage
 [name] == fullplatemail && [quality] == unique // goldskin
 [name] == ancientarmor && [quality] == unique // silks of the victor
 // ---
@@ -58,7 +58,7 @@
 [name] == serpentskinarmor && [quality] == unique // skin of the vipermagi
 [name] == demonhidearmor && [quality] == unique // skin of the flayed one
 [name] == trellisedarmor && [quality] == unique // iron pelt
-//[name] == tigulatedmail && [quality] == unique // crow caw
+[name] == tigulatedmail && [quality] == unique // crow caw
 [name] == linkedmail && [quality] == unique // spirit forge
 [name] == cuirass && [quality] == unique // duriel's shell
 [name] == mesharmor && [quality] == unique // shaftstop
@@ -87,7 +87,7 @@
 // ---
 [name] == demonhidesash && [quality] == unique // string of ears
 [name] == sharkskinbelt && [quality] == unique // razortail
-//[name] == meshbelt && [quality] == unique // gloom's trap
+[name] == meshbelt && [quality] == unique // gloom's trap
 [name] == battlebelt && [quality] == unique // snowclash
 [name] == warbelt && [quality] == unique // thundergod's vigor
 // ---
@@ -97,12 +97,12 @@
 
 // boots
 [name] == boots && [quality] == unique // hotspur
-//[name] == heavyboots && [quality] == unique // gorefoot
+[name] == heavyboots && [quality] == unique // gorefoot
 [name] == chainboots && [quality] == unique // treads of cthon
 [name] == lightplatedboots && [quality] == unique // goblin toe
 [name] == greaves && [quality] == unique // tearhaunch
 // ---
-//[name] == demonhideboots && [quality] == unique // infernostride
+[name] == demonhideboots && [quality] == unique // infernostride
 [name] == sharkskinboots && [quality] == unique // waterwalk
 [name] == meshboots && [quality] == unique // silkweave
 [name] == battleboots && [quality] == unique // war traveler
@@ -114,10 +114,10 @@
 
 // gloves
 [name] == leathergloves && [quality] == unique // the hand of broc
-//[name] == heavygloves && [quality] == unique // bloodfist
+[name] == heavygloves && [quality] == unique // bloodfist
 [name] == chaingloves && [quality] == unique // chance guards
-//[name] == lightgauntlets && [quality] == unique // magefist
-//[name] == gauntlets && [quality] == unique // frostburn
+[name] == lightgauntlets && [quality] == unique // magefist
+[name] == gauntlets && [quality] == unique // frostburn
 // ---
 [name] == demonhidegloves && [quality] == unique // venom grip
 [name] == sharkskingloves && [quality] == unique // gravepalm
@@ -131,21 +131,21 @@
 
 // shields
 [name] == buckler && [quality] == unique // pelta lunata
-//[name] == smallshield && [quality] == unique // umbral disk
+[name] == smallshield && [quality] == unique // umbral disk
 [name] == largeshield && [quality] == unique // stormguild
-//[name] == kiteshield && [quality] == unique // steelclash
+[name] == kiteshield && [quality] == unique // steelclash
 [name] == spikedshield && [quality] == unique // swordback hold
 [name] == towershield && [quality] == unique // bverrit keep
 [name] == boneshield && [quality] == unique // wall of the eyeless
 [name] == gothicshield && [quality] == unique // the ward
 // ---
-//[name] == defender && [quality] == unique // visceratuant
+[name] == defender && [quality] == unique // visceratuant
 [name] == roundshield && [quality] == unique // moser's blessed circle
 [name] == scutum && [quality] == unique // stormchaser
 [name] == dragonshield && [quality] == unique // tiamat's rebuke
-[name] == barbedshield && [quality] == unique // lance guardt
+[name] == barbedshield && [quality] == unique // lance guard
 [name] == pavise && [quality] == unique // gerke's sanctuary
-//[name] == grimshield && [quality] == unique // lidless wall
+[name] == grimshield && [quality] == unique // lidless wall
 [name] == ancientshield && [quality] == unique // radament's sphere
 // ---
 [name] == luna && [quality] == unique // blackoak shield
@@ -158,9 +158,9 @@
 // polearms
 [name] == bardiche && [quality] == unique // dimoak's hew
 [name] == voulge && [quality] == unique // steelgoad
-//[name] == scythe && [quality] == unique // soulharvest
-//[name] == poleaxe && [quality] == unique // the battlebranch
-//[name] == halberd && [quality] == unique // woestave
+[name] == scythe && [quality] == unique // soulharvest
+[name] == poleaxe && [quality] == unique // the battlebranch
+[name] == halberd && [quality] == unique // woestave
 [name] == warscythe && [quality] == unique // the grim reaper
 // ---
 [name] == lochaberaxe && [quality] == unique // the meat scraper
@@ -170,16 +170,16 @@
 [name] == becdecorbin && [quality] == unique // husoldal evo
 [name] == grimscythe && [quality] == unique // grim's burning dead
 // ---
-//[name] == ogreaxe && [quality] == unique // bonehew
+[name] == ogreaxe && [quality] == unique // bonehew
 [name] == thresher && [quality] == unique // the reaper's toll
 [name] == crypticaxe && [quality] == unique // tomb reaver
 [name] == giantthresher && [quality] == unique // stormspire
 
 // spears
-//[name] == spear && [quality] == unique // the dragon chang
+[name] == spear && [quality] == unique // the dragon chang
 [name] == trident && [quality] == unique // razortine
-//[name] == brandistock && [quality] == unique // bloodthief
-//[name] == spetum && [quality] == unique // lance of yaggai
+[name] == brandistock && [quality] == unique // bloodthief
+[name] == spetum && [quality] == unique // lance of yaggai
 [name] == pike && [quality] == unique // the tannr gorerod
 // ---
 [name] == warspear && [quality] == unique // the impaler
@@ -195,21 +195,21 @@
 // swords
 [name] == shortsword && [quality] == unique // rixot's keen
 [name] == scimitar && [quality] == unique // blood crescent
-//[name] == sabre && [quality] == unique // skewer of krintiz
-//[name] == falchion && [quality] == unique // gleamscythe
-//[name] == broadsword && [quality] == unique // griswold's edge
+[name] == sabre && [quality] == unique // skewer of krintiz
+[name] == falchion && [quality] == unique // gleamscythe
+[name] == broadsword && [quality] == unique // griswold's edge
 [name] == longsword && [quality] == unique // hellplague
-//[name] == warsword && [quality] == unique // culwen's point
-//[name] == twohandedsword && [quality] == unique // shadowfang
-//[name] == claymore && [quality] == unique // soulflay
-//[name] == giantsword && [quality] == unique // kinemil's awl
-//[name] == bastardsword && [quality] == unique // blacktongue
+[name] == warsword && [quality] == unique // culwen's point
+[name] == twohandedsword && [quality] == unique // shadowfang
+[name] == claymore && [quality] == unique // soulflay
+[name] == giantsword && [quality] == unique // kinemil's awl
+[name] == bastardsword && [quality] == unique // blacktongue
 [name] == flamberge && [quality] == unique // ripsaw
 [name] == greatsword && [quality] == unique // the patriarch
 // ---
-//[name] == gladius && [quality] == unique // bloodletter
+[name] == gladius && [quality] == unique // bloodletter
 [name] == cutlass && [quality] == unique // coldsteel eye
-//[name] == shamshir && [quality] == unique // hexfire
+[name] == shamshir && [quality] == unique // hexfire
 [name] == tulwar && [quality] == unique // blade of ali baba
 [name] == dimensionalblade && [quality] == unique // ginther's rift
 [name] == battlesword && [quality] == unique // headstriker
@@ -233,15 +233,15 @@
 
 // axes
 [name] == handaxe && [quality] == unique // the gnasher
-//[name] == axe && [quality] == unique // deathspade
-//[name] == doubleaxe && [quality] == unique // bladebone
-//[name] == militarypick && [quality] == unique // skullsplitter
-//[name] == waraxe && [quality] == unique // rakescar
-[name] == largeaxe && [quality] == unique // axe of fechmar
-//[name] == broadaxe && [quality] == unique // goreshovel
+[name] == axe && [quality] == unique // deathspade
+[name] == doubleaxe && [quality] == unique // bladebone
+[name] == militarypick && [quality] == unique // skullsplitter
+[name] == waraxe && [quality] == unique // rakescar
+//[name] == largeaxe && [quality] == unique // axe of fechmar
+[name] == broadaxe && [quality] == unique // goreshovel
 [name] == battleaxe && [quality] == unique // the chieftain
-//[name] == greataxe && [quality] == unique // brainhew
-//[name] == giantaxe && [quality] == unique // humongous
+[name] == greataxe && [quality] == unique // brainhew
+[name] == giantaxe && [quality] == unique // humongous
 // ---
 [name] == hatchet && [quality] == unique // coldkill
 [name] == cleaver && [quality] == unique // butcher's pupil
@@ -250,7 +250,6 @@
 [name] == naga && [quality] == unique // guardian naga
 [name] == militaryaxe && [quality] == unique // warlord's trust
 [name] == beardedaxe && [quality] == unique // spellsteel
-//
 [name] == tabar && [quality] == unique // stormrider
 [name] == gothicaxe && [quality] == unique // boneslayer blade
 [name] == ancientaxe && [quality] == unique // the minotaur
@@ -259,7 +258,7 @@
 [name] == ettinaxe && [quality] == unique // rune master
 [name] == warspike && [quality] == unique // cranebeak
 [name] == berserkeraxe && [quality] == unique // death cleaver
-//[name] == silveredgedaxe && [quality] == unique // ethereal edge
+[name] == silveredgedaxe && [quality] == unique // ethereal edge
 [name] == decapitator && [quality] == unique // hellslayer
 [name] == championaxe && [quality] == unique // messerschmidt's reaver
 [name] == gloriousaxe && [quality] == unique // executioner's justice
@@ -267,19 +266,19 @@
 // maces
 [name] == club && [quality] == unique // felloak
 [name] == spikedclub && [quality] == unique // stoutnail
-//[name] == mace && [quality] == unique // crushflange
-//[name] == morningstar && [quality] == unique // bloodrise
-//[name] == flail && [quality] == unique // the general's tan do li ga
-//[name] == warhammer && [quality] == unique // ironstone
-//[name] == maul && [quality] == unique // bonesnap
-//[name] == greatmaul && [quality] == unique // steeldriver
+[name] == mace && [quality] == unique // crushflange
+[name] == morningstar && [quality] == unique // bloodrise
+[name] == flail && [quality] == unique // the general's tan do li ga
+[name] == warhammer && [quality] == unique // ironstone
+[name] == maul && [quality] == unique // bonesnap
+[name] == greatmaul && [quality] == unique // steeldriver
 // ---
-//[name] == cudgel && [quality] == unique // dark clan crusher
-//[name] == barbedclub && [quality] == unique // fleshrender
+[name] == cudgel && [quality] == unique // dark clan crusher
+[name] == barbedclub && [quality] == unique // fleshrender
 [name] == flangedmace && [quality] == unique // sureshrill frost
 [name] == jaggedstar && [quality] == unique // moonfall
 [name] == knout && [quality] == unique // baezil's vortex
-//[name] == battlehammer && [quality] == unique // earthshaker
+[name] == battlehammer && [quality] == unique // earthshaker
 [name] == warclub && [quality] == unique // bloodtree stump
 [name] == marteldefer && [quality] == unique // the gavel of pain
 // ---
@@ -288,7 +287,7 @@
 [name] == devilstar && [quality] == unique // baranar's star
 [name] == scourge && [quality] == unique # [ias] == 50 // horizon's tornado
 [name] == scourge && [quality] == unique # [ias] == 30 // stormlash
-[name] == legendarymallet && [quality] == unique // schaefer's hammer
+[name] == legendarymallet && [quality] == unique // schaefer's hammer (also stone crusher)
 [name] == ogremaul && [quality] == unique // windhammer
 [name] == thundermaul && [quality] == unique # [ias] == 10 // earthshifter
 [name] == thundermaul && [quality] == unique # [ias] == 20 // the cranium basher
@@ -298,7 +297,7 @@
 [name] == grandscepter && [quality] == unique // rusthandle
 [name] == warscepter && [quality] == unique // stormeye
 // ---
-//[name] == runescepter && [quality] == unique // zakarum's hand
+[name] == runescepter && [quality] == unique // zakarum's hand
 [name] == holywatersprinkler && [quality] == unique // the fetid sprinkler
 [name] == divinescepter && [quality] == unique // hand of blessed light
 // ---
@@ -307,20 +306,20 @@
 [name] == caduceus && [quality] == unique // astreon's iron ward
 
 // bows
-//[name] == shortbow && [quality] == unique // pluckeye
+[name] == shortbow && [quality] == unique // pluckeye
 [name] == hunter'sbow && [quality] == unique // witherstring
-//[name] == longbow && [quality] == unique // raven claw
-//[name] == compositebow && [quality] == unique // rogue's bow
-//[name] == shortbattlebow && [quality] == unique // stormstrike
-//[name] == longbattlebow && [quality] == unique // wizendraw
-//[name] == shortwarbow && [quality] == unique // hellclap
-//[name] == longwarbow && [quality] == unique // blastbark
+[name] == longbow && [quality] == unique // raven claw
+[name] == compositebow && [quality] == unique // rogue's bow
+[name] == shortbattlebow && [quality] == unique // stormstrike
+[name] == longbattlebow && [quality] == unique // wizendraw
+[name] == shortwarbow && [quality] == unique // hellclap
+[name] == longwarbow && [quality] == unique // blastbark
 // ---
 [name] == edgebow && [quality] == unique // skystrike
 [name] == razorbow && [quality] == unique // riphook
 [name] == cedarbow && [quality] == unique // kuko shakaku
 [name] == doublebow && [quality] == unique // endlesshail
-//[name] == shortsiegebow && [quality] == unique // witchwild string
+[name] == shortsiegebow && [quality] == unique // witchwild string
 [name] == largesiegebow && [quality] == unique // cliffkiller
 [name] == runebow && [quality] == unique // magewrath
 [name] == gothicbow && [quality] == unique // goldstrike arch
@@ -330,18 +329,18 @@
 [name] == hydrabow && [quality] == unique // windforce
 
 // crossbows
-//[name] == lightcrossbow && [quality] == unique // leadcrow
-//[name] == crossbow && [quality] == unique // ichorsting
-//[name] == heavycrossbow && [quality] == unique // hellcast
-//[name] == repeatingcrossbow && [quality] == unique // doomslinger
+[name] == lightcrossbow && [quality] == unique // leadcrow
+[name] == crossbow && [quality] == unique // ichorsting
+[name] == heavycrossbow && [quality] == unique // hellcast
+[name] == repeatingcrossbow && [quality] == unique // doomslinger
 // ---
-//[name] == arbalest && [quality] == unique // langer briser
-//[name] == siegecrossbow && [quality] == unique // pus spitter
-//[name] == ballista && [quality] == unique // buriza-do kyanon
-//[name] == chukonu && [quality] == unique // demon machine
+[name] == arbalest && [quality] == unique // langer briser
+[name] == siegecrossbow && [quality] == unique // pus spitter
+[name] == ballista && [quality] == unique // buriza-do kyanon
+[name] == chukonu && [quality] == unique // demon machine
 // ---
-//[name] == colossuscrossbow && [quality] == unique // hellrack
-//[name] == demoncrossbow && [quality] == unique // gut siphon
+[name] == colossuscrossbow && [quality] == unique // hellrack
+[name] == demoncrossbow && [quality] == unique // gut siphon
 
 // javelins
 [name] == balrogspear && [quality] == unique // demon's arch
@@ -350,7 +349,7 @@
 
 // daggers
 [name] == dagger && [quality] == unique // gull
-//[name] == dirk && [quality] == unique // the diggler
+[name] == dirk && [quality] == unique // the diggler
 [name] == kris && [quality] == unique // the jade tan do
 [name] == blade && [quality] == unique // spectral shard
 // ---
@@ -378,7 +377,7 @@
 [name] == battlestaff && [quality] == unique // the salamander
 [name] == warstaff && [quality] == unique // the iron jang bong
 // ---
-//[name] == jostaff && [quality] == unique // razorswitch
+[name] == jostaff && [quality] == unique // razorswitch
 [name] == quarterstaff && [quality] == unique // ribcracker
 [name] == cedarstaff && [quality] == unique // chromatic ire
 [name] == gothicstaff && [quality] == unique // warpspear
@@ -390,7 +389,7 @@
 // wands
 [name] == wand && [quality] == unique // torch of iro
 [name] == yewwand && [quality] == unique // maelstrom
-//[name] == bonewand && [quality] == unique // gravenspine
+[name] == bonewand && [quality] == unique // gravenspine
 [name] == grimwand && [quality] == unique // ume's lament
 // ---
 [name] == burntwand && [quality] == unique // suicide branch
@@ -406,7 +405,7 @@
 [name] == ceremonialpike && [quality] == unique // lycander's flank
 [name] == ceremonialbow && [quality] == unique // lycander's aim
 [name] == ceremonialjavelin && [quality] == unique // titan's revenge
-//[name] == matriarchaljavelin && [quality] == unique // thunderstroke
+[name] == matriarchaljavelin && [quality] == unique // thunderstroke
 [name] == matriarchalbow && [quality] == unique // blood raven's charge
 
 // assassin
@@ -472,53 +471,53 @@
 // https://github.com/blizzhackers/pickits/blob/master/custom/set.nip
 
 // angelic raiment
-//[name] == ringmail && [quality] == set // angelic mantle
-//[name] == sabre && [quality] == set // angelic sickle
-//[type] == ring && [quality] == set # [maxhp] == 20 // angelic halo
+[name] == ringmail && [quality] == set // angelic mantle
+[name] == sabre && [quality] == set // angelic sickle
+[type] == ring && [quality] == set # [maxhp] == 20 // angelic halo
 [type] == amulet && [quality] == set # [itemlightradius] == 3 && [itemdamagetomana] == 20 // angelic wings
 
 // arcanna's tricks
-//[type] == amulet && [quality] == set # [maxmana] == 15 // arcanna's sign
+[type] == amulet && [quality] == set # [maxmana] == 15 // arcanna's sign
 [name] == skullcap && [quality] == set // arcanna's head
-//[name] == lightplate && [quality] == set // arcanna's flesh
+[name] == lightplate && [quality] == set // arcanna's flesh
 [name] == warstaff && [quality] == set // arcanna's deathwand
 
 // arctic gear
 [name] == quiltedarmor && [quality] == set // arctic furs
-//[name] == lightbelt && [quality] == set // arctic binding
-//[name] == lightgauntlets && [quality] == set # [maxhp] == 20 && [ias] == 10 // arctic mitts
-//[name] == shortwarbow && [quality] == set // arctic horn
+[name] == lightbelt && [quality] == set // arctic binding
+[name] == lightgauntlets && [quality] == set # [maxhp] == 20 && [ias] == 10 // arctic mitts
+[name] == shortwarbow && [quality] == set // arctic horn
 
 // berseker's arsenal
-//[name] == helm && [quality] == set // berserker's headgear
-//[name] == splintmail && [quality] == set // berserker's hauberk
-//[name] == doubleaxe && [quality] == set // berserker's hatchet
+[name] == helm && [quality] == set // berserker's headgear
+[name] == splintmail && [quality] == set // berserker's hauberk
+[name] == doubleaxe && [quality] == set // berserker's hatchet
 
 // cathan's traps
 [type] == ring && [quality] == set # [lifeleech] == 6 && [normaldamagereduction] == 2 // cathan's seal
-//[type] == amulet && [quality] == set # [fhr] == 10 && [lightmaxdam] == 5 // cathan's sigil
-//[name] == chainmail && [quality] == set // cathan's mesh
-//[name] == mask && [quality] == set // cathan's visage
+[type] == amulet && [quality] == set # [fhr] == 10 && [lightmaxdam] == 5 // cathan's sigil
+[name] == chainmail && [quality] == set // cathan's mesh
+[name] == mask && [quality] == set // cathan's visage
 
 // civerb's vestment
-//[name] == grandscepter && [quality] == set // civerb's cudgel
+[name] == grandscepter && [quality] == set // civerb's cudgel
 [type] == amulet && [quality] == set # [manarecovery] == 40 && [hpregen] == 4 // civerb's icon
-//[name] == largeshield && [quality] == set // civerb's ward
+[name] == largeshield && [quality] == set // civerb's ward
 
 // cleglaw's brace
-//[name] == longsword && [quality] == set // cleglaw's tooth
-//[name] == chaingloves && [quality] == set // cleglaw's pincers
-//[name] == smallshield && [quality] == set // cleglaw's claw
+[name] == longsword && [quality] == set // cleglaw's tooth
+[name] == chaingloves && [quality] == set // cleglaw's pincers
+[name] == smallshield && [quality] == set // cleglaw's claw
 
 // death's disguise
-//[name] == warsword && [quality] == set // death's touch
+[name] == warsword && [quality] == set // death's touch
 [name] == leathergloves && [quality] == set // death's hand
 [name] == sash && [quality] == set // death's guard
 
 // hsaru's defense
 [name] == buckler && [quality] == set // hsarus' iron fist
 [name] == belt && [quality] == set # [coldresist] == 20 && [maxhp] == 20 // hsarus' iron stay
-//[name] == chainboots && [quality] == set // hsarus' iron heel
+[name] == chainboots && [quality] == set // hsarus' iron heel
 
 // infernal tools
 [name] == cap && [quality] == set # [fireresist] == 10 && [lightresist] == 10 && [coldresist] == 10 && [poisonresist] == 10 // infernal cranium
@@ -526,49 +525,49 @@
 [name] == heavybelt && [quality] == set # [maxhp] == 20 && [enhanceddefense] == 25 // infernal sign
 
 // iratha's finery
-//[name] == heavybelt && [quality] == set # [mindamage] == 5 // iratha's cord
-//[name] == crown && [quality] == set # [fireresist] == 30 && [lightresist] == 30 // iratha's coil
-//[type] == amulet && [quality] == set # [poisonresist] == 30 && [poisonlength] == -75 // iratha's collar
-//[name] == lightgauntlets && [quality] == set # [coldresist] == 30 // iratha's cuff
+[name] == heavybelt && [quality] == set # [mindamage] == 5 // iratha's cord
+[name] == crown && [quality] == set # [fireresist] == 30 && [lightresist] == 30 // iratha's coil
+[type] == amulet && [quality] == set # [poisonresist] == 30 && [poisonlength] == -75 // iratha's collar
+[name] == lightgauntlets && [quality] == set # [coldresist] == 30 // iratha's cuff
 
 // isenhart's armory
-//[name] == broadsword && [quality] == set // isenhart's lightbrand
-//[name] == fullhelm && [quality] == set // isenhart's horns
-//[name] == breastplate && [quality] == set // isenhart's case
-//[name] == gothicshield && [quality] == set // isenhart's parry
+[name] == broadsword && [quality] == set // isenhart's lightbrand
+[name] == fullhelm && [quality] == set // isenhart's horns
+[name] == breastplate && [quality] == set // isenhart's case
+[name] == gothicshield && [quality] == set // isenhart's parry
 
 // milabrega's regalia
-//[name] == kiteshield && [quality] == set // milabrega's orb
-//[name] == ancientarmor && [quality] == set // milabrega's robe
-//[name] == warscepter && [quality] == set // milabrega's rod
+[name] == kiteshield && [quality] == set // milabrega's orb
+[name] == ancientarmor && [quality] == set // milabrega's robe
+[name] == warscepter && [quality] == set // milabrega's rod
 [name] == crown && [quality] == set # [maxhp] == 15 && [maxmana] == 15 // milabrega's diadem
 
 // sigon's steel
-//[name] == greathelm && [quality] == set // sigon's visor
-//[name] == gothicplate && [quality] == set // sigon's shelter
-//[name] == greaves && [quality] == set // sigon's sabot
-//[name] == towershield && [quality] == set // sigon's guard
-//[name] == platedbelt && [quality] == set // sigon's wrap
-//[name] == gauntlets && [quality] == set // sigon's gage
+[name] == greathelm && [quality] == set // sigon's visor
+[name] == gothicplate && [quality] == set // sigon's shelter
+[name] == greaves && [quality] == set // sigon's sabot
+[name] == towershield && [quality] == set // sigon's guard
+[name] == platedbelt && [quality] == set // sigon's wrap
+[name] == gauntlets && [quality] == set // sigon's gage
 
 // tancred's battlegear
-//[name] == bonehelm && [quality] == set // tancred's skull
+[name] == bonehelm && [quality] == set // tancred's skull
 [name] == fullplatemail && [quality] == set // tancred's spine
 [name] == boots && [quality] == set # [staminarecoverybonus] == 25 && [dexterity] == 10 // tancred's hobnails
-//[name] == militarypick && [quality] == set // tancred's crowbill
+[name] == militarypick && [quality] == set // tancred's crowbill
 [type] == amulet && [quality] == set # [magicdamagereduction] == 1 && [normaldamagereduction] == 2 // tancred's weird
 
 // vidala's rig
-//[type] == amulet && [quality] == set # [coldresist] == 20 && [maxmana] == 15 // vidala's snare
-//[name] == longbattlebow && [quality] == set // vidala's barb
+[type] == amulet && [quality] == set # [coldresist] == 20 && [maxmana] == 15 // vidala's snare
+[name] == longbattlebow && [quality] == set // vidala's barb
 [name] == leatherarmor && [quality] == set // vidala's ambush
-//[name] == lightplatedboots && [quality] == set // vidala's fetlock
+[name] == lightplatedboots && [quality] == set // vidala's fetlock
 
 // aldur's watchtower
 [name] == hunter'sguise && [quality] == set // aldur's stony gaze
 [name] == battleboots && [quality] == set // aldur's advance
 [name] == shadowplate && [quality] == set // aldur's deception
-//[name] == jaggedstar && [quality] == set // aldur's rhythm
+[name] == jaggedstar && [quality] == set // aldur's rhythm
 
 // bul kathos' children
 [name] == colossusblade && [quality] == set // bul-kathos' sacred charge
@@ -583,7 +582,7 @@
 [type] == amulet && [quality] == set # [itemallskills] == 1 && [coldresist] == 18 // telling of beads
 [name] == bramblemitts && [quality] == set // laying of hands
 [name] == duskshroud && [quality] == set // dark adherent
-//[name] == demonhideboots && [quality] == set // rite of passage
+[name] == demonhideboots && [quality] == set // rite of passage
 [name] == mithrilcoil && [quality] == set // credendum
 
 // griswold's legacy
@@ -599,14 +598,14 @@
 [name] == spiredhelm && [quality] == set // ondal's almighty
 
 // hwanin's majesty
-//[name] == grandcrown && [quality] == set // hwanin's splendor
-//[name] == bill && [quality] == set // hwanin's justice
+[name] == grandcrown && [quality] == set // hwanin's splendor
+[name] == bill && [quality] == set // hwanin's justice
 [name] == tigulatedmail && [quality] == set // hwanin's refuge
-//[name] == belt && [quality] == set # [lightmindam] == 3 && [lightmaxdam] == 33 // hwanin's blessing
+[name] == belt && [quality] == set # [lightmindam] == 3 && [lightmaxdam] == 33 // hwanin's blessing
 
 // immortal king
 [name] == warbelt && [quality] == set // immortal king's detail
-//[name] == avengerguard && [quality] == set // immortal king's will
+[name] == avengerguard && [quality] == set // immortal king's will
 [name] == ogremaul && [quality] == set // immortal king's stone crusher
 [name] == sacredarmor && [quality] == set // immortal king's soul cage
 [name] == wargauntlets && [quality] == set // immortal king's forge
@@ -617,7 +616,7 @@
 [name] == grandmatronbow && [quality] == set // m'avina's caster
 [name] == krakenshell && [quality] == set // m'avina's embrace
 [name] == battlegauntlets && [quality] == set // m'avina's icy clutch
-//[name] == sharkskinbelt && [quality] == set // m'avina's tenet
+[name] == sharkskinbelt && [quality] == set // m'avina's tenet
 
 // natalya's odium
 [name] == grimhelm && [quality] == set // natalya's totem
@@ -626,26 +625,26 @@
 [name] == meshboots && [quality] == set // natalya's soul
 
 // naj's ancient vestige
-//[name] == circlet && [quality] == set // naj's circlet
+[name] == circlet && [quality] == set // naj's circlet
 [name] == hellforgeplate && [quality] == set // naj's light plate
 [name] == elderstaff && [quality] == set // naj's puzzler
 
 // orphan's call
 [name] == wingedhelm && [quality] == set // guillaume's face
-//[name] == roundshield && [quality] == set // whistan's guard
-//[name] == sharkskingloves && [quality] == set // magnus' skin
+[name] == roundshield && [quality] == set // whistan's guard
+[name] == sharkskingloves && [quality] == set // magnus' skin
 [name] == battlebelt && [quality] == set // wilhelm's pride
 
 // sander's folly
 [name] == cap && [quality] == set # [itemmagicbonus] == 35 // sander's paragon
-//[name] == bonewand && [quality] == set // sander's superstition
-//[name] == heavygloves && [quality] == set # [maxhp] == 40 // sander's taboo
-//[name] == heavyboots && [quality] == set # [dexterity] == 10 && [strength] == 5 // sander's riprap
+[name] == bonewand && [quality] == set // sander's superstition
+[name] == heavygloves && [quality] == set # [maxhp] == 40 // sander's taboo
+[name] == heavyboots && [quality] == set # [dexterity] == 10 && [strength] == 5 // sander's riprap
 
 // sazabi's grand tribute
-//[name] == basinet && [quality] == set // sazabi's mental sheath
+[name] == basinet && [quality] == set // sazabi's mental sheath
 [name] == crypticsword && [quality] == set // sazabi's cobalt redeemer
-//[name] == balrogskin && [quality] == set // sazabi's ghost liberator
+[name] == balrogskin && [quality] == set // sazabi's ghost liberator
 
 // tal rasha's wrappings
 [name] == swirlingcrystal && [quality] == set // tal rasha's lidless eye
