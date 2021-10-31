@@ -168,7 +168,7 @@ var Pather = {
 			pop = false;
 		}
 
-		this.useTeleport = this.teleport && !me.getState(139) && !me.getState(140) && !me.inTown && me.area != 73 &&
+		this.useTeleport = !Config.ClearPath && this.teleport && !me.getState(139) && !me.getState(140) && !me.inTown && me.area != 73 &&
 							((me.classid === 1 && me.getSkill(54, 1)) || me.getStat(97, 54));
 
 		// Teleport without calling getPath if the spot is close enough

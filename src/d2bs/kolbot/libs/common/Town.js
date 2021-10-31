@@ -1554,12 +1554,18 @@ MainLoop:
 
 		if (items) {
 			for (i = 0; i < items.length; i += 1) {
-				if (!Storage.Stash.CanFit(items[i])){
-					say("/insertpage");
-					delay(1000);
-					say("/swap 1");
-					delay(1000);
-					D2Bot.printToConsole("New Stash Created! =)", 7);
+				if (!Storage.Stash.CanFit(items[i])) {
+					if (Config.InfiniteStash) {
+						say("/insertpage");
+						delay(1000);
+						say("/swappage 1"); // only works with PlugY v14
+						delay(1000);
+						D2Bot.printToConsole("New Stash Created!", 7);
+					}
+					else {
+						D2Bot.printToConsole("No More Space In Stash!", 8);
+						D2Bot.stop(me.profile, true);
+					}
 				}
 
 

@@ -7,3 +7,4 @@ src/d2bs/kolbot/data/*
 src/d2bs/kolbot/libs/config/*.*.js
 src/d2bs/d2bs.log
 src/d2bs/kolbot/logs/ScriptErrorLog.txt
+src/d2bs/D2BS.exe.config

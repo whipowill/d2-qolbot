@@ -50,6 +50,8 @@ function Countess() {
 		}
 	}
 
+	//Attack.clearLevel();
+
 	poi = getPresetUnit(me.area, 2, 580);
 
 	if (!poi) {
