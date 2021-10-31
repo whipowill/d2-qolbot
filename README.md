@@ -1,70 +1,84 @@
 # Qolbot
 
-A botting application for Diablo II LOD ``1.13d`` w/ PlugY support.
+A botting application for Diablo II version ``1.13d`` w/ PlugY support.
 
-This is a fork of an older branch of Kolbot, modified with all the necessary changes and provided here with all the necessary instructions to get it working on your SP PlugY version of the game.
+This is a fork of an old version of Kolbot.  I've made modifictions to fix bugs, improve performance, and add PlugY support.
 
-## Prerequisites
+## Word To The Wise
 
-- Make sure these are installed:
-	- [Microsoft Visual C++ 2010 Redistributable Package (x86)](https://www.microsoft.com/en-us/download/details.aspx?id=5555)
-	- [Microsoft .NET Framework 4.0 (or higher)](https://dotnet.microsoft.com/download/dotnet-framework)
+You don't want to use this software to bot farm items.  It will ruin the game for you -- trust me.
+
+The more enjoyable and rewarding way to use this software is use it to host LAN games that your other singleplayer characters can join.  It's like your own ladder reset where you steamroll through the game with a full team.
+
+## How To Install
+
 - Modify your ``PlugY.ini`` file:
 	- Make sure ``OpenSharedStashOnLoading`` is ``0``.
-	- This makes the bot fill up personal stash instead of shared stash.
-
-## Install
-
+- Install prerequisites:
+	- [Microsoft Visual C++ 2010 Redistributable Package (x86)](https://www.microsoft.com/en-us/download/details.aspx?id=5555)
+	- [Microsoft .NET Framework 4.0 (or higher)](https://dotnet.microsoft.com/download/dotnet-framework)
 - Download this [zipfile](https://github.com/whipowill/d2-qolbot/archive/master.zip) and extract it.
 - Modify ``D2bot.exe`` to run as administrator for all users.
 - Run ``D2bot.exe``.
-- Create a new profile:
+- Create your character profiles:
 	- ``Profile Name`` is ``Yourprofilename``.
 	- ``Character`` is ``Yourcharactername``.
 	- ``Mode`` is ``Single Player``.
-	- ``Parameters`` are ``-direct -txt -3dfx -ns -w``.
+	- ``Parameters`` are ``-direct -txt -ns -w``.
 		- The ``-w`` has to be in there or it won't work!
 	- ``Diablo Path`` is ``C:\your\path\to\Diablo II\Game.exe``.
 	- ``Entry Script`` is ``C:\your\path\to\d2-qolbot\src\d2bs\kolbot\D2BotLead.dbj``
-	- ``Visible`` is checked.
-- Create a new player script:
+- Create your character scripts:
 	- These files are found in ``C:\your\path\to\d2-qolbot\src\d2bs\kolbot\libs\config\``.
 	- Copy ``Sorceress.js`` and rename as ``Sorceress.Yourcharactername.js``.
 	- This file controls where your character goes and how it fights.
 	- The setting ``Scripts.UserAddon`` must be set to ``false``.
 	- Use this handy [skill sheet](https://user.xmission.com/~trevin/DiabloIIv1.09_Skills.html) to look up attack skill IDs.
-- Create a new pickit rulset:
+- Create your pickit rulsets:
 	- These files are found in ``C:\your\path\to\d2-qolbot\src\d2bs\kolbot\pickit\``.
 	- These files control what items your character picks up and keeps.
-	- These files are referenced in your player script.
-	- I recommend using the ``QOL`` files included in this repo.
-- Select your profile and click the ``Start`` button.
+	- These files are referenced in your player scripts.
+- Select your profiles and click the ``Start`` button.
 
-### Wine
+## How To Play Multiplayer Games
 
-- This doesn't work w/ Wine, no matter how hard you try.
+- Run the game.
+- Host a TCP/IP game on the character you wish to play.
+- Run ``D2bot.exe``.
+- Modify your character profiles:
+	- ``Entry Script`` is ``C:\your\path\to\d2-qolbot\src\d2bs\kolbot\D2BotTcpIpJoin.dbj``.
+- Modify your character scripts:
+	- Set ``Scripts.Follower`` to ``true``
+- Select your profiles and click the ``Start`` button.
 
-## Automation
+### Chat Commands
 
-I programmed the ``Questing.js`` file to do all the quests in the game.  This is a work in progress:
+Learn these chat commands to control you bot party:
 
-- It won't auto-equip or auto-skill (todo).
-- It will idle the character at the end of every act.
-- You must model your script after the ``Sorceress.Questing.js`` example file.
-- You are very likely to die on HC.
+- ``leader <YOURNAME>`` - The bots will mark you as the leader.
+- ``1`` - The bots will follow your portal from town.
+- ``2`` - The bots will follow your portal to town.
+- ``3`` - The bots will do repairs and town chores.
+- ``a1``, ``a2``, ``a3``, ``a4``, ``a5`` - The bots will try to move to that act town.
+- ``quit <BOTNAME>`` - The bot will quit the game and rejoin.
+- ``reload`` - The bots will reload their configs (assuming you made changes).
 
-## Commands
+A full list of all available commands can be found [here](https://github.com/kolton/d2bot-with-kolbot/wiki/Follower).
+
+## Console Commands
 
 - Press ``Pause/Break`` key to pause the bot.
-- Press ``NUMPAD+`` key to bring up ingame console.
+- Press ``NUMPAD +`` key to bring up ingame console.
 	- Type ``reload`` to reload the bot / restart quests.
 	- Type ``getMouseCoords(1)`` to get X,Y location of cursor on map.
+
+### Issues
+
+- I could never get this to work w/ Wine, no matter how hard I tried.
 
 ## References
 
 - [Kolbot](https://github.com/kolton/d2bot-with-kolbot/tree/patch-113d-core15) - the original code repository.
-- [Issue #338](https://github.com/kolton/d2bot-with-kolbot/issues/338) - instructions on modifications.
 - [Documentation](https://github.com/blizzhackers/documentation/blob/master/kolbot/Hotkeys.md/#hotkeys) - official documentation.
 - [API Documentation](https://github.com/noah-/d2bs) - more documentation.
 - [D2 Skills Chart](https://user.xmission.com/~trevin/DiabloIIv1.09_Skills.html) - list of skills w/ ID numbers.
-- [Pickit Files](https://github.com/blizzhackers/pickits/tree/master/custom) - downloable pickit rulesets.

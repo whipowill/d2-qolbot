@@ -577,14 +577,10 @@ function Follower() {
 			}
 		}
 
-		if (msg && msg.split(" ")[0] === "leader" && commanders.indexOf(nick) > -1) {
+		if (msg && msg.split(" ")[0] === "leader") {
 			piece = msg.split(" ")[1];
 
 			if (typeof piece === "string") {
-				if (commanders.indexOf(piece) === -1) {
-					commanders.push(piece);
-				}
-
 				say("Switching leader to " + piece);
 
 				Config.Leader = piece;

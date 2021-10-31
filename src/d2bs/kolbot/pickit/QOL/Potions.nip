@@ -1,0 +1,26 @@
+// .................................................
+// QOL Pickit Ruleset
+// by whipowill
+// .................................................
+
+// =================================================
+// POTIONS
+// =================================================
+
+// healing
+[name] == minorhealingpotion && me.charlvl > 0 && me.charlvl <= 12
+[name] == lighthealingpotion && me.charlvl > 12 && me.charlvl <= 24
+[name] == healingpotion && me.charlvl > 24 && me.charlvl <= 36
+[name] == greaterhealingpotion && me.charlvl > 36 && me.charlvl <= 48
+[name] == superhealingpotion
+
+// mana
+[name] == minormanapotion && me.charlvl > 0 &&me.charlvl <= 12
+[name] == lightmanapotion && me.charlvl > 12 &&me.charlvl <= 24
+[name] == manapotion && me.charlvl > 24 && me.charlvl <= 36
+[name] == greatermanapotion && me.charlvl > 36 && me.charlvl <= 48
+[name] == supermanapotion
+
+// rejuv
+[name] == rejuvenationpotion && me.charlvl > 0 && me.charlvl <= 48
+[name] == fullrejuvenationpotion
