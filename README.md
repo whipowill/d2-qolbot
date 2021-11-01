@@ -72,7 +72,7 @@ A full list of all available commands can be found [here](https://github.com/kol
 	- Type ``reload`` to reload the bot / restart quests.
 	- Type ``getMouseCoords(1)`` to get X,Y location of cursor on map.
 
-### Issues
+## Issues
 
 - I could never get this to work w/ Wine, no matter how hard I tried.
 
