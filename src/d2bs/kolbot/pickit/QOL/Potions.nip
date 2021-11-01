@@ -8,19 +8,19 @@
 // =================================================
 
 // healing
-[name] == minorhealingpotion && me.charlvl > 0 && me.charlvl <= 12
-[name] == lighthealingpotion && me.charlvl > 12 && me.charlvl <= 24
-[name] == healingpotion && me.charlvl > 24 && me.charlvl <= 36
-[name] == greaterhealingpotion && me.charlvl > 36 && me.charlvl <= 48
-[name] == superhealingpotion
+[name] == minorhealingpotion && me.charlvl > 0 && me.charlvl <= 12 # # [maxquantity] == 3
+[name] == lighthealingpotion && me.charlvl > 12 && me.charlvl <= 24 # # [maxquantity] == 3
+[name] == healingpotion && me.charlvl > 24 && me.charlvl <= 36 # # [maxquantity] == 3
+[name] == greaterhealingpotion && me.charlvl > 36 && me.charlvl <= 48 # # [maxquantity] == 3
+[name] == superhealingpotion # # [maxquantity] == 3
 
 // mana
-[name] == minormanapotion && me.charlvl > 0 &&me.charlvl <= 12
-[name] == lightmanapotion && me.charlvl > 12 &&me.charlvl <= 24
-[name] == manapotion && me.charlvl > 24 && me.charlvl <= 36
-[name] == greatermanapotion && me.charlvl > 36 && me.charlvl <= 48
-[name] == supermanapotion
+[name] == minormanapotion && me.charlvl > 0 &&me.charlvl <= 12 # # [maxquantity] == 3
+[name] == lightmanapotion && me.charlvl > 12 &&me.charlvl <= 24 # # [maxquantity] == 3
+[name] == manapotion && me.charlvl > 24 && me.charlvl <= 36 # # [maxquantity] == 3
+[name] == greatermanapotion && me.charlvl > 36 && me.charlvl <= 48 # # [maxquantity] == 3
+[name] == supermanapotion # # [maxquantity] == 3
 
 // rejuv
-[name] == rejuvenationpotion && me.charlvl > 0 && me.charlvl <= 48
-[name] == fullrejuvenationpotion
+[name] == rejuvenationpotion && me.charlvl > 0 && me.charlvl <= 48 # # [maxquantity] == 3
+[name] == fullrejuvenationpotion # # [maxquantity] == 3
