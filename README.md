@@ -41,7 +41,7 @@ You don't want to use this software to bot farm items bc it will ruin the game f
 
 ## How To Play Multiplayer Games
 
-- Prep the game.
+- Prep the game:
 	- Join a TCP/IP game using address ``localhost``.
 	- It will fail, but the game will remember this address for the bots.
 	- Host a TCP/IP game on the character you wish to play.
@@ -77,6 +77,7 @@ A full list of all available commands can be found [here](https://github.com/kol
 ## Issues
 
 - I could never get this to work w/ Wine, no matter how hard I tried.
+- Mercs apparently don't gain experience in LAN games?
 
 ## References
 
