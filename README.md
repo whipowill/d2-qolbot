@@ -54,13 +54,14 @@ You don't want to use this software to bot farm items bc it will ruin the game f
 
 Learn these chat commands to control your bot party:
 
-- ``leader <YOURNAME>`` - bots will mark you as the leader.
+- ``leader <YOURNAME>`` - bots will mark you as their leader.
 - ``1`` - bots will follow your portal from town.
 - ``2`` - bots will follow your portal to town.
 - ``3`` - bots will do repairs and town chores.
 - ``a1``, ``a2``, ``a3``, ``a4``, ``a5`` - bots will try to move to that act town.
 - ``quit <BOTNAME>`` - bot will quit the game and rejoin.
 - ``reload`` - bots will reload their configs (assuming you made changes).
+- ``wp`` - bots will capture the nearest waypoint.
 
 A full list of all available commands can be found [here](https://github.com/kolton/d2bot-with-kolbot/wiki/Follower).
 
