@@ -41,8 +41,10 @@ You don't want to use this software to bot farm items bc it will ruin the game f
 
 ## How To Play Multiplayer Games
 
-- Run the game.
-- Host a TCP/IP game on the character you wish to play.
+- Prep the game.
+	- Join a TCP/IP game using address ``localhost``.
+	- It will fail, but the game will remember this address for the bots.
+	- Host a TCP/IP game on the character you wish to play.
 - Run ``D2bot.exe``.
 - Modify your character profiles:
 	- ``Entry Script`` is ``C:\your\path\to\d2-qolbot\src\d2bs\kolbot\D2BotTcpIpJoin.dbj``.
