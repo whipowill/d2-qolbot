@@ -1,8 +1,8 @@
 # Qolbot
 
-A botting application for Diablo II version ``1.13d`` w/ PlugY support.
+A botting application for Diablo II version ``1.13d`` w/ PlugY support.  This is a fork of an old version of Kolbot w/ some bug fixes.
 
-This is a fork of an old version of Kolbot w/ some bug fixes.  Let me advise you not to use this software to bot farm items bc it will ruin the game for you.  The more enjoyable way of using this software is to host LAN games that your other singleplayer characters can join.  It's like having your own ladder reset where you roll through the game with a full team.
+Let me advise you not to use this software to bot farm items bc it will ruin the game for you.  The more enjoyable way of using this software is to host LAN games that your other singleplayer characters can join.  It's like having your own ladder reset where you roll through the game with a full team.
 
 ## How To Install
 
