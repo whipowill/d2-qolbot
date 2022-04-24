@@ -2,9 +2,7 @@
 
 A botting application for Diablo II version ``1.13d`` w/ PlugY support.
 
-This is a fork of an old version of Kolbot.  I've fixed some bugs, improved performance, and added PlugY support.
-
-You don't want to use this software to bot farm items bc it will ruin the game for you.  The more enjoyable way of using this software is to host LAN games that your other singleplayer characters can join.  It's like having your own ladder reset where you roll through the game with a full team.
+This is a fork of an old version of Kolbot w/ some bug fixes.  Let me advise you not to use this software to bot farm items bc it will ruin the game for you.  The more enjoyable way of using this software is to host LAN games that your other singleplayer characters can join.  It's like having your own ladder reset where you roll through the game with a full team.
 
 ## How To Install
 
@@ -28,10 +26,10 @@ You don't want to use this software to bot farm items bc it will ruin the game f
 	- This file controls where your character goes and how it fights.
 	- The setting ``Scripts.UserAddon`` must be set to ``false``.
 	- Some additional settings I've added:
-		- ``Config.InfiniteStash`` - will enable use of PlugY pages.
-		- ``Config.ViperCheck`` - will quit the game if encounter has Vipers.
-		- ``Config.DollsCheck`` - will quit the game if encounter has Dolls.
-		- ``Config.ClearPath`` - set to true if you don't use Teleport.
+		- ``Config.InfiniteStash=true`` - will enable use of PlugY pages.
+		- ``Config.ViperCheck=true`` - will quit the game if encounter has Vipers.
+		- ``Config.DollsCheck=true`` - will quit the game if encounter has Dolls.
+		- ``Config.ClearPath=true`` - set to true if you don't use Teleport.
 	- Use this handy [skill sheet](https://user.xmission.com/~trevin/DiabloIIv1.09_Skills.html) to look up attack skill IDs.
 - Create your pickit rulesets:
 	- These files are found in ``C:\your\path\to\d2-qolbot\src\d2bs\kolbot\pickit\``.
@@ -57,13 +55,15 @@ You don't want to use this software to bot farm items bc it will ruin the game f
 Learn these chat commands to control your bot party:
 
 - ``leader <YOURNAME>`` - bots will mark you as their leader.
-- ``1`` - bots will follow your portal from town.
-- ``2`` - bots will follow your portal to town.
+- ``1`` - bots will follow your portal from town (from any act).
+- ``2`` - bots will follow your portal to town (only if closeby).
 - ``3`` - bots will do repairs and town chores.
 - ``a1``, ``a2``, ``a3``, ``a4``, ``a5`` - bots will try to move to that act town.
-- ``quit <BOTNAME>`` - bot will quit the game and rejoin.
-- ``reload`` - bots will reload their configs (assuming you made changes).
+- ``quit`` - bots will quit the game and rejoin.
+- ``reload`` - bots will reload their configs (I DON'T THIS THIS ACTUALLY WORKS).
+- ``talk <NPCNAME>`` - bots will complete quests by talking to NPC.
 - ``wp`` - bots will capture the nearest waypoint.
+- ``s`` - bots will stop moving and freeze.
 
 A full list of all available commands can be found [here](https://github.com/kolton/d2bot-with-kolbot/wiki/Follower).
 
@@ -77,7 +77,9 @@ A full list of all available commands can be found [here](https://github.com/kol
 ## Issues
 
 - I could never get this to work w/ Wine, no matter how hard I tried.
-- Mercs apparently don't gain experience in LAN games?
+- There is an issue where, depending on how the bots disconnect from multiplayer games, it effects their progress retention:
+	- When the bots quit the game, it seems they only retain recent but not all progress.
+	- When the host quits the game, and the bots are disconnected, it seems they retain all the progess they made.
 
 ## References
 
