@@ -30,7 +30,7 @@ This is a fork of an old version of Kolbot w/ some bug fixes.
 		- ``Config.ViperCheck=true`` - will quit the game if encounter has Vipers.
 		- ``Config.DollsCheck=true`` - will quit the game if encounter has Dolls.
 		- ``Config.ClearPath=true`` - set to true if you don't want to use Teleport.
-		- ``Scripts.ForceSave=true`` - put at the end of your scripts, will fix progress rention and run count issues.
+		- ``Scripts.ForceSave=true`` - put at the end of your scripts, will fix progress retention issues.
 	- Use this handy [skill sheet](https://user.xmission.com/~trevin/DiabloIIv1.09_Skills.html) to look up attack skill IDs.
 - Create your pickit rulesets:
 	- These files are found in ``C:\your\path\to\d2-qolbot\src\d2bs\kolbot\pickit\``.
@@ -77,19 +77,19 @@ A full list of all available commands can be found [here](https://github.com/kol
 
 ## Issues
 
-- There is an issue where the bot will mess up your shared (organized) stash.
+- The bot will mess up your shared stash unless you fix the config.
 	- Modify your ``PlugY.ini`` file:
 		- Make sure ``OpenSharedStashOnLoading`` is ``0``.
-- There is an issue where you can't play another character while a bot is running bc your shared stash will get overwritten.
+- You can't play another character while a bot is running bc your shared stash will get overwritten.
 	- Modify your bot profile:
 		- ``Entry Script`` is ``C:\your\path\to\d2-qolbot\src\d2bs\kolbot\D2BotTcpIpHost.dbj``.
 			- By running as TCP/IP host, shared stash is disabled.
-- There is an issue where, depending on how the bot disconnects from TCP/IP games, it effects their progress retention:
-	- If you the player (as host) quit the game, and the bots are disconnected, everyone will retain progess.
+- Depending on how the bot disconnects from TCP/IP games, it effects their progress retention:
+	- If you the player as host quit the game, and the bots are disconnected, everyone will retain progess.
 		- This seems to be good and nothing needs fixing.
-	- If the bot (as joiner) quits the game, it seems they only retain recent but not all progress.
+	- If the bot as joiner quits the game, it seems they only retain recent but not all progress.
 		- Nothing I can do to fix this, they will quit when they chicken.
-	- If the bot is the host, and it quits, it looses all progress.
+	- If the bot as host quits the game, it looses all progress.
 		- This was fixed by adding ``Scripts.ForceSave=true`` to the end of bot configs.
 			- It uses PlugY to force a save by printing ``/save`` to the chat.
 - I could never get this to work w/ Wine, no matter how hard I tried.
