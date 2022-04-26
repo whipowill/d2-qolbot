@@ -137,7 +137,7 @@ function locationAction() {
 	MainSwitch:
 	switch (ScreenLocation) {
 		case 0: // Splash Screen
-			delay(5000);
+			delay(10000);
 		break;
 		case 8: // Main Screen
 			ControlAction.click(6, 264, 433, 272, 35); //Other Multiplayer

@@ -1,35 +1,36 @@
 # Qolbot
 
-A botting application for Diablo II version ``1.13d`` w/ PlugY support.  This is a fork of an old version of Kolbot w/ some bug fixes.
+A botting application for Diablo II version ``1.13d`` w/ PlugY support.
 
-Let me advise you not to use this software to bot farm items bc it will ruin the game for you.  The more enjoyable way of using this software is to host LAN games that your other singleplayer characters can join.  It's like having your own ladder reset where you roll through the game with a full team.
+The most enjoyable way of using this software is to host LAN games that your other singleplayer characters can join.  It's like having your own ladder reset where you roll through the game with a full team.
+
+This is a fork of an old version of Kolbot w/ some bug fixes.
 
 ## How To Install
 
-- Modify your ``PlugY.ini`` file:
-	- Make sure ``OpenSharedStashOnLoading`` is ``0``.
 - Install prerequisites:
 	- [Microsoft Visual C++ 2010 Redistributable Package (x86)](https://www.microsoft.com/en-us/download/details.aspx?id=5555)
 	- [Microsoft .NET Framework 4.0 (or higher)](https://dotnet.microsoft.com/download/dotnet-framework)
 - Download this [zipfile](https://github.com/whipowill/d2-qolbot/archive/master.zip) and extract it.
 - Modify ``D2bot.exe`` to run as administrator for all users.
 - Run ``D2bot.exe``.
-- Create your character profiles:
+- Create your bot profiles:
 	- ``Mode`` is ``Single Player``.
 	- ``Parameters`` are ``-direct -txt -ns -w``.
 		- The ``-w`` has to be in there or it won't work!
 	- ``Diablo Path`` is ``C:\your\path\to\Diablo II\Game.exe``.
 	- ``Entry Script`` is ``C:\your\path\to\d2-qolbot\src\d2bs\kolbot\D2BotLead.dbj``
-- Create your character scripts:
+- Create your bot scripts:
 	- These files are found in ``C:\your\path\to\d2-qolbot\src\d2bs\kolbot\libs\config\``.
 	- Copy ``Sorceress.js`` and rename as ``Sorceress.Yourcharactername.js``.
-	- This file controls where your character goes and how it fights.
+	- This file controls where your bot goes and how it fights.
 	- The setting ``Scripts.UserAddon`` must be set to ``false``.
 	- Some additional settings I've added:
 		- ``Config.InfiniteStash=true`` - will enable use of PlugY pages.
 		- ``Config.ViperCheck=true`` - will quit the game if encounter has Vipers.
 		- ``Config.DollsCheck=true`` - will quit the game if encounter has Dolls.
-		- ``Config.ClearPath=true`` - set to true if you don't use Teleport.
+		- ``Config.ClearPath=true`` - set to true if you don't want to use Teleport.
+		- ``Scripts.ForceSave=true`` - put at the end of your scripts, will fix progress rention and run count issues.
 	- Use this handy [skill sheet](https://user.xmission.com/~trevin/DiabloIIv1.09_Skills.html) to look up attack skill IDs.
 - Create your pickit rulesets:
 	- These files are found in ``C:\your\path\to\d2-qolbot\src\d2bs\kolbot\pickit\``.
@@ -44,9 +45,9 @@ Let me advise you not to use this software to bot farm items bc it will ruin the
 	- It will fail, but the game will remember this address for the bots.
 	- Host a TCP/IP game on the character you wish to play.
 - Run ``D2bot.exe``.
-- Modify your character profiles:
+- Modify your bot profile:
 	- ``Entry Script`` is ``C:\your\path\to\d2-qolbot\src\d2bs\kolbot\D2BotTcpIpJoin.dbj``.
-- Modify your character scripts:
+- Modify your bot script:
 	- Set ``Scripts.Follower`` to ``true``
 - Select your profiles and click the ``Start`` button.
 
@@ -55,12 +56,12 @@ Let me advise you not to use this software to bot farm items bc it will ruin the
 Learn these chat commands to control your bot party:
 
 - ``leader <YOURNAME>`` - bots will mark you as their leader.
-- ``1`` - bots will follow your portal from town (from any act).
-- ``2`` - bots will follow your portal to town (only if closeby).
+- ``1`` - bots will follow your portal from town (call from any act).
+- ``2`` - bots will follow your portal to town (call only if closeby).
 - ``3`` - bots will do repairs and town chores.
-- ``a1``, ``a2``, ``a3``, ``a4``, ``a5`` - bots will try to move to that act town.
+- ``a2``, ``a3``, ``a4``, ``a5`` - bots will complete quest dialogues to travel to that act town.
 - ``quit`` - bots will quit the game and rejoin.
-- ``reload`` - bots will reload their configs (I DON'T THIS THIS ACTUALLY WORKS).
+- ``reload`` - bots will reload their configs.
 - ``talk <NPCNAME>`` - bots will complete quests by talking to NPC.
 - ``wp`` - bots will capture the nearest waypoint.
 - ``s`` - bots will stop moving and freeze.
@@ -76,10 +77,22 @@ A full list of all available commands can be found [here](https://github.com/kol
 
 ## Issues
 
+- There is an issue where the bot will mess up your shared (organized) stash.
+	- Modify your ``PlugY.ini`` file:
+		- Make sure ``OpenSharedStashOnLoading`` is ``0``.
+- There is an issue where you can't play another character while a bot is running bc your shared stash will get overwritten.
+	- Modify your bot profile:
+		- ``Entry Script`` is ``C:\your\path\to\d2-qolbot\src\d2bs\kolbot\D2BotTcpIpHost.dbj``.
+			- By running as TCP/IP host, shared stash is disabled.
+- There is an issue where, depending on how the bot disconnects from TCP/IP games, it effects their progress retention:
+	- If you the player (as host) quit the game, and the bots are disconnected, everyone will retain progess.
+		- This seems to be good and nothing needs fixing.
+	- If the bot (as joiner) quits the game, it seems they only retain recent but not all progress.
+		- Nothing I can do to fix this, they will quit when they chicken.
+	- If the bot is the host, and it quits, it looses all progress.
+		- This was fixed by adding ``Scripts.ForceSave=true`` to the end of bot configs.
+			- It uses PlugY to force a save by printing ``/save`` to the chat.
 - I could never get this to work w/ Wine, no matter how hard I tried.
-- There is an issue where, depending on how the bots disconnect from multiplayer games, it effects their progress retention:
-	- When the bots quit the game, it seems they only retain recent but not all progress.
-	- When the host quits the game, and the bots are disconnected, it seems they retain all the progess they made.
 
 ## References
 

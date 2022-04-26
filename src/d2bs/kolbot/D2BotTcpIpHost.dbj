@@ -132,6 +132,7 @@ function locationAction(location) {
 	MainSwitch:
 	switch (location) {
 		case 0: // Splash Screen
+			delay(10000);
 		break;
 		case 8: // Main Screen
 			ControlAction.click(6, 264, 433, 272, 35); //Other Multiplayer
@@ -157,11 +158,14 @@ function locationAction(location) {
 			// ControlAction.click(6, 421, 337, 96, 32); //Join
 		break;
 		default:
+			delay(5000);
+			/*
 			if (location !== undefined) {
 				D2Bot.printToConsole("Unhandled location " + location);
 				delay(500);
 				D2Bot.restart();
 			}
+			*/
 		break;
 	}
 }

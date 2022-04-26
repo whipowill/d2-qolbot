@@ -485,4 +485,7 @@ function LoadConfig() {
 	Config.AutoBuild.DebugMode = true;			//	Debug mode prints a little more information to console and 
 												//	logs activity to /logs/AutoBuild.CharacterName._MM_DD_YYYY.log
 												//	It automatically enables Config.AutoBuild.Verbose
+
+	// whipowill added - fix run count issues and make sure to save before exit
+	Scripts.ForceSave = true;
 }
