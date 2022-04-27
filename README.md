@@ -53,32 +53,13 @@ I've made some changes to the original Kolbot code:
 - Modify your bot profiles:
 	- ``Entry Script`` is ``C:\your\path\to\d2-qolbot\src\d2bs\kolbot\D2BotTcpIpJoin.dbj``.
 - Modify your bot scripts:
-	- Set ``Scripts.Follower`` to ``true``
+	- Set ``Scripts.Follower=true``.
+	- Set ``Config.PublicMode=2``.
 - Select your profiles and click the ``Start`` button.
 
-### Chat Commands
-
-Learn these chat commands to control your bot party:
-
-- ``leader <YOURNAME>`` - bots will mark you as their leader.
-- ``1`` - bots will follow your portal from town (call from any act).
-- ``2`` - bots will follow your portal to town (call only if closeby).
-- ``3`` - bots will do repairs and town chores.
-- ``a2``, ``a3``, ``a4``, ``a5`` - bots will complete quest dialogues to travel to that act town.
-- ``quit`` - bots will quit the game and rejoin.
-- ``<BOTNAME> quit`` - bot will quit the game and rejoin.
-- ``reload`` - bots will reload their configs.
-- ``talk <NPCNAME>`` - bots will complete quests by talking to NPC.
-- ``wp`` - bots will capture the nearest waypoint.
-- ``s`` - bots will stop moving and freeze.
-- ``<BOTNAME> s`` - bot will stop moving and freeze.
-- ``move`` - bots will shuffle position.
-
-To address issues w/ bots not reliably saving progress on TCP/IP games, I added this command:
+A full list of chat commands for controlling your bot party can be found [here](https://raw.githubusercontent.com/whipowill/d2-qolbot/master/src/d2bs/kolbot/libs/bots/Follower.js).  Note that I added this chat command:
 
 - ``save`` - bots will issue PlugY ``/save`` to force save.
-
-A full list of all available commands can be found [here](https://raw.githubusercontent.com/whipowill/d2-qolbot/master/src/d2bs/kolbot/libs/bots/Follower.js).
 
 ## Console
 
@@ -90,26 +71,30 @@ A full list of all available commands can be found [here](https://raw.githubuser
 ## Issues
 
 - The bot will mess up your shared stash unless you fix the config.
-	- Modify your ``PlugY.ini`` file:
-		- Make sure ``OpenSharedStashOnLoading`` is ``0``.
+	- Modify your ``PlugY.ini`` file.
+	- Set ``OpenSharedStashOnLoading=0``.
 - You can't play another character while a bot is running bc your shared stash will get overwritten.
 	- Modify your bot profile:
-		- ``Entry Script`` is ``C:\your\path\to\d2-qolbot\src\d2bs\kolbot\D2BotTcpIpHost.dbj``.
-			- By running as TCP/IP host, shared stash is disabled.
+	- ``Entry Script`` is ``C:\your\path\to\d2-qolbot\src\d2bs\kolbot\D2BotTcpIpHost.dbj``.
+	- By running as TCP/IP host, shared stash is disabled.
 - Depending on how the bot disconnects from TCP/IP games, it effects their progress retention.
 	- If you the player as host quit the game, and the bots are disconnected, everyone will retain progess.
 		- This seems to be good and nothing needs fixing.
 	- If the bot as joiner quits the game, it seems they only retain recent but not all progress.
 		- Nothing I can do to fix this, they will quit when they chicken.
 	- If the bot as host quits the game, it looses all progress.
-		- This was fixed by adding ``Scripts.ForceSave=true`` to the end of bot configs.
+		- I fixed this by adding ``Scripts.ForceSave=true`` to the end of bot configs.
 			- It uses PlugY to force a save by printing ``/save`` to the chat.
+- There is definitely an issue w/ mercs not retaining all XP from TCP/IP games.
+	- It seems they retain about half the XP earned.
+	- Over time, your bot will be twice the level of your merc.
+	- I have no idea how to fix it so I just HeroEdit the merc more XP.
 - If you have maphack installed it means that all your bots will launch w/ maphack too.
-	- This causes unecessary overhead on your machine, but you can turn it off:
-		- Copy your game folder to another directory, I named mine ``Diablo II - Bots``.
-		- Modify the ``Plugy.ini`` in that directory to not load ``BH.dll``.
-		- Change the ``Diablo Path`` in your botting profile to use the new ``Game.exe``.
-		- The bot will still save to your original D2 directory bc the path is defined in the Windows registry.
+	- This causes unecessary overhead on your machine, but you can turn it off.
+	- Copy your game folder to another directory, I named mine ``Diablo II - Bots``.
+	- Modify the ``Plugy.ini`` in that directory to not load ``BH.dll``.
+	- Change the ``Diablo Path`` in your botting profile to use the new ``Game.exe``.
+	- The bot will still save to your original D2 directory bc the path is defined in the Windows registry.
 - I could never get this to work w/ Wine, no matter how hard I tried.
 
 ## References
