@@ -71,20 +71,17 @@ A full list of chat commands for controlling your bot party can be found [here](
 ## Issues
 
 - The bot will mess up your shared stash unless you fix the config.
-	- Modify your ``PlugY.ini`` file.
+	- Modify your ``PlugY.ini`` file:
 		- Set ``OpenSharedStashOnLoading=0``.
 - You can't play another character while a bot is running bc your shared stash will get overwritten.
 	- Modify your bot profile:
 		- ``Entry Script`` is ``C:\your\path\to\d2-qolbot\src\d2bs\kolbot\D2BotTcpIpHost.dbj``.
 			- By running as TCP/IP host, shared stash is disabled.
-- Depending on how the bot disconnects from TCP/IP games, it effects their progress retention.
-	- If you the player as host quit the game, and the bots are disconnected, everyone will retain progess.
-		- This seems to be good and nothing needs fixing.
-	- If the bot as joiner quits the game, it seems they only retain recent but not all progress.
-		- Nothing I can do to fix this, they will quit when they chicken.
-	- If the bot as host quits the game, it looses all progress.
-		- I fixed this by adding ``Scripts.ForceSave=true`` to the end of bot configs.
-			- It uses PlugY to force a save by printing ``/save`` to the chat.
+- Depending on how a bot disconnects from TCP/IP games, it effects their progress retention.
+	- If the bot is disconnected bc you were the host and you quit the game, they will retain all progress.
+	- If the bot is disconnected bc they quit the game, they only retain recent but not all progress.
+	- I added the chat command ``save``, which I use often, to force the bot to issue a PlugY ``/save`` command.
+	- I added the config entry ``Scripts.ForceSave=true`` which does the same.
 - There is definitely an issue w/ mercs not retaining all XP from TCP/IP games.
 	- It seems they retain about half the XP earned.
 	- Over time, your bot will be twice the level of your merc.
