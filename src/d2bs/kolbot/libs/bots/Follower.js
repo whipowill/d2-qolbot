@@ -48,7 +48,7 @@
 
 function Follower() {
 	var i, j, stop, leader, leaderUnit, charClass, piece, skill, result, unit, player,
-		commanders = [Config.Leader],
+		commanders = Config.Leaders,
 		attack = true,
 		openContainers = true,
 		classes = ["amazon", "sorceress", "necromancer", "paladin", "barbarian", "druid", "assassin"],
@@ -363,6 +363,10 @@ function Follower() {
 			say("Don't forget to talk to Drognan after getting the Viper Amulet!");
 		}
 
+		if (act === 3) {
+			say("Don't forget to talk to Hratli before getting the Gidbinn!");
+		}
+
 		return true;
 	};
 
@@ -503,10 +507,18 @@ function Follower() {
 				say("Attack on.");
 
 				break;
+			case "save":
+				delay(500);
+				say("/save");
+				delay(5000);
+				say("Saved.");
+				break;
 			case "quit":
 			case me.name + " quit":
+				delay(500);
+				say("/save");
+				delay(5000);
 				quit();
-
 				break;
 			case "s":
 			case me.name + " s":
@@ -577,11 +589,15 @@ function Follower() {
 			}
 		}
 
-		if (msg && msg.split(" ")[0] === "leader") {
+		if (msg && msg.split(" ")[0] === "leader" && commanders.indexOf(nick) > -1) {
 			piece = msg.split(" ")[1];
 
 			if (typeof piece === "string") {
-				say("Switching leader to " + piece);
+				if (commanders.indexOf(piece) === -1) {
+					commanders.push(piece);
+				}
+
+				say("Switching leader to " + piece + ".");
 
 				Config.Leader = piece;
 				leader = this.getLeader(Config.Leader);
@@ -610,7 +626,9 @@ function Follower() {
 
 	if (!leader) {
 		say("Leader not found.");
-		delay(1000);
+		delay(500);
+		say("/save");
+		delay(5000);
 		quit();
 	} else {
 		say("Leader found.");
@@ -769,9 +787,9 @@ WPLoop:
 			}
 
 			if (getUIFlag(0x14)) {
-				say("Got wp.");
+				say("Got waypoint.");
 			} else {
-				say("Failed to get wp.");
+				say("Failed to get waypoint.");
 			}
 
 			me.cancel();
@@ -825,10 +843,10 @@ WPLoop:
 			break;
 		case "3":
 			if (me.inTown) {
-				say("Running town chores");
+				say("Running town chores.");
 				Town.doChores();
 				Town.move("portalspot");
-				say("Ready");
+				say("Ready.");
 			}
 
 			break;

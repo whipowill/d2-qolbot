@@ -6,7 +6,7 @@ The most enjoyable way of using this software is to host LAN games that your oth
 
 This is a fork of an old version of Kolbot w/ some bug fixes.
 
-## How To Install
+## Install
 
 - Install prerequisites:
 	- [Microsoft Visual C++ 2010 Redistributable Package (x86)](https://www.microsoft.com/en-us/download/details.aspx?id=5555)
@@ -25,12 +25,6 @@ This is a fork of an old version of Kolbot w/ some bug fixes.
 	- Copy ``Sorceress.js`` and rename as ``Sorceress.Yourcharactername.js``.
 	- This file controls where your bot goes and how it fights.
 	- The setting ``Scripts.UserAddon`` must be set to ``false``.
-	- Some additional settings I've added:
-		- ``Config.InfiniteStash=true`` - will enable use of PlugY pages.
-		- ``Config.ViperCheck=true`` - will quit the game if encounter has Vipers.
-		- ``Config.DollsCheck=true`` - will quit the game if encounter has Dolls.
-		- ``Config.ClearPath=true`` - set to true if you don't want to use Teleport.
-		- ``Scripts.ForceSave=true`` - put at the end of your scripts, will fix progress retention issues.
 	- Use this handy [skill sheet](https://user.xmission.com/~trevin/DiabloIIv1.09_Skills.html) to look up attack skill IDs.
 - Create your pickit rulesets:
 	- These files are found in ``C:\your\path\to\d2-qolbot\src\d2bs\kolbot\pickit\``.
@@ -38,7 +32,18 @@ This is a fork of an old version of Kolbot w/ some bug fixes.
 	- These files are referenced in your player scripts.
 - Select your profiles and click the ``Start`` button.
 
-## How To Play Multiplayer Games
+## Changes
+
+I've made some changes to the original Kolbot code:
+
+- ``Config.InfiniteStash=true`` - will enable use of PlugY pages.
+- ``Config.ViperCheck=true`` - will quit the game if encounter has Vipers.
+- ``Config.DollsCheck=true`` - will quit the game if encounter has Dolls.
+- ``Config.ClearPath=true`` - set to true if you don't want to use Teleport.
+- ``Config.Leaders=["mychar1", "mychar2"]`` - set an array of characters who bots will allow to be leader (still use ``leader <NAME>`` ingame).
+- ``Scripts.ForceSave=true`` - put at the end of your scripts, will fix progress retention issues.
+
+## Multiplayer
 
 - Prep the game:
 	- Join a TCP/IP game using address ``localhost``.
@@ -47,7 +52,7 @@ This is a fork of an old version of Kolbot w/ some bug fixes.
 - Run ``D2bot.exe``.
 - Modify your bot profile:
 	- ``Entry Script`` is ``C:\your\path\to\d2-qolbot\src\d2bs\kolbot\D2BotTcpIpJoin.dbj``.
-- Modify your bot script:
+- Modify your bot scripts:
 	- Set ``Scripts.Follower`` to ``true``
 - Select your profiles and click the ``Start`` button.
 
@@ -61,17 +66,24 @@ Learn these chat commands to control your bot party:
 - ``3`` - bots will do repairs and town chores.
 - ``a2``, ``a3``, ``a4``, ``a5`` - bots will complete quest dialogues to travel to that act town.
 - ``quit`` - bots will quit the game and rejoin.
+- ``<BOTNAME> quit`` - bot will quit the game and rejoin.
 - ``reload`` - bots will reload their configs.
 - ``talk <NPCNAME>`` - bots will complete quests by talking to NPC.
 - ``wp`` - bots will capture the nearest waypoint.
 - ``s`` - bots will stop moving and freeze.
+- ``<BOTNAME> s`` - bot will stop moving and freeze.
+- ``move`` - bots will shuffle position.
 
-A full list of all available commands can be found [here](https://github.com/kolton/d2bot-with-kolbot/wiki/Follower).
+To address issues w/ bots not reliably saving progress on TCP/IP games, I added this command:
 
-## Console Commands
+- ``save`` - bots will issue PlugY ``/save`` to force save.
+
+A full list of all available commands can be found [here](https://raw.githubusercontent.com/whipowill/d2-qolbot/master/src/d2bs/kolbot/libs/bots/Follower.js).
+
+## Console
 
 - Press ``Pause/Break`` key to pause the bot.
-- Press ``NUMPAD +`` key to bring up ingame console.
+- Press ``+`` on the numpad to bring up ingame console:
 	- Type ``reload`` to reload the bot / restart quests.
 	- Type ``getMouseCoords(1)`` to get X,Y location of cursor on map.
 
@@ -84,7 +96,7 @@ A full list of all available commands can be found [here](https://github.com/kol
 	- Modify your bot profile:
 		- ``Entry Script`` is ``C:\your\path\to\d2-qolbot\src\d2bs\kolbot\D2BotTcpIpHost.dbj``.
 			- By running as TCP/IP host, shared stash is disabled.
-- Depending on how the bot disconnects from TCP/IP games, it effects their progress retention:
+- Depending on how the bot disconnects from TCP/IP games, it effects their progress retention.
 	- If you the player as host quit the game, and the bots are disconnected, everyone will retain progess.
 		- This seems to be good and nothing needs fixing.
 	- If the bot as joiner quits the game, it seems they only retain recent but not all progress.
@@ -92,6 +104,12 @@ A full list of all available commands can be found [here](https://github.com/kol
 	- If the bot as host quits the game, it looses all progress.
 		- This was fixed by adding ``Scripts.ForceSave=true`` to the end of bot configs.
 			- It uses PlugY to force a save by printing ``/save`` to the chat.
+- If you have maphack installed it means that all your bots will launch w/ maphack too.
+	- This causes unecessary overhead on your machine, but you can turn it off:
+		- Copy your game folder to another directory, I named mine ``Diablo II - Bots``.
+		- Modify the ``Plugy.ini`` in that directory to not load ``BH.dll``.
+		- Change the ``Diablo Path`` in your botting profile to use the new ``Game.exe``.
+		- The bot will still save to your original D2 directory bc the path is defined in the Windows registry.
 - I could never get this to work w/ Wine, no matter how hard I tried.
 
 ## References
