@@ -40,8 +40,7 @@ I've made some changes to the original Kolbot code:
 - ``Config.ViperCheck=true`` - will quit the game if encounter has Vipers.
 - ``Config.DollsCheck=true`` - will quit the game if encounter has Dolls.
 - ``Config.ClearPath=true`` - set to true if you don't want to use Teleport.
-- ``Config.Leaders=["mychar1", "mychar2"]`` - set an array of characters who bots will allow to be leader.
-	- Still use ``leader <NAME>`` ingame to set who is leader, randos will be ignored.
+- ``Config.Leaders=["MyCharOne", "MyCharTwo"]`` - set an array of characters who bots will allow to be leader.
 - ``Scripts.ForceSave=true`` - put at the end of your scripts, will fix progress retention issues.
 
 ## Multiplayer
@@ -51,7 +50,7 @@ I've made some changes to the original Kolbot code:
 	- It will fail, but the game will remember this address for the bots.
 	- Host a TCP/IP game on the character you wish to play.
 - Run ``D2bot.exe``.
-- Modify your bot profile:
+- Modify your bot profiles:
 	- ``Entry Script`` is ``C:\your\path\to\d2-qolbot\src\d2bs\kolbot\D2BotTcpIpJoin.dbj``.
 - Modify your bot scripts:
 	- Set ``Scripts.Follower`` to ``true``
