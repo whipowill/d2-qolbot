@@ -72,11 +72,11 @@ A full list of chat commands for controlling your bot party can be found [here](
 
 - The bot will mess up your shared stash unless you fix the config.
 	- Modify your ``PlugY.ini`` file.
-	- Set ``OpenSharedStashOnLoading=0``.
+		- Set ``OpenSharedStashOnLoading=0``.
 - You can't play another character while a bot is running bc your shared stash will get overwritten.
 	- Modify your bot profile:
-	- ``Entry Script`` is ``C:\your\path\to\d2-qolbot\src\d2bs\kolbot\D2BotTcpIpHost.dbj``.
-	- By running as TCP/IP host, shared stash is disabled.
+		- ``Entry Script`` is ``C:\your\path\to\d2-qolbot\src\d2bs\kolbot\D2BotTcpIpHost.dbj``.
+			- By running as TCP/IP host, shared stash is disabled.
 - Depending on how the bot disconnects from TCP/IP games, it effects their progress retention.
 	- If you the player as host quit the game, and the bots are disconnected, everyone will retain progess.
 		- This seems to be good and nothing needs fixing.
