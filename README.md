@@ -40,7 +40,7 @@ I've made some changes to the original Kolbot code:
 - ``Config.ViperCheck=true`` - will quit the game if encounter has Vipers.
 - ``Config.DollsCheck=true`` - will quit the game if encounter has Dolls.
 - ``Config.ClearPath=true`` - set to true if you don't want to use Teleport.
-- ``Config.Leaders=["mychar1", "mychar2"]`` - set an array of characters who bots will allow to be leader
+- ``Config.Leaders=["mychar1", "mychar2"]`` - set an array of characters who bots will allow to be leader.
 	- Still use ``leader <NAME>`` ingame to set who is leader, randos will be ignored.
 - ``Scripts.ForceSave=true`` - put at the end of your scripts, will fix progress retention issues.
 
