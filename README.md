@@ -43,6 +43,8 @@ I've made some changes to the original Kolbot code:
 - ``Config.Leaders=["MyCharOne", "MyCharTwo"]`` - set an array of characters who bots will allow to be leader.
 - ``Scripts.ForceSave=true`` - put at the end of your scripts, will fix progress retention issues.
 
+I've also added some additional chat commands for bot followers which is discussed below.
+
 ## Multiplayer
 
 - Prep the game:
@@ -57,9 +59,17 @@ I've made some changes to the original Kolbot code:
 	- Set ``Config.PublicMode=2``.
 - Select your profiles and click the ``Start`` button.
 
-A full list of chat commands for controlling your bot party can be found [here](https://raw.githubusercontent.com/whipowill/d2-qolbot/master/src/d2bs/kolbot/libs/bots/Follower.js).  Note that I added this chat command:
+### Chat Commands
+
+A list of chat commands for controlling your bot party can be found [here](https://raw.githubusercontent.com/whipowill/d2-qolbot/master/src/d2bs/kolbot/libs/bots/Follower.js).
+
+In addition to those commands, I've added some additonal chat commands that didn't exist in the original code:
 
 - ``save`` - bots will issue PlugY ``/save`` to force save.
+- ``town`` - bots will go to town from wherever they are.
+- ``prep`` - bots will get preparred for battle.
+- ``<BOTNAME> portal <DESTINATION>`` - Dispatch a sorceress a desired place and open a portal.
+	- ``countess``, ``mausoleum``, ``pit``, ``andariel``, ``tunnels``, ``temple``, ``mephisto``, ``diablo``, ``halls``, ``baal``
 
 ## Console
 

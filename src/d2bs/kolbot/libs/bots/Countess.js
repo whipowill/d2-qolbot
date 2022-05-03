@@ -11,46 +11,9 @@ function Countess() {
 	Pather.useWaypoint(6);
 	Precast.doPrecast(true);
 
-	if (Config.Questing)
-	{
-		if (!Pather.moveToExit(20, true)) {
-			throw new Error();
-		}
-		Attack.clearLevel();
-
-		if (!Pather.moveToExit(21, true)) {
-			throw new Error();
-		}
-		Attack.clearLevel();
-
-		if (!Pather.moveToExit(22, true)) {
-			throw new Error();
-		}
-		Attack.clearLevel();
-
-		if (!Pather.moveToExit(23, true)) {
-			throw new Error();
-		}
-		Attack.clearLevel();
-
-		if (!Pather.moveToExit(24, true)) {
-			throw new Error();
-		}
-		Attack.clearLevel();
-
-		if (!Pather.moveToExit(25, true)) {
-			throw new Error();
-		}
-		Attack.clearLevel();
+	if (!Pather.moveToExit([20, 21, 22, 23, 24, 25], true)) {
+		throw new Error("Failed to move to Countess");
 	}
-	else
-	{
-		if (!Pather.moveToExit([20, 21, 22, 23, 24, 25], true)) {
-			throw new Error("Failed to move to Countess");
-		}
-	}
-
-	//Attack.clearLevel();
 
 	poi = getPresetUnit(me.area, 2, 580);
 

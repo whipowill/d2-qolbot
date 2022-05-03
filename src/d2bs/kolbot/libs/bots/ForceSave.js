@@ -1,6 +1,9 @@
 function ForceSave() {
 
+	delay(5000);
+
 	// use plugy command to save
+	say("save");
 	say("/save");
 	delay(5000);
 

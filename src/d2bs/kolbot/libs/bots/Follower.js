@@ -508,16 +508,19 @@ function Follower() {
 
 				break;
 			case "save":
-				delay(500);
 				say("/save");
 				delay(5000);
 				say("Saved.");
 				break;
+			case "prep":
+			case "precast":
+				Precast.doPrecast(true);
+				break;
+			case "town":
+				Pather.makePortal(true); // take the portal to town
+				break;
 			case "quit":
 			case me.name + " quit":
-				delay(500);
-				say("/save");
-				delay(5000);
 				quit();
 				break;
 			case "s":
@@ -583,6 +586,30 @@ function Follower() {
 					break;
 				}
 
+				// if command is includes "portal"
+				if (msg.indexOf("portal ") > -1) {
+					piece = msg.split(" ")[0];
+
+					// if command is for me...
+					if (piece === me.name)
+					{
+						// if has skill teleport
+						if (this.canWormhole())
+						{
+							// capture location
+							piece = msg.split(" ")[2];
+
+							// init travel to location
+							this.openWormhole(piece);
+						}
+						else
+						{
+							say("I am not able to travel quickly.");
+						}
+					}
+					break;
+				}
+
 				action = msg;
 
 				break;
@@ -603,6 +630,103 @@ function Follower() {
 				leader = this.getLeader(Config.Leader);
 				leaderUnit = this.getLeaderUnit(Config.Leader);
 			}
+		}
+	};
+
+	this.canWormhole = function ()
+	{
+		if (me.classid === 1 && me.getSkill(54, 1))
+		{
+			return true;
+		}
+
+		return false;
+	};
+
+	this.openWormhole = function (destination)
+	{
+		// I need to add a check in here for hasWaypoint
+		// so she doesn't run off into the wild and get killed.
+		is_portal = true;
+		switch (destination)
+		{
+			case "countess":
+				say("Opening portal to the Tower Cellar Level 5.");
+				Town.goToTown(1);
+				Pather.useWaypoint(6);
+				Pather.moveToExit([20, 21, 22, 23, 24, 25], true);
+				break;
+			case "mausoleum":
+				say("Opening portal to the Mausoleum.");
+				Town.goToTown(1);
+				Pather.useWaypoint(3);
+				Pather.moveToExit(17, true);
+				Pather.moveToExit(19, true);
+				break;
+			case "pit":
+				say("Opening portal to the Pit.");
+				Town.goToTown(1);
+				Pather.useWaypoint(6);
+				Pather.moveToExit([7, 12], true);
+				break;
+			case "andariel":
+				say("Opening portal to the Catacombs Level 4.");
+				Town.goToTown(1);
+				Pather.useWaypoint(35);
+				Pather.moveToExit([36, 37], true);
+				break;
+			case "at": // ancient tunnels
+			case "tunnels":
+				say("Opening portal to the Ancient Tunnels.");
+				Town.goToTown(2);
+				Pather.useWaypoint(44);
+				Pather.moveToExit(65, true);
+				break;
+			case "ft": // forgotten temple
+			case "kt":
+			case "temple":
+				say("Opening portal to the Forgotten Temple.");
+				Town.goToTown(3);
+				Pather.journeyTo(94);
+				break;
+			case "mephisto":
+				say("Opening portal to the Durance of Hate Level 3.");
+				Town.goToTown(3);
+				Pather.useWaypoint(101);
+				Pather.moveToExit(102, true);
+				break;
+			case "diablo":
+				say("Opening portal to the Chaos Sanctuary.");
+				Town.goToTown(4);
+				Pather.useWaypoint(107);
+				Pather.moveTo(7788, 5292);
+				break;
+			case "halls":
+			case "nihlathak":
+				say("Opening portal to the Halls of Vaught.");
+				Town.goToTown(5);
+				Pather.useWaypoint(123);
+				Pather.moveToExit(124, true);
+				break;
+			case "baal":
+				say("Opening portal to Baal's Throne Room.");
+				Town.goToTown(5);
+				Pather.useWaypoint(129);
+				Pather.moveToExit([130, 131], true);
+				break;
+			default:
+				say("No such place.");
+				is_portal = false;
+				break;
+		}
+
+		if (is_portal)
+		{
+			// go back to town
+			Pather.makePortal(true); // flag true to use portal
+
+			// announce
+			say("Portal is open.");
 		}
 	};
 
