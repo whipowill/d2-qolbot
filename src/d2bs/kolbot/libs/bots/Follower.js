@@ -682,6 +682,18 @@ function Follower() {
 				Pather.useWaypoint(44);
 				Pather.moveToExit(65, true);
 				break;
+			case "summoner":
+				say("Opening portal to the Arcane Sanctuary.");
+				Pather.useWaypoint(74);
+				Pather.moveToPreset(me.area, 2, 357, -3, -3);
+				break;
+			case "duriel":
+				say("Opening portal to Tal Rasha's Chamber.");
+				Town.goToTown(2);
+				Pather.useWaypoint(46);
+				Pather.moveToExit(getRoom().correcttomb, true);
+				Pather.moveToPreset(me.area, 2, 152, -11, 3);
+				break;
 			case "ft": // forgotten temple
 			case "kt":
 			case "temple":
@@ -807,8 +819,8 @@ function Follower() {
 				}
 			}
 
-			if (leaderUnit && getDistance(me.x, me.y, leaderUnit.x, leaderUnit.y) <= 60) {
-				if (getDistance(me.x, me.y, leaderUnit.x, leaderUnit.y) > 4) {
+			if (leaderUnit && getDistance(me.x, me.y, leaderUnit.x, leaderUnit.y) <= 80) {
+				if (getDistance(me.x, me.y, leaderUnit.x, leaderUnit.y) > 12) {
 					Pather.moveToUnit(leaderUnit);
 				}
 			}
