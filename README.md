@@ -69,7 +69,22 @@ In addition to those commands, I've added some additonal chat commands that didn
 - ``town`` - bots will go to town from wherever they are.
 - ``prep`` - bots will get preparred for battle.
 - ``<BOTNAME> portal <DESTINATION>`` - Dispatch a sorceress a desired place and open a portal.
-	- ``countess``, ``mausoleum``, ``pit``, ``andariel``, ``tunnels``, ``summoner``, ``duriel``, ``temple``, ``mephisto``, ``diablo``, ``halls``, ``baal``
+	- ``countess``
+	- ``mausoleum``
+	- ``pit``
+	- ``andariel``
+	- ``tunnels``
+	- ``summoner``
+	- ``duriel``
+	- ``temple``
+	- ``mephisto``
+	- ``diablo``
+	- ``halls``
+	- ``baal``
+
+For fun, and to make playing w/ a bot team more lively and fun, I added chat lines from the Darkest Dungeon.  The bots will make chatter more frequently in town than in the dungeons
+
+- ``Config.DarkQuotes=true`` - will cause follower bots to make chatter in game.
 
 ## Console
 

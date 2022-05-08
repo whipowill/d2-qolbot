@@ -54,6 +54,196 @@ function Follower() {
 		classes = ["amazon", "sorceress", "necromancer", "paladin", "barbarian", "druid", "assassin"],
 		action = "";
 
+	// https://www.quoteambition.com/darkest-dungeon-quotes/
+	var quotetime = 0;
+	var quotes_town = [
+		"In time, you will know the tragic extent of my failings.",
+		"Ruin has come to our family.",
+		"I remember days when the sun shone and laughter could be heard from the tavern.",
+		"The cost of preparedness - measured now in gold, later in blood.",
+		"My obsession caused this great foulness, and it is shameful that I must rely upon you to set it right.",
+		"In that limitless chasm of chaos - they will realize the truth of it. 'We are not the flame,' they will cry out, 'We are but moths and we are doomed!' ",
+		"Once again, the stars are right and the manor sits at the very epicenter of cosmic unrest. Cultists rally to their twisted idols and great gongs sound in anticipation of the coming sacrifices. Far below, life-laden shadows pulse to the unrelenting rhythm of a beating heart.",
+		"This sprawling estate - a mecca of madness and morbidity. Your work begins.",
+		"The front line of this war is not in the dungeon, but rather, inside the mind.",
+		"Welcome home, such as it is. This squalid hamlet, these corrupted lands, they are yours now, and you are bound to them.",
+		"The bellows blast once again! The forge stands ready to make weapons of war.",
+		"Women and men, soldiers and outlaws, fools and corpses - all will find their way to us now that the road is clear.",
+		"There is a sickness in the ancient pitted cobbles of the old road, and on its writhing path you will face viciousness, violence, and perhaps other damnably transcendent terrors.",
+		"Once our estate was the envy of this land.",
+		"I was lord of this place, before the crows and rats made it their domain.",
+		"They must learn more than brutal blood-letting! They must learn to survive!",
+		"This man understands that adversity and existence are one and the same.",
+		"At home in wild places, she is a stalwart survivor and a strict instructor.",
+		"Idol, amulet, or lucky charm - the simplest object can be a talisman against evil.",
+		"Curiosity, interest, and obsession - mile markers on my road to damnation.",
+		"Alone in the woods or tunnels, survival is the same. Prepare, persist, and overcome.",
+		"Success depends on survival.",
+		"Shoot, bandage, and pillage - the dancing steps of war.",
+		"A lawman and his faithful beast - a bond forged by battle and bloodshed.",
+		"These tonics and herbs will stave off infection and neutralize contagion.",
+		"Failure tests the mettle of the heart, brain, and body.",
+		"Carelessness will find no clemency in this place!",
+		"The requirements of survival cannot be met on an empty stomach.",
+		"Survival is a tenuous proposition in this sprawling tomb.",
+		"True desperation is known only when escape is impossible.",
+		"Tokens of hope, recovered from the encroaching dark.",
+		"The Abbot will be grateful - the trappings of his faith have been restored.",
+		"Disinfection, at last.",
+		"The Brigands are undone - our family crest is once again a symbol of strength!",
+		"Let those dirty beasts worship the mud now!",
+		"In radiance may we find victory.",
+		"The light, the promise of safety!",
+		"A handsome reward for a task well performed.",
+		"To those with a keen eye, gold gleams like a dagger's point.",
+		"Experimental techniques and tonics can overcome things a sharpened sword cannot.",
+		"Make no mistake, we will face ever greater threats. Our soldiers must be ready.",
+		"Every creature has a weakness. The wise hero trains for what she will face.",
+		"With enough ale, maybe they can be inured against the horrors below.",
+		"Gilded icons and dogmatic rituals - for some, a tonic against the bloodshed.",
+		"A sharper sword, a stronger shield. Anything to prolong a soldier's life.",
+		"A strict regimen is paramount, if one is to master the brutal arithmetic of combat.",
+		"Rarities and curios, sold at a profit, of course.",
+		"To fight the abyss, one must know it.",
+		"An increasing stockpile of curious trinkets, gathered from forbidden places.",
+		"Self-preservation is paramount - at any cost!",
+		"She searches where others will not go, and sees what others will not see.",
+		"Barbaric rage and unrelenting savagery make for a powerful ally.",
+		"A champion markswoman keen for a new kind of challenge.",
+		"Our supplies are replenished, the soldiers will feast tonight.",
+		"The cobwebs have been dusted, the pews set straight. The Abbey calls to the faithful.",
+		"I see something long-absent in the sunken faces of passersby - a glimmer of hope.",
+		"In truth, I cannot tell how much time has passed since I sent that letter.",
+		"Every cleared path and charted route reduces the isolation of our troubled estate.",
+		"Paths and roads bring soldiers and supplies, let them arrive unharried!",
+		"These medicines will prevent the outbreak of epidemics in our struggling hamlet.",
+		"At last, wholesome marine life can flourish, if indeed there is such a thing.",
+		"Trouble yourself not with the cost of this crusade - its noble end affords you broad tolerance in your choice of means.",
+		"All manner of diversion and dalliance await those who cross the threshold with coin in hand.",
+		"More arrive, foolishly seeking fortune and glory in this domain of the damned.",
+		"It is done. Turn yourself now to the conditions of those poor devils who remain.",
+		"Wealth beyond measure, awarded to the brave and the foolhardy alike.",
+		"Those without a stomach for this place must move on.",
+		"The raw strength of youth may be spent, but his eyes hold the secrets of a hundred campaigns.",
+		"We are born of this thing, made from it, and we will be returned to it in time.",
+		"The degeneracy of the hamlet is nothing, I fear, when compared to the condition of surrounding acres.",
+		"Let me share with you the terrible wonders I have come to know.",
+		"Our family name once so well-regarded is now barely whispered aloud by decent folk.",
+		"All the decadent horrors I have seen pale in comparison with that final, crowning thing. I could not look, nor could I look away!",
+		"Some guy made fun of my helmet, so I butchered him in a public place.",
+		"I do this because it irritates you.",
+		"I know just enough to be dangerous, now be still.",
+		"Someone arm wrestle me! Come on, you cowards!",
+		"You answered the letter - now like me, you are part of this place.",
+		"Curious methodologies and apparatus can calm even the most tormented soul.",
+		"Trinkets and charms, gathered from all the forgotten corners of the earth.",
+		"Fan the flames! Mold the metal! We are raising an army!",
+		"Great heroes can be found even here, in the mud and rain.",
+		"There is a great horror beneath the manor - a crawling chaos that must be destroyed!",
+		"Strong drink, a game of chance, and companionship - the rush of life.",
+		"There is power in symbols. Collect the scattered scraps of faith and give comfort to the masses.",
+		"Can you feel it? The walls between the sane world and that unplumbed dimension of delirium is tenuously thin here.",
+		"A man in a robe, claiming communion with the divine. Madness.",
+		"So many young gentlemen, so little propriety.",
+	];
+	var quotes_battle = [
+		"In time, you will know the tragic extent of my failings.",
+		"Remind yourself that overconfidence is a slow and insidious killer.",
+		"Prodigious size alone does not dissuade the sharpened blade.",
+		"Leave nothing unchecked, there is much to be found in forgotten places.",
+		"Brigands have run off these lanes. Keep to the side path - the hamlet is just ahead.",
+		"The mighty sword arm anchored by holy purpose - a zealous warrior.",
+		"Many fall in the face of chaos, but not this one. Not today.",
+		"Monstrous size has no intrinsic merit, unless inordinate exsanguination be considered a virtue.",
+		"'We are the flame,' they cry, 'and darkness fears us!'",
+		"These nightmarish creatures can be felled! They can be beaten!",
+		"Dispatch this thug in brutal fashion, that all may hear of your arrival!",
+		"An ambush! Send these vermin a message - the rightful owner has returned, and their kind is no longer welcome.",
+		"And now the true test - hold fast or expire?",
+		"Injury and despondence set the stage for heroism or cowardice.",
+		"Great adversity has beauty - it is the fire that tempers the blade.",
+		"Slowly, gently, this is how life is taken.",
+		"Where there is no peril in the task, there can be no glory in its accomplishment.",
+		"Do not ruminate on this fleeting failure - the campaign is long, and victory will come.",
+		"A moment of valor shines brightest against a backdrop of despair.",
+		"Good fortune and hard work may yet arrest this plague.",
+		"A setback, but not the end of things!",
+		"Wounds to be tended - lessons to be learned.",
+		"You will endure this loss, and learn from it.",
+		"You cannot learn a thing you think you know.",
+		"We fall so that we may learn to pick ourselves up once again.",
+		"Our land is remote and unneighbored. Every lost resource must be recovered.",
+		"Ignorance of your enemy and of yourself will invariably lead to defeat.",
+		"This expedition, at least, promises success.",
+		"Squirming, contorting, and ever-expanding - this horror must be unmade!",
+		"The great ruins belong to us, and we will find whatever secrets they hold.",
+		"More bones returned to rest. Devils remanded to their abyss.",
+		"Room by room, hall by hall, we reclaim what is ours.",
+		"This day belongs to the light!",
+		"Confidence surges as the enemy crumbles!",
+		"Another abomination cleansed from our lands.",
+		"The bigger the beast, the greater the glory.",
+		"A victory - perhaps a turning point.",
+		"A little hope, however desperate, is never without worth.",
+		"Adversity can foster hope and resilience.",
+		"The frothing waters subside - the advantage is ours!",
+		"Shattered and unmade! Or, perhaps, reborn?",
+		"It will live again in another time, another place.",
+		"The way is lit. The path is clear. We require only the strength to follow it.",
+		"As the light gains purchase, spirits are lifted and purpose is made clear.",
+		"A wise general cuts losses, and regroups.",
+		"This skirmish may be lost, but the battle may yet be won.",
+		"The sin is not in being outmatched, but in failing to recognize it.",
+		"Some may fall, but their knowledge lives on.",
+		"Send this one to journey elsewhere, for we have a need of sterner stock.",
+		"Driving out corruption is an endless battle, but one that must be fought.",
+		"Anger is power - unleash it!",
+		"The agents of pestilence will yet be driven from our woods!",
+		"Tortured and reclusive - this man is more dangerous than he seems.",
+		"Elusive, evasive, persistent - righteous traits for a rogue.",
+		"What better laboratory than the blood-soaked battlefield?",
+		"A sister of battle - pious and unrelenting.",
+		"This one has become vestigial, useless.",
+		"Suffer not the lame horse - nor the broken man.",
+		"Life - the greatest treasure of all.",
+		"All my life, I could feel an insistent gnawing at the back of my mind. It was a yearning - a thirst for discovery - which could be neither numbed nor sated.",
+		"Mind that such missteps are the exception, and not the rule.",
+		"Death is patient, it will wait.",
+		"Another soul battered and broken, cast aside like a spent torch.",
+		"Death and demise - cause for celebration!",
+		"Sloped shoulders, wild eyes and a stumbling gate - this one is no more good to us.",
+		"Even in death, the captain shouts his orders and the crew obeys.",
+		"Most will end up here, covered in the poisoned earth, awaiting merciful oblivion.",
+		"Did he foresee his own demise? I care not, so long as he remains dead.",
+		"In life, his claims to precognition were dubious at best, in death, they are ridiculous.",
+		"Even reanimated bones can fall - even the dead can die again.",
+		"With no living sinew to actuate them, will these walking bones finally fail?",
+		"Leave her corpse to rot, consumed by the spores she spawned.",
+		"It is as grotesque in death as it was in life.",
+		"The thing is even more horrible in death. Liquefaction cannot come soon enough.",
+		"Death cannot be escaped, but it can be postponed.",
+		"No chance for egress - will this be a massacre?",
+		"The plume and the pistol - a fitting end to my folly, and a curse upon us all.",
+		"I knew all these paths once - now they are as twisted as my own ambitions.",
+		"An eternity of futile struggle - a penance for my unspeakable transgressions.",
+		"Mechanical hazards, possessed by evil intent.",
+		"The human mind - fragile like a robin's egg.",
+		"Even the aged oak will fall to the tempest's winds.",
+		"Fear and frailty finally claim their due.",
+		"More dust, more ashes - more disappointment.",
+		"Their squeals fade, their confidence is shaken!",
+		"I smell brimstone. Or is that hyacinth?",
+		"Silence, my arbalest sings!",
+		"I am fueled by the blood of my enemies, thank you.",
+		"Thank my torturer who was tasked with keeping me alive.",
+		"Did I wash this needle? Well, too late now.",
+		"An impressive wound! Let me make a quick sketch.",
+		"As life ebbs, terrible vistas of emptiness reveal themselves.",
+		"Success, so clearly in view. Or, is it merely a trick of the light?",
+		"It's a sad day when I am your best hope.",
+		"Be wary, triumphant pride precipitates a dizzying fall.",
+	];
+
 	// Get leader's Party Unit
 	this.getLeader = function (name) {
 		var player = getParty();
@@ -357,14 +547,14 @@ function Follower() {
 		}
 
 		Town.move("portalspot");
-		say("Act change successful.");
+		//say("Act change successful.");
 
 		if (act === 2) {
-			say("Don't forget to talk to Drognan after getting the Viper Amulet!");
+			//say("Don't forget to talk to Drognan after getting the Viper Amulet!");
 		}
 
 		if (act === 3) {
-			say("Don't forget to talk to Hratli before getting the Gidbinn!");
+			//say("Don't forget to talk to Hratli before getting the Gidbinn!");
 		}
 
 		return true;
@@ -633,6 +823,43 @@ function Follower() {
 		}
 	};
 
+	this.sayQuotes = function (quotetime, quotes_town, quotes_battle)
+	{
+		// if quotes are turned off, bail
+		if (!Config.DarkQuotes) return 0;
+
+		// init
+		var speak = false;
+		var now = Date.now();
+
+		// if first run
+		if (!quotetime) return now + Math.floor(Math.random() * 120000);
+
+		// if speak
+		if (quotetime - now < 0)
+		{
+			if (me.inTown)
+			{
+				quotetime = now + 120000 + Math.floor(Math.random() * 240000);
+				var quotes = quotes_town;
+			}
+			else
+			{
+				quotetime = now + 120000 + Math.floor(Math.random() * 480000);
+				var quotes = quotes_battle;
+			}
+
+			// roll the dice on what quote to use
+			var ran = Math.floor(Math.random() * quotes.length);
+
+			// say the quote
+			say(quotes[ran]);
+		}
+
+		// return
+		return quotetime;
+	};
+
 	this.canWormhole = function ()
 	{
 		if (me.classid === 1 && me.getSkill(54, 1))
@@ -647,7 +874,7 @@ function Follower() {
 	{
 		// I need to add a check in here for hasWaypoint
 		// so she doesn't run off into the wild and get killed.
-		is_portal = true;
+		var is_portal = true;
 		switch (destination)
 		{
 			case "countess":
@@ -738,7 +965,7 @@ function Follower() {
 			Pather.makePortal(true); // flag true to use portal
 
 			// announce
-			say("Portal is open.");
+			//say("Portal is open.");
 		}
 	};
 
@@ -767,14 +994,14 @@ function Follower() {
 		delay(5000);
 		quit();
 	} else {
-		say("Leader found.");
+		//say("Leader found.");
 	}
 
 	while (!Misc.inMyParty(Config.Leader)) {
 		delay(500);
 	}
 
-	say("Partied.");
+	//say("Partied.");
 
 	if (me.inTown) {
 		Town.move("portalspot");
@@ -782,6 +1009,10 @@ function Follower() {
 
 	// Main Loop
 	while (Misc.inMyParty(Config.Leader)) {
+
+		// say quote
+		quotetime = this.sayQuotes(quotetime, quotes_town, quotes_battle);
+
 		if (me.mode === 17) {
 			while (!me.inTown) {
 				me.revive();
@@ -796,12 +1027,13 @@ function Follower() {
 			delay(500);
 		}
 
-		if (!me.inTown) {
+		if (!me.inTown)
+		{
 			if (!leaderUnit || !copyUnit(leaderUnit).x) {
 				leaderUnit = this.getLeaderUnit(Config.Leader);
 
 				if (leaderUnit) {
-					say("Leader unit found.");
+					//say("Leader unit found.");
 				}
 			}
 
@@ -819,9 +1051,12 @@ function Follower() {
 				}
 			}
 
-			if (leaderUnit && getDistance(me.x, me.y, leaderUnit.x, leaderUnit.y) <= 80) {
-				if (getDistance(me.x, me.y, leaderUnit.x, leaderUnit.y) > 12) {
-					Pather.moveToUnit(leaderUnit);
+			if (leaderUnit && getDistance(me.x, me.y, leaderUnit.x, leaderUnit.y) <= 60) {
+				if (getDistance(me.x, me.y, leaderUnit.x, leaderUnit.y) > 6) {
+					//Pather.moveToUnit(leaderUnit);
+
+					// make the bots stand randomly arround you
+					Pather.moveTo(leaderUnit.x + rand(-5, 5), leaderUnit.y + rand(-5, 5));
 				}
 			}
 
@@ -843,23 +1078,23 @@ function Follower() {
 
 				switch (result) {
 				case 1:
-					say("Taking exit.");
+					//say("Taking exit.");
 					delay(500);
 					Pather.moveToExit(leader.area, true);
 
 					break;
 				case 2:
-					say("Taking portal.");
+					//say("Taking portal.");
 
 					break;
 				case 3:
-					say("Taking waypoint.");
+					//say("Taking waypoint.");
 					delay(500);
 					Pather.useWaypoint(leader.area, true);
 
 					break;
 				case 4:
-					say("Special transit.");
+					//say("Special transit.");
 
 					break;
 				}
@@ -950,11 +1185,11 @@ WPLoop:
 			break;
 		case "1":
 			if (me.inTown && leader.inTown && this.checkLeaderAct(leader) !== me.act) {
-				say("Going to leader's town.");
+				//say("Going to leader's town.");
 				Town.goToTown(this.checkLeaderAct(leader));
 				Town.move("portalspot");
 			} else if (me.inTown) {
-				say("Going outside.");
+				//say("Going outside.");
 				Town.goToTown(this.checkLeaderAct(leader));
 				Town.move("portalspot");
 
@@ -972,14 +1207,14 @@ WPLoop:
 		case "2":
 			if (!me.inTown) {
 				delay(150);
-				say("Going to town.");
+				//say("Going to town.");
 				Pather.usePortal(null, leader.name);
 			}
 
 			break;
 		case "3":
 			if (me.inTown) {
-				say("Running town chores.");
+				//say("Running town chores.");
 				Town.doChores();
 				Town.move("portalspot");
 				say("Ready.");
