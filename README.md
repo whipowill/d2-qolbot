@@ -6,6 +6,8 @@ The most enjoyable way of using this software is to host LAN games that your oth
 
 This is a fork of an old version of Kolbot w/ some bug fixes.
 
+![Qolbot](https://i.imgur.com/xJqNewn.png)
+
 ## Install
 
 - Install prerequisites:
@@ -43,9 +45,9 @@ I've made some changes to the original Kolbot code:
 - ``Config.Leaders=["MyCharOne", "MyCharTwo"]`` - set an array of characters who bots will allow to be leader.
 - ``Scripts.ForceSave=true`` - put at the end of your scripts, will fix progress retention issues.
 
-For fun, and to make playing w/ a bot team more lively and fun, I programmed them to make comments as you play the game w/ over 7,000 one-liners from [Darkest Dungeon](https://raw.githubusercontent.com/whipowill/d2-qolbot/master/src/d2bs/kolbot/libs/config/Quotes/quotes.json).
+For fun, to make playing w/ a bot team more lively and amusing, I programmed them to make gallows-humor comments as you play the game using roughly 5,000 offhand remarks from [Darkest Dungeon](https://raw.githubusercontent.com/whipowill/d2-qolbot/master/src/d2bs/kolbot/libs/config/Quotes/quotes.json).
 
-- ``Config.DarkQuotes=true`` - will cause follower bots to make chat comments in the game.
+- ``Config.DarkQuotes=true`` - will cause follower bots to drop gallows-humor chats in the game.
 
 I've also added some additional chat commands for bot followers which are discussed below.
 

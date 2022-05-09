@@ -866,11 +866,11 @@ function Follower() {
 			}
 
 			if (leaderUnit && getDistance(me.x, me.y, leaderUnit.x, leaderUnit.y) <= 60) {
-				if (getDistance(me.x, me.y, leaderUnit.x, leaderUnit.y) > 6) {
+				if (getDistance(me.x, me.y, leaderUnit.x, leaderUnit.y) > 12) {
 					//Pather.moveToUnit(leaderUnit);
 
 					// make the bots stand randomly arround you
-					Pather.moveTo(leaderUnit.x + rand(-5, 5), leaderUnit.y + rand(-5, 5));
+					Pather.moveTo(leaderUnit.x + rand(-6, 6), leaderUnit.y + rand(-6, 6));
 				}
 			}
 
@@ -998,11 +998,7 @@ WPLoop:
 
 			break;
 		case "1":
-			if (me.inTown && leader.inTown && this.checkLeaderAct(leader) !== me.act) {
-				//say("Going to leader's town.");
-				Town.goToTown(this.checkLeaderAct(leader));
-				Town.move("portalspot");
-			} else if (me.inTown) {
+			if (me.inTown) {
 				//say("Going outside.");
 				Town.goToTown(this.checkLeaderAct(leader));
 				Town.move("portalspot");
@@ -1024,8 +1020,16 @@ WPLoop:
 				//say("Going to town.");
 				Pather.usePortal(null, leader.name);
 
-				// reset quotetime
-				//quotetime = 0;
+				// spread out
+				Pather.moveTo(me.x + rand(-6, 6), me.y + rand(-6, 6));
+			}
+			else
+			{
+				if (leader.inTown && this.checkLeaderAct(leader) !== me.act) {
+					//say("Going to leader's town.");
+					Town.goToTown(this.checkLeaderAct(leader));
+					Town.move("portalspot");
+				}
 			}
 
 			break;
