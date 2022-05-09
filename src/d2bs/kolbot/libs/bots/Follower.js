@@ -667,7 +667,7 @@ function Follower() {
 			var ran = Math.floor(Math.random() * list.length);
 
 			// say the quote
-			say(list[ran]);
+			say("!" + list[ran]);
 		}
 
 		// return
