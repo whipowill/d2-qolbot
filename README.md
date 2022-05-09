@@ -43,7 +43,11 @@ I've made some changes to the original Kolbot code:
 - ``Config.Leaders=["MyCharOne", "MyCharTwo"]`` - set an array of characters who bots will allow to be leader.
 - ``Scripts.ForceSave=true`` - put at the end of your scripts, will fix progress retention issues.
 
-I've also added some additional chat commands for bot followers which is discussed below.
+For fun, and to make playing w/ a bot team more lively and fun, I programmed them to make comments as you play the game w/ over 7,000 one-liners from [Darkest Dungeon](https://raw.githubusercontent.com/whipowill/d2-qolbot/master/src/d2bs/kolbot/libs/config/Quotes/quotes.json).
+
+- ``Config.DarkQuotes=true`` - will cause follower bots to make chat comments in the game.
+
+I've also added some additional chat commands for bot followers which are discussed below.
 
 ## Multiplayer
 
@@ -81,10 +85,6 @@ In addition to those commands, I've added some additonal chat commands that didn
 	- ``diablo``
 	- ``halls``
 	- ``baal``
-
-For fun, and to make playing w/ a bot team more lively and fun, I added chat lines from the Darkest Dungeon.  The bots will make chatter more frequently in town than in the dungeons
-
-- ``Config.DarkQuotes=true`` - will cause follower bots to make chatter in game.
 
 ## Console
 
