@@ -710,6 +710,7 @@ function Follower() {
 				Pather.useWaypoint(6);
 				Pather.moveToExit([7, 12], true);
 				break;
+			case "andy":
 			case "andariel":
 				say("Opening portal to the Catacombs Level 4.");
 				Town.goToTown(1);
@@ -742,6 +743,7 @@ function Follower() {
 				Town.goToTown(3);
 				Pather.journeyTo(94);
 				break;
+			case "meph":
 			case "mephisto":
 				say("Opening portal to the Durance of Hate Level 3.");
 				Town.goToTown(3);
@@ -866,7 +868,7 @@ function Follower() {
 			}
 
 			if (leaderUnit && getDistance(me.x, me.y, leaderUnit.x, leaderUnit.y) <= 60) {
-				if (getDistance(me.x, me.y, leaderUnit.x, leaderUnit.y) > 12) {
+				if (getDistance(me.x, me.y, leaderUnit.x, leaderUnit.y) > 6) {
 					//Pather.moveToUnit(leaderUnit);
 
 					// make the bots stand randomly arround you

@@ -2156,16 +2156,7 @@ MainLoop:
 			//print("moveToSpot: " + spot + " from " + me.x + ", " + me.y);
 
 			if (getDistance(me, townSpot[i], townSpot[i + 1]) > 2) {
-
-				if (spot == "portalspot")
-				{
-					// make them stand around the portal randomly, not on top of each other
-					Pather.moveTo(townSpot[i] + rand(-6, 6), townSpot[i + 1] + rand(-6, 6), 3, false, true);
-				}
-				else
-				{
-					Pather.moveTo(townSpot[i], townSpot[i + 1], 3, false, true);
-				}
+				Pather.moveTo(townSpot[i], townSpot[i + 1], 3, false, true);
 			}
 
 			switch (spot) {
