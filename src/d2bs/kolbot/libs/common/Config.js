@@ -15,6 +15,10 @@ var Config = {
 		for (i = 0; i < 5; i += 1) {
 			switch (i) {
 			case 0: // Custom config
+				if (!isIncluded("config/_defaultconfig.js")) {
+					include("config/_defaultconfig.js");
+				}
+
 				if (!isIncluded("config/_customconfig.js")) {
 					include("config/_customconfig.js");
 				}
@@ -87,6 +91,7 @@ var Config = {
 		}
 
 		try {
+			LoadDefaultConfig.call(); // for settings that effect all characters
 			LoadConfig.call();
 		} catch (e2) {
 			if (notify) {

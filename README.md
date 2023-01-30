@@ -8,6 +8,23 @@ This is a fork of an old version of Kolbot w/ some bug fixes.
 
 ![Qolbot](https://i.imgur.com/xJqNewn.png)
 
+## Vision
+
+Most of my work on this code involves the ``Follower.js`` and ``Quester.js`` files.  My goal is to create an experience where the bots will join your games and play with you and automatically do the things a normal person would do.  They crack jokes, they gather waypoints, they complete quests, they gear up, they choose skills, they gamble, etc.
+
+### Features
+
+- Gallows humor remarks as you play
+- Capture waypoints as you go
+- Complete quests as you go (work in progress)
+- Custom inventory sizes to accomodate your mods
+- Infinite stash support for PlugY
+
+### Todo
+
+- Experiment w/ AutoBuild abilities
+- Experiment w/ AutoEquip abilities
+
 ## Install
 
 - Install prerequisites:
@@ -24,32 +41,13 @@ This is a fork of an old version of Kolbot w/ some bug fixes.
 	- ``Entry Script`` is ``C:\your\path\to\d2-qolbot\src\d2bs\kolbot\D2BotLead.dbj``
 - Create your bot scripts:
 	- These files are found in ``C:\your\path\to\d2-qolbot\src\d2bs\kolbot\libs\config\``.
-	- Copy ``Sorceress.js`` and rename as ``Sorceress.Yourcharactername.js``.
-	- This file controls where your bot goes and how it fights.
-	- The setting ``Scripts.UserAddon`` must be set to ``false``.
-	- Use this handy [skill sheet](https://user.xmission.com/~trevin/DiabloIIv1.09_Skills.html) to look up attack skill IDs.
+	- ``_DefaultConfig.js`` is a config file that applies to all characters, most of the settings are in here.
+	- Copy ``Yourclass.js``, rename as ``Yourclass.Yourcharactername.js``, and modify as needed.
 - Create your pickit rulesets:
 	- These files are found in ``C:\your\path\to\d2-qolbot\src\d2bs\kolbot\pickit\``.
 	- These files control what items your character picks up and keeps.
-	- These files are referenced in your player scripts.
-- Select your profiles and click the ``Start`` button.
-
-## Changes
-
-I've made some changes to the original Kolbot code:
-
-- ``Config.InfiniteStash=true`` - will enable use of PlugY pages.
-- ``Config.ViperCheck=true`` - will quit the game if encounter has Vipers.
-- ``Config.DollsCheck=true`` - will quit the game if encounter has Dolls.
-- ``Config.ClearPath=true`` - set to true if you don't want to use Teleport.
-- ``Config.Leaders=["MyCharOne", "MyCharTwo"]`` - set an array of characters who bots will allow to be leader.
-- ``Scripts.ForceSave=true`` - put at the end of your scripts, will fix progress retention issues.
-
-For fun, to make playing w/ a bot team more lively and amusing, I programmed them to make gallows-humor comments as you play the game using roughly 5,000 offhand remarks from [Darkest Dungeon](https://raw.githubusercontent.com/whipowill/d2-qolbot/master/src/d2bs/kolbot/libs/config/Quotes/quotes.json).
-
-- ``Config.DarkQuotes=true`` - will cause follower bots to drop gallows-humor chats in the game.
-
-I've also added some additional chat commands for bot followers which are discussed below.
+	- These files are referenced in your bot scripts.
+- Select your profile and click the ``Start`` button.
 
 ## Multiplayer
 
@@ -61,32 +59,28 @@ I've also added some additional chat commands for bot followers which are discus
 - Modify your bot profiles:
 	- ``Entry Script`` is ``C:\your\path\to\d2-qolbot\src\d2bs\kolbot\D2BotTcpIpJoin.dbj``.
 - Modify your bot scripts:
-	- Set ``Scripts.Follower=true``.
-	- Set ``Config.PublicMode=2``.
+	- In ``_DefaultConfig.js``:
+		- Set ``Config.Leader=`` the character you intend to play.
+		- Set ``Scripts.Follower=true``.
+		- Set ``Config.PublicMode=2``.
 - Select your profiles and click the ``Start`` button.
 
 ### Chat Commands
 
-A list of chat commands for controlling your bot party can be found [here](https://raw.githubusercontent.com/whipowill/d2-qolbot/master/src/d2bs/kolbot/libs/bots/Follower.js).
-
-In addition to those commands, I've added some additonal chat commands that didn't exist in the original code:
-
-- ``save`` - bots will issue PlugY ``/save`` to force save.
-- ``town`` - bots will go to town from wherever they are.
-- ``prep`` - bots will get preparred for battle.
-- ``<BOTNAME> portal <DESTINATION>`` - Dispatch a sorceress a desired place and open a portal.
-	- ``countess``
-	- ``mausoleum``
-	- ``pit``
-	- ``andariel``
-	- ``tunnels``
-	- ``summoner``
-	- ``duriel``
-	- ``temple``
-	- ``mephisto``
-	- ``diablo``
-	- ``halls``
-	- ``baal``
+- ``1`` - take the portal opened into the wild
+- ``2`` - take the portal opened back to town
+- ``3`` - perform town chores
+- ``save`` - bots will issue PlugY ``/save`` to force save
+- ``town`` - bots will go to town from wherever they are (use when lost)
+- ``move`` - bots will shuffle around (use when stuck)
+- ``prep`` - bots will get prepared for battle (use for summons that take time)
+- ``status`` - bots will report quest progress
+- ``<BOTNAME> portal <DESTINATION>`` - dispatch a Sorceress a desired place and open a portal
+	- Act 1 - ``countess``, ``mausoleum``, ``pit``, ``andariel``
+	- Act 2 - ``tunnels``, ``summoner``, ``duriel``
+	- Act 3 - ``temple``, ``mephisto``
+	- Act 4 - ``diablo``
+	- Act 5 - ``halls``, ``baal``
 
 ## Console
 
@@ -104,22 +98,12 @@ In addition to those commands, I've added some additonal chat commands that didn
 	- Modify your bot profile:
 		- ``Entry Script`` is ``C:\your\path\to\d2-qolbot\src\d2bs\kolbot\D2BotTcpIpHost.dbj``.
 			- By running as TCP/IP host, shared stash is disabled.
-- Depending on how a bot disconnects from TCP/IP games, it effects their progress retention.
-	- If the bot is disconnected bc you were the host and you quit the game, they will retain all progress.
-	- If the bot is disconnected bc they quit the game, they only retain recent but not all progress.
-	- I added the chat command ``save``, which I use often, to force the bot to issue a PlugY ``/save`` command.
-	- I added the config entry ``Scripts.ForceSave=true`` which does the same.
-- There is definitely an issue w/ mercs not retaining all XP from TCP/IP games.
-	- It seems they retain about half the XP earned.
-	- Over time, your bot will be twice the level of your merc.
-	- I have no idea how to fix it so I just HeroEdit the merc more XP.
 - If you have maphack installed it means that all your bots will launch w/ maphack too.
 	- This causes unecessary overhead on your machine, but you can turn it off.
 	- Copy your game folder to another directory, I named mine ``Diablo II - Bots``.
 	- Modify the ``Plugy.ini`` in that directory to not load ``BH.dll``.
 	- Change the ``Diablo Path`` in your botting profile to use the new ``Game.exe``.
 	- The bot will still save to your original D2 directory bc the path is defined in the Windows registry.
-- I could never get this to work w/ Wine, no matter how hard I tried.
 
 ## References
 

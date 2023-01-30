@@ -4,65 +4,52 @@
 // .................................................
 
 // helms
-[type] == circlet && [quality] == normal # [sockets] == 2
-[type] == circlet && [quality] == normal # [sockets] == 3
-[type] == pelt && [quality] == normal && [flag] != ethereal # [sockets] != 1 && [skillhurricane]+[skilltornado] >= 4
-[type] == pelt && [quality] == normal && [flag] != ethereal # [sockets] != 1 && [skillsummongrizzly]+[skillsummondirewolf]+[skillsummonspiritwolf]+[skillcarrionvine] >= 4
-[type] == primalhelm && [quality] == normal && [flag] != ethereal # [sockets] != 1 && [skillbattleorders]+[skillbattlecommand]+[skillshout] >= 4
-[type] == primalhelm && [quality] == normal && [flag] != ethereal # [sockets] != 1 && [skillironskin] >= 2
+//[type] == circlet && [quality] == normal # [sockets] == 2
+//[type] == circlet && [quality] == normal # [sockets] == 3
+//[type] == pelt && [quality] == normal && [flag] != ethereal # [sockets] != 1 && [skillhurricane]+[skilltornado] >= 4
+//[type] == pelt && [quality] == normal && [flag] != ethereal # [sockets] != 1 && [skillsummongrizzly]+[skillsummondirewolf]+[skillsummonspiritwolf]+[skillcarrionvine] >= 4
+//[type] == primalhelm && [quality] == normal && [flag] != ethereal # [sockets] != 1 && [skillbattleorders]+[skillbattlecommand]+[skillshout] >= 4
+//[type] == primalhelm && [quality] == normal && [flag] != ethereal # [sockets] != 1 && [skillironskin] >= 2
 
 // armors (player)
-[name] == studdedleather && [quality] == normal && [flag] != ethereal # [sockets] != 1
-[name] == trellisedarmor && [quality] == normal && [flag] != ethereal # [sockets] != 1
-[name] == wirefleece && [quality] == normal && [flag] != ethereal # [sockets] != 1
-[name] == lightplate && [quality] == normal && [flag] != ethereal # [sockets] != 1
-[name] == mageplate && [quality] == normal && [flag] != ethereal # [sockets] != 1
-[name] == archonplate && [quality] == normal && [flag] != ethereal # [sockets] != 1
-[name] == duskshroud && [quality] == normal && [flag] != ethereal # [sockets] != 1
+//[name] == studdedleather && [quality] == normal && [flag] != ethereal # [sockets] != 1
+//[name] == trellisedarmor && [quality] == normal && [flag] != ethereal # [sockets] != 1
+//[name] == wirefleece && [quality] == normal && [flag] != ethereal # [sockets] != 1
+//[name] == lightplate && [quality] == normal && [flag] != ethereal # [sockets] != 1
+//[name] == mageplate && [quality] == normal && [flag] != ethereal # [sockets] != 1
+//[name] == archonplate && [quality] == normal && [flag] != ethereal # [sockets] != 1
+//[name] == duskshroud && [quality] == normal && [flag] != ethereal # [sockets] != 1
 
 // armors (merc)
-[name] == duskshroud && [quality] == normal && [flag] == ethereal # [sockets] != 1
-[name] == wyrmhide && [quality] == normal && [flag] == ethereal # [sockets] != 1
-[name] == scarabhusk && [quality] == normal && [flag] == ethereal # [sockets] != 1
-[name] == wirefleece && [quality] == normal && [flag] == ethereal # [sockets] != 1
-[name] == diamondmail && [quality] == normal && [flag] == ethereal # [sockets] != 1
-[name] == loricatedmail && [quality] == normal && [flag] == ethereal # [sockets] != 1
-[name] == greathauberk && [quality] == normal && [flag] == ethereal # [sockets] != 1
-[name] == boneweave && [quality] == normal && [flag] == ethereal # [sockets] != 1
-[name] == balrogskin && [quality] == normal && [flag] == ethereal # [sockets] != 1
-[name] == archonplate && [quality] == normal && [flag] == ethereal # [sockets] != 1
-[name] == krakenshell && [quality] == normal && [flag] == ethereal # [sockets] != 1
-[name] == hellforgeplate && [quality] == normal && [flag] == ethereal # [sockets] != 1
-[name] == lacqueredplate && [quality] == normal && [flag] == ethereal # [sockets] != 1
-[name] == shadowplate && [quality] == normal && [flag] == ethereal # [sockets] != 1
-[name] == sacredarmor && [quality] == normal && [flag] == ethereal # [sockets] != 1
+[type] == armor && [quality] == normal && [class] == elite && [flag] == ethereal # [sockets] == 4 && [defense] >= 1000
+([name] == archonplate || [name] == sacredarmor) && [quality] == normal && [flag] == ethereal # [sockets] == 0 && [defense] >= 700
 
 // shields
-[name] == kiteshield && [quality] == normal && [flag] != ethereal # [sockets] == 3
-[name] == dragonshield && [quality] == normal && [flag] != ethereal # [sockets] != 1
-[name] == monarch && [quality] == normal && [flag] != ethereal # [sockets] != 1
-[name] == sacredtarge && [quality] == normal && [flag] != ethereal # [fireresist] >= 30 && [sockets] != 1
-[name] == sacredrondache && [quality] == normal && [flag] != ethereal # [fireresist] >= 30 && [sockets] != 1
-[name] == kurastshield && [quality] == normal && [flag] != ethereal # [fireresist] >= 30 && [sockets] != 1
-[name] == zakarumshield && [quality] == normal && [flag] != ethereal # [fireresist] >= 30 && [sockets] != 1
-[name] == vortexshield && [quality] == normal && [flag] != ethereal # [fireresist] >= 30 && [sockets] != 1
+//[name] == kiteshield && [quality] == normal && [flag] != ethereal # [sockets] == 3
+//[name] == dragonshield && [quality] == normal && [flag] != ethereal # [sockets] != 1
+//[name] == monarch && [quality] == normal && [flag] != ethereal # [sockets] != 1
+//[name] == sacredtarge && [quality] == normal && [flag] != ethereal # [fireresist] >= 30 && [sockets] != 1
+//[name] == sacredrondache && [quality] == normal && [flag] != ethereal # [fireresist] >= 30 && [sockets] != 1
+//[name] == kurastshield && [quality] == normal && [flag] != ethereal # [fireresist] >= 30 && [sockets] != 1
+//[name] == zakarumshield && [quality] == normal && [flag] != ethereal # [fireresist] >= 30 && [sockets] != 1
+//[name] == vortexshield && [quality] == normal && [flag] != ethereal # [fireresist] >= 30 && [sockets] != 1
 
 // weapons (player)
-[name] == crystalsword && [quality] == normal # [sockets] == 4 // spirit
-[name] == (shortstaff || longstaff || gnarledstaff) && [quality] == normal # [sockets] == 2 // leaf
-[name] == colossussword && [quality] == normal && [flag] == ethereal # [sockets] != 1 // death, botd, oath
-[name] == colossusblade && [quality] == normal && [flag] == ethereal # [sockets] != 1 // death, botd, oath
-[name] == berserkeraxe && [quality] == normal && [flag] == ethereal # [sockets] != 1 // death, botd, oath
-[name] == phaseblade && [quality] == normal && [flag] != ethereal # [sockets] != 1 // grief, last wish
-[name] == scourge && [quality] == normal && [flag] != ethereal # [sockets] != 1 // cta, hoto
+//[name] == crystalsword && [quality] == normal # [sockets] == 4 // spirit
+//[name] == (shortstaff || longstaff || gnarledstaff) && [quality] == normal # [sockets] == 2 // leaf
+//[name] == colossussword && [quality] == normal && [flag] == ethereal # [sockets] != 1 // death, botd, oath
+//[name] == colossusblade && [quality] == normal && [flag] == ethereal # [sockets] != 1 // death, botd, oath
+//[name] == berserkeraxe && [quality] == normal && [flag] == ethereal # [sockets] != 1 // death, botd, oath
+//[name] == phaseblade && [quality] == normal && [flag] != ethereal # [sockets] != 1 // grief, last wish
+//[name] == scourge && [quality] == normal && [flag] != ethereal # [sockets] != 1 // cta, hoto
 [name] == grandmatronbow && [quality] == normal && [flag] != ethereal # [bowandcrossbowskilltab] >= 3 && [sockets] != 1
-[name] == matriarchalbow && [quality] == normal && [flag] != ethereal # [bowandcrossbowskilltab] >= 3 && [sockets] != 1
-[name] == greatbow && [quality] == normal && [flag] != ethereal # [sockets] != 1 // harmony
+//[name] == matriarchalbow && [quality] == normal && [flag] != ethereal # [bowandcrossbowskilltab] >= 3 && [sockets] != 1
+//[name] == greatbow && [quality] == normal && [flag] != ethereal # [sockets] != 1 // harmony
 
 // weapons (merc)
-[name] == scythe && [quality] == normal && [flag] == ethereal # [sockets] != 1
-[name] == scythe && [quality] == normal && [flag] != ethereal # [sockets] != 1
-[name] == battlescythe && [quality] == normal && [flag] == ethereal # [sockets] != 1
-[name] == battlescythe && [quality] == normal && [flag] != ethereal # [sockets] != 1
+//[name] == scythe && [quality] == normal && [flag] == ethereal # [sockets] != 1
+//[name] == scythe && [quality] == normal && [flag] != ethereal # [sockets] != 1
+//[name] == battlescythe && [quality] == normal && [flag] == ethereal # [sockets] != 1
+//[name] == battlescythe && [quality] == normal && [flag] != ethereal # [sockets] != 1
 [name] == thresher && [quality] == normal && [flag] == ethereal # [sockets] != 1
-[name] == thresher && [quality] == normal && [flag] != ethereal # [sockets] != 1
+//[name] == thresher && [quality] == normal && [flag] != ethereal # [sockets] != 1

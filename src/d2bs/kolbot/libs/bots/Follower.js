@@ -48,7 +48,7 @@
 
 function Follower() {
 	var i, j, stop, leader, leaderUnit, charClass, piece, skill, result, unit, player,
-		commanders = Config.Leaders,
+		commanders = Config.LeaderOptions,
 		attack = true,
 		openContainers = true,
 		classes = ["amazon", "sorceress", "necromancer", "paladin", "barbarian", "druid", "assassin"],
@@ -522,6 +522,7 @@ function Follower() {
 				break;
 			case "town":
 				Pather.makePortal(true); // take the portal to town
+				Town.doChores();
 				break;
 			case "quit":
 			case me.name + " quit":
@@ -667,11 +668,69 @@ function Follower() {
 			var ran = Math.floor(Math.random() * list.length);
 
 			// say the quote
-			say("!" + list[ran]);
+			say(list[ran]);
 		}
 
 		// return
 		return quotetime;
+	};
+
+	// keep log of waypoint already gathered
+	var wp_logbook = [];
+
+	this.hasWaypoint = function ()
+	{
+		var area = me.area;
+		if (wp_logbook.indexOf(me.area) > -1)
+		{
+			return true;
+		}
+
+		return false;
+	};
+
+	this.gatherWaypoint = function ()
+	{
+		if (me.inTown || this.hasWaypoint()) {
+			return;
+		}
+
+		//delay(rand(1, 3) * 500);
+		unit = getUnit(2, "waypoint");
+
+		if (unit) {
+			WPLoop:
+			for (i = 0; i < 3; i += 1) {
+				if (getDistance(me, unit) > 3) {
+					Pather.moveToUnit(unit);
+				}
+
+				unit.interact();
+
+				for (j = 0; j < 100; j += 1) {
+					if (j % 20 === 0) {
+						me.cancel();
+						delay(300);
+						unit.interact();
+					}
+
+					if (getUIFlag(0x14)) {
+						break WPLoop;
+					}
+
+					delay(10);
+				}
+			}
+		}
+
+		if (getUIFlag(0x14)) {
+			say("Waypoint gathered.");
+			wp_logbook.push(me.area); // save to log
+		} else {
+			//say("Failed to gather waypoint.");
+		}
+
+		me.cancel();
 	};
 
 	this.canWormhole = function ()
@@ -781,9 +840,11 @@ function Follower() {
 			Pather.makePortal(true); // flag true to use portal
 
 			// announce
-			//say("Portal is open.");
+			say("Portal is open.");
 		}
 	};
+
+	// BEGIN EXECUTION
 
 	addEventListener("chatmsg", this.chatEvent);
 
@@ -793,6 +854,8 @@ function Follower() {
 	Config.TownMP = 0;
 	charClass = classes[me.classid];
 
+	if (Config.Leader)
+		say("Searching for leader " + Config.Leader + ".");
 	for (i = 0; i < 20; i += 1) {
 		leader = this.getLeader(Config.Leader);
 
@@ -805,12 +868,9 @@ function Follower() {
 
 	if (!leader) {
 		say("Leader not found.");
-		delay(500);
-		say("/save");
-		delay(5000);
 		quit();
 	} else {
-		//say("Leader found.");
+		say("Leader found.");
 	}
 
 	while (!Misc.inMyParty(Config.Leader)) {
@@ -820,6 +880,7 @@ function Follower() {
 	//say("Partied.");
 
 	if (me.inTown) {
+		Town.doChores();
 		Town.move("portalspot");
 	}
 
@@ -894,24 +955,14 @@ function Follower() {
 
 				switch (result) {
 				case 1:
-					//say("Taking exit.");
-					delay(500);
 					Pather.moveToExit(leader.area, true);
-
 					break;
 				case 2:
-					//say("Taking portal.");
-
 					break;
 				case 3:
-					//say("Taking waypoint.");
-					delay(500);
 					Pather.useWaypoint(leader.area, true);
-
 					break;
 				case 4:
-					//say("Special transit.");
-
 					break;
 				}
 
@@ -921,6 +972,9 @@ function Follower() {
 
 				leaderUnit = this.getLeaderUnit(Config.Leader);
 			}
+
+			// look for nearby waypoints
+			this.gatherWaypoint();
 		}
 
 		switch (action) {
@@ -940,47 +994,29 @@ function Follower() {
 			break;
 		case "wp":
 		case me.name + "wp":
+			say("Gathering waypoint.");
+			this.gatherWaypoint();
+
+			break;
+		case "quest":
+		case "quests":
 			if (me.inTown) {
-				break;
+				Config.QuestTownOnly = true;
+				Quester.runQuests();
+				Town.move("portalspot");
+				say("Quest tasks completed.");
 			}
+			break;
+		case "status":
+			Config.QuestTownOnly = true;
+			Quester.runQuests(true); // flag true to only display status
+			break;
+		case "reload":
+			say("Reloading.");
 
-			delay(rand(1, 3) * 500);
-
-			unit = getUnit(2, "waypoint");
-
-			if (unit) {
-WPLoop:
-				for (i = 0; i < 3; i += 1) {
-					if (getDistance(me, unit) > 3) {
-						Pather.moveToUnit(unit);
-					}
-
-					unit.interact();
-
-					for (j = 0; j < 100; j += 1) {
-						if (j % 20 === 0) {
-							me.cancel();
-							delay(300);
-							unit.interact();
-						}
-
-						if (getUIFlag(0x14)) {
-							break WPLoop;
-						}
-
-						delay(10);
-					}
-				}
-			}
-
-			if (getUIFlag(0x14)) {
-				say("Got waypoint.");
-			} else {
-				say("Failed to get waypoint.");
-			}
-
-			me.cancel();
-
+			break;
+		case "cube":
+			Cubing.doCubing();
 			break;
 		case "c":
 			if (!me.inTown) {
@@ -1001,7 +1037,7 @@ WPLoop:
 			break;
 		case "1":
 			if (me.inTown) {
-				//say("Going outside.");
+				say("Going outside.");
 				Town.goToTown(this.checkLeaderAct(leader));
 				Town.move("portalspot");
 
@@ -1019,16 +1055,19 @@ WPLoop:
 		case "2":
 			if (!me.inTown) {
 				delay(150);
-				//say("Going to town.");
+				say("Going to town.");
 				Pather.usePortal(null, leader.name);
 
-				// spread out
-				Pather.moveTo(me.x + rand(-6, 6), me.y + rand(-6, 6));
+				// do chores
+				Town.doChores();
+
+				// move to portal
+				Town.move("portalspot");
 			}
 			else
 			{
 				if (leader.inTown && this.checkLeaderAct(leader) !== me.act) {
-					//say("Going to leader's town.");
+					say("Going to leader's town.");
 					Town.goToTown(this.checkLeaderAct(leader));
 					Town.move("portalspot");
 				}
@@ -1037,7 +1076,7 @@ WPLoop:
 			break;
 		case "3":
 			if (me.inTown) {
-				//say("Running town chores.");
+				say("Running town chores.");
 				Town.doChores();
 				Town.move("portalspot");
 				say("Ready.");

@@ -13,6 +13,9 @@
 [name] == ring && [quality] == unique # [lifeleech] >= 6 // carrion wind
 [name] == ring && [quality] == unique # [poisonresist] <= 30 // nature's peace
 [name] == ring && [quality] == unique # [itemabsorblightpercent] >= 20 && [itemmagicbonus] >= 10 // wisp projector
+///////
+[type] == ring && [quality] == set # [lifeleech] == 6 && [normaldamagereduction] == 2 // cathan's seal
+//[type] == ring && [quality] == set # [maxhp] == 20 // angelic halo
 
 // amulets
 [name] == amulet && [quality] == unique # [itemfastergethitrate] == 20 // nokozan relic
@@ -26,4 +29,13 @@
 [name] == amulet && [quality] == unique # [ias] == 20 && [lightresist] == 35 // highlord's wrath
 [name] == amulet && [quality] == unique # [strength] == 5 // mara's kaleidoscope
 [name] == amulet && [quality] == unique # [tohit] >= 400 // metalgrid
+///////
+//[type] == amulet && [quality] == set # [itemlightradius] == 3 && [itemdamagetomana] == 20 // angelic wings
+[type] == amulet && [quality] == set # [maxmana] == 15 // arcanna's sign
+[type] == amulet && [quality] == set # [fhr] == 10 && [lightmaxdam] == 5 // cathan's sigil
+[type] == amulet && [quality] == set # [manarecovery] == 40 && [hpregen] == 4 // civerb's icon
+[type] == amulet && [quality] == set # [poisonresist] == 30 && [poisonlength] == -75 // iratha's collar
+[type] == amulet && [quality] == set # [magicdamagereduction] == 1 && [normaldamagereduction] == 2 // tancred's weird
+[type] == amulet && [quality] == set # [coldresist] == 20 && [maxmana] == 15 // vidala's snare
+[type] == amulet && [quality] == set # [itemallskills] == 1 && [coldresist] == 18 // telling of beads
 [type] == amulet && [quality] == set # [sorceressskills] == 2 // tal rasha's adjucation

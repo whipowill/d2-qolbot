@@ -14,6 +14,7 @@ var Skill = {
 		case 10: // Jab
 		case 14: // Power Strike
 		case 19: // Impale
+		case 24: // Charged Strike
 		case 30: // Fend
 		case 34: // Lightning Strike
 		case 73: // Poison Dagger
@@ -90,7 +91,6 @@ var Skill = {
 			}
 
 			return 15;
-		case 24: // Charged Strike
 		case 47:
 		case 51:
 		case 53:

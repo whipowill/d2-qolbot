@@ -290,12 +290,11 @@ Loop:
 
 var Storage = new function () {
 	this.Init = function () {
-		this.StashY = me.gametype === 0 ? 4 : 10;
-		this.Inventory = new Container("Inventory", 10, 4, 3);
-		this.TradeScreen = new Container("Inventory", 10, 4, 5);
-		this.Stash = new Container("Stash", 10, this.StashY, 7);
+		this.Inventory = new Container("Inventory", Config.StorageSizeInventory[0], Config.StorageSizeInventory[1], 3);
+		this.TradeScreen = new Container("Inventory", Config.StorageSizeTrade[0], Config.StorageSizeTrade[1], 5);
+		this.Stash = new Container("Stash", Config.StorageSizeStash[0], Config.StorageSizeStash[1], 7);
 		this.Belt = new Container("Belt", 4 * this.BeltSize(), 1, 2);
-		this.Cube = new Container("Horadric Cube", 3, 4, 6);
+		this.Cube = new Container("Horadric Cube", Config.StorageSizeCube[0], Config.StorageSizeCube[1], 6);
 		this.InvRef = [];
 
 		this.Reload();
