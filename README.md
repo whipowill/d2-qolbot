@@ -16,7 +16,8 @@ Most of my work on this code involves the ``Follower.js`` and ``Quester.js`` fil
 
 - Gallows humor remarks as you play
 - Capture waypoints as you go
-- Complete quests as you go (work in progress)
+- Pickup quest items as you go
+- Complete quests as they are able in town
 - Custom inventory sizes to accomodate your mods
 - Infinite stash support for PlugY
 
@@ -75,19 +76,13 @@ Most of my work on this code involves the ``Follower.js`` and ``Quester.js`` fil
 - ``move`` - bots will shuffle around (use when stuck)
 - ``prep`` - bots will get prepared for battle (use for summons that take time)
 - ``status`` - bots will report quest progress
-- ``<BOTNAME> portal <DESTINATION>`` - dispatch a Sorceress a desired place and open a portal
+- ``<BOTNAME> portal <DESTINATION>`` - dispatch a Sorceress to a desired place and open a portal there
 	- Act 1 - ``countess``, ``mausoleum``, ``pit``, ``andariel``
 	- Act 2 - ``tunnels``, ``summoner``, ``duriel``
 	- Act 3 - ``temple``, ``mephisto``
 	- Act 4 - ``diablo``
 	- Act 5 - ``halls``, ``baal``
-
-## Console
-
-- Press ``Pause/Break`` key to pause the bot.
-- Press ``+`` on the numpad to bring up ingame console:
-	- Type ``reload`` to reload the bot / restart quests.
-	- Type ``getMouseCoords(1)`` to get X,Y location of cursor on map.
+- ``<BOTNAME> s`` - pause/unpause a specific bot
 
 ## Issues
 

@@ -4,10 +4,19 @@
 *	@desc		handle player quests
 */
 
+// Some notes about how quests work in parties.  When in a party
+// all the players will get the quest progress that you get, even if they
+// don't pick up all the items or talk to all the quest givers.  The
+// only thing that they must do is some items have to be picked up
+// and consumed, like the Book of Skill.  These items are handled in
+// C:\your\path\to\d2-qolbot\src\d2bs\kolbot\pickit\QOL\Quest.nip
+// and requires that your config allows inventory space for the items
+// to be picked up.
+
 var Quester = {
 
 	quests: [
-		// questid, script, act, questnum, title
+		// act, quest_num, title, quest_id, script
 		[1, 1, "Den of Evil", 1, "act1_den_of_evil"],
 		[1, 2, "Sister's Burial Grounds", 2, "act1_sisters_burial_grounds"],
 		[1, 3, "Search for Cain", 4, "act1_search_for_cain"],
@@ -23,10 +32,10 @@ var Quester = {
 		[2, 6, "Seven Tombs", 14, "act2_seven_tombs"],
 
 		[3, 1, "Golden Bird", 20, "act3_golden_bird"],
-		[3, 2, "Blade of the Old Religion", 17, "act3_lam_esens_tome"],
+		[3, 2, "Blade of the Old Religion", 19, "act3_blade_of_the_old_religion"],
 		[3, 3, "Khalim's Will", 18, "act3_khalims_will"],
-		[3, 4, "Blackened Temple", 19, "act3_blade_of_the_old_religion"],
-		[3, 5, "Lam Essen's Tome", 21, "act3_blackened_temple"],
+		[3, 4, "Lam Essen's Tome", 17, "act3_lam_esens_tome"],
+		[3, 5, "Blackened Temple", 21, "act3_blackened_temple"],
 		[3, 6, "The Guardian", 22, "act3_guardian"],
 
 		[4, 1, "Fallen Angel", 25, "act4_fallen_angel"],
@@ -38,7 +47,7 @@ var Quester = {
 		[5, 3, "Prison of Ice", 37, "act5_prison_of_ice"],
 		[5, 4, "Betrayal of Haggorath", 38, "act5_betrayal_of_haggorath"],
 		[5, 5, "Rite of Passage", 39, "act5_rite_of_passage"],
-		[5, 6, "Rite of Passage", 40, "act5_eve_of_destruction"],
+		[5, 6, "Eve of Destruction", 40, "act5_eve_of_destruction"],
 	],
 
 	getQuestProgress: function (quest_id)
@@ -55,17 +64,22 @@ var Quester = {
 		//3-10 = Parts of Quest Complete Varies by Quest
 		//12 = Quest Box Filled in
 		if (me.getQuest(quest_id, 0)) progress = 100;
-		else if (me.getQuest(quest_id, 1)) progress = 90;
-		else if (me.getQuest(quest_id, 2)) progress = 90;
-		else if (me.getQuest(quest_id, 3)) progress = 80;
-		else if (me.getQuest(quest_id, 4)) progress = 70;
-		else if (me.getQuest(quest_id, 5)) progress = 60;
-		else if (me.getQuest(quest_id, 6)) progress = 50;
-		else if (me.getQuest(quest_id, 7)) progress = 40;
-		else if (me.getQuest(quest_id, 8)) progress = 30;
-		else if (me.getQuest(quest_id, 9)) progress = 20;
-		else if (me.getQuest(quest_id, 10)) progress = 10;
-		else if (me.getQuest(quest_id, 12)) progress = 0;
+		/*
+		For some reason none of these responses really work.  I've tested
+		in multiplayer extensively, it's always just bogus.  The only one
+		that works is "is complete" or not.
+		else if (me.getQuest(quest_id, 1)) progress = 10;
+		else if (me.getQuest(quest_id, 2)) progress = 20;
+		else if (me.getQuest(quest_id, 3)) progress = 30;
+		else if (me.getQuest(quest_id, 4)) progress = 40;
+		else if (me.getQuest(quest_id, 5)) progress = 50;
+		else if (me.getQuest(quest_id, 6)) progress = 60;
+		else if (me.getQuest(quest_id, 7)) progress = 70;
+		else if (me.getQuest(quest_id, 8)) progress = 80;
+		else if (me.getQuest(quest_id, 9)) progress = 90;
+		else if (me.getQuest(quest_id, 10)) progress = 95;
+		else if (me.getQuest(quest_id, 12)) progress = 1;
+		*/
 
 		return progress;
 	},
@@ -1398,6 +1412,9 @@ var Quester = {
 
 			// back to town
 			Town.goToTown(5);
+
+			// idle if questing
+			this.idle();
 		}
 
 		// return
@@ -1412,128 +1429,127 @@ var Quester = {
 	{
 		var i, j;
 
-		// if questing...
-		if (1) {
-			// do quests...
-			for (i = 0; i < this.quests.length; i += 1)
+		// do quests...
+		for (i = 0; i < this.quests.length; i += 1)
+		{
+			// init
+			var pass = true;
+			var progress = 0;
+
+			var quest_act = this.quests[i][0];
+			var quest_num = this.quests[i][1];
+			var quest_title = this.quests[i][2];
+			var quest_id = this.quests[i][3];
+			var quest_script = this.quests[i][4];
+
+			// check access to this act
+			if (!Pather.accessToAct(quest_act)) pass = false;
+
+			// if town chores only and not in right town, skip
+			// REFERENCE: var towns = [1, 40, 75, 103, 109];
+			var town_area = 0;
+			if (quest_act == 1) town_area = 1;
+			else if (quest_act == 2) town_area = 40;
+			else if (quest_act == 3) town_area = 75;
+			else if (quest_act == 4) town_area = 103;
+			else if (quest_act == 5) town_area = 109;
+			if (Config.QuestTownOnly && me.area != town_area) pass = false;
+
+			if (pass)
 			{
-				// init
-				var pass = true;
-				var progress = 0;
+				var progress = this.getQuestProgress(quest_id);
 
-				var quest_act = this.quests[i][0];
-				var quest_num = this.quests[i][1];
-				var quest_title = this.quests[i][2];
-				var quest_id = this.quests[i][3];
-				var quest_script = this.quests[i][4];
+				if (is_status_only)
+					say('Act ' + quest_act + ' - Quest #' + quest_num + ' - "' + quest_title + '" is ' + progress + ' complete.');
 
-				// check access to this act
-				if (!Pather.accessToAct(quest_act)) pass = false;
+				// if quest already complete, skip
+				if (progress >= 100) pass = false;
 
-				// if town chores only and not in right town, skip
-				// REFERENCE: var towns = [1, 40, 75, 103, 109];
-				var town_area = 0;
-				if (quest_act == 1) town_area = 1;
-				else if (quest_act == 2) town_area = 40;
-				else if (quest_act == 3) town_area = 75;
-				else if (quest_act == 4) town_area = 103;
-				else if (quest_act == 5) town_area = 109;
-				if (Config.QuestTownOnly && me.area != town_area) pass = false;
-
-				if (pass)
+				// if quests charsi, larzuk, or anya...
+				if (quest_id == 3 || quest_id == 35 || quest_id == 38)
 				{
-					var progress = this.getQuestProgress(quest_id);
-
-					if (is_status_only)
-						say('Act ' + quest_act + ' - Quest #' + quest_num + ' - "' + quest_title + '" is ' + progress + ' complete.');
-
-					// if quest already complete, skip
-					if (progress >= 100) pass = false;
-
-					// if quests charsi, larzuk, or anya...
-					if (quest_id == 3 || quest_id == 35 || quest_id == 38)
-					{
-						// if quest partially complete, skip
-						if (progress >= 50) pass = false;
-					}
-				}
-
-				// if we intend to do the quest...
-				if (pass && !is_status_only)
-				{
-					// report to console
-					print(quest_script);
-
-					// report
-					//say('Attempting "' + quest_title + '"...');
-
-					// attempt to do it 3 times...
-					for (j = 0; j < 3; j += 1) {
-						try {
-							if (this[quest_script](progress)) {
-								break;
-							}
-						} catch (e) {
-
-						}
-					}
-
-					if (j === 3) {
-						//say('Quest "' + this.quests[i][1] + '" failed.');
-					}
-					else
-					{
-						say('Act ' + quest_act + ' - Quest #' + quest_num + ' - "' + quest_title + '" is complete.');
-					}
+					// if quest partially complete, skip
+					if (progress >= 50) pass = false;
 				}
 			}
 
-			// idle
-			//this.idle();
+			// if we intend to do the quest...
+			if (pass && !is_status_only)
+			{
+				// report to console
+				print(quest_script);
 
-			// die
-			//D2Bot.stop();
+				// report
+				//say('Attempting "' + quest_title + '"...');
+
+				// progress detect doesn't work, for now, so just lie
+				// the bot will end up talking to everybody in town
+				progress = 50;
+
+				// attempt to do it 3 times...
+				for (j = 0; j < 3; j += 1) {
+					try {
+						if (this[quest_script](progress)) {
+							break;
+						}
+					} catch (e) {
+
+					}
+				}
+
+				// if completed, report
+				if (this.getQuestProgress(quest_id) >= 100)
+				{
+					say('Act ' + quest_act + ' - Quest #' + quest_num + ' - "' + quest_title + '" is complete.');
+				}
+			}
 		}
 
-		// else, if leveling...
-		else {
-			// report
-			print('Leveling in Act ' + Config.Leveling + ".");
+		// idle
+		//this.idle();
 
-			// get ready...
-			Town.heal();
-			Town.doChores();
+		// die
+		//D2Bot.stop();
+	},
 
-			// determine zones to clear
-			switch (Config.Leveling) {
-				case 1:
-					var zones = [3,4,10,5,6,7];
-					break;
-				case 2:
-					var zones = [41,42,43,44];
-					break;
-				case 3:
-					var zones = [76,77,78,79,80,81];
-					break;
-				case 4:
-					var zones = [104];
-					break;
-				case 5:
-					var zones = [110,111,112];
-					break;
-			}
+	grindLevels: function ()
+	{
+		// report
+		print('Leveling in Act ' + Config.Leveling + ".");
 
-			// foreach each zone...
-			for (i = 0; i < zones.length; i += 1) {
-				// travel to
-				Pather.journeyTo(zones[i]);
+		// get ready...
+		Town.heal();
+		Town.doChores();
 
-				// clear level
-				Attack.clearLevel();
+		// determine zones to clear
+		switch (Config.Leveling) {
+			case 1:
+				var zones = [3,4,10,5,6,7];
+				break;
+			case 2:
+				var zones = [41,42,43,44];
+				break;
+			case 3:
+				var zones = [76,77,78,79,80,81];
+				break;
+			case 4:
+				var zones = [104];
+				break;
+			case 5:
+				var zones = [110,111,112];
+				break;
+		}
 
-				// get waypoint
-				Pather.getWP(zones[i]);
-			}
+		// foreach each zone...
+		for (i = 0; i < zones.length; i += 1) {
+			// travel to
+			Pather.journeyTo(zones[i]);
+
+			// clear level
+			Attack.clearLevel();
+
+			// get waypoint
+			Pather.getWP(zones[i]);
 		}
 	}
 };

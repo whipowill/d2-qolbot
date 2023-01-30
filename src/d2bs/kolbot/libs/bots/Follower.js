@@ -522,7 +522,12 @@ function Follower() {
 				break;
 			case "town":
 				Pather.makePortal(true); // take the portal to town
+				// do chores
 				Town.doChores();
+				// do quest chores
+				Config.QuestTownOnly = true;
+				Quester.runQuests();
+				Town.move("portalspot");
 				break;
 			case "quit":
 			case me.name + " quit":
@@ -940,6 +945,9 @@ function Follower() {
 			if (attack) {
 				Attack.clear(20, false, false, false, false);
 				this.pickPotions(20);
+
+				// look for nearby quest items
+				Pickit.pickItems();
 			}
 
 			if (me.classid === 3 && Config.AttackSkill[2] > 0) {
@@ -978,150 +986,142 @@ function Follower() {
 		}
 
 		switch (action) {
-		case "cow":
-			if (me.area === 1) {
-				Town.move("portalspot");
+			case "cow":
+				if (me.area === 1) {
+					Town.move("portalspot");
 
-				if (!Pather.usePortal(39)) {
-					say("Failed to use cow portal.");
+					if (!Pather.usePortal(39)) {
+						say("Failed to use cow portal.");
+					}
 				}
-			}
-
-			break;
-		case "move":
-			Pather.moveTo(me.x + rand(-5, 5), me.y + rand(-5, 5));
-
-			break;
-		case "wp":
-		case me.name + "wp":
-			say("Gathering waypoint.");
-			this.gatherWaypoint();
-
-			break;
-		case "quest":
-		case "quests":
-			if (me.inTown) {
+				break;
+			case "move":
+				Pather.moveTo(me.x + rand(-5, 5), me.y + rand(-5, 5));
+				break;
+			case "wp":
+			case me.name + "wp":
+				say("Gathering waypoint.");
+				this.gatherWaypoint();
+				break;
+			case "status":
 				Config.QuestTownOnly = true;
-				Quester.runQuests();
-				Town.move("portalspot");
-				say("Quest tasks completed.");
-			}
-			break;
-		case "status":
-			Config.QuestTownOnly = true;
-			Quester.runQuests(true); // flag true to only display status
-			break;
-		case "reload":
-			say("Reloading.");
+				Quester.runQuests(true); // flag true to only display status
+				break;
+			case "reload":
+				say("Reloading.");
+				// doesn't work
+				break;
+			case "cube":
+				Cubing.doCubing();
+				break;
+			case "c":
+				if (!me.inTown) {
+					Town.getCorpse();
+				}
 
-			break;
-		case "cube":
-			Cubing.doCubing();
-			break;
-		case "c":
-			if (!me.inTown) {
-				Town.getCorpse();
-			}
+				break;
+			case "p":
+				say("!Picking items.");
+				Pickit.pickItems();
 
-			break;
-		case "p":
-			say("!Picking items.");
-			Pickit.pickItems();
+				if (openContainers) {
+					this.openContainers(20);
+				}
 
-			if (openContainers) {
-				this.openContainers(20);
-			}
+				say("!Done picking.");
 
-			say("!Done picking.");
+				break;
+			case "1":
+				if (me.inTown) {
+					say("Going outside.");
+					Town.goToTown(this.checkLeaderAct(leader));
+					Town.move("portalspot");
 
-			break;
-		case "1":
-			if (me.inTown) {
-				say("Going outside.");
-				Town.goToTown(this.checkLeaderAct(leader));
-				Town.move("portalspot");
+					if (!Pather.usePortal(null, leader.name)) {
+						break;
+					}
 
-				if (!Pather.usePortal(null, leader.name)) {
+					while (!this.getLeaderUnit(Config.Leader) && !me.dead) {
+						Attack.clear(10);
+						delay(200);
+					}
+				}
+
+				break;
+			case "2":
+				if (!me.inTown) {
+					delay(150);
+					say("Going to town.");
+					Pather.usePortal(null, leader.name);
+
+					// do chores
+					Town.doChores();
+
+					// do quest chores
+					Config.QuestTownOnly = true;
+					Quester.runQuests();
+
+					// move to portal
+					Town.move("portalspot");
+				}
+				else
+				{
+					if (leader.inTown && this.checkLeaderAct(leader) !== me.act) {
+						say("Going to leader's town.");
+						Town.goToTown(this.checkLeaderAct(leader));
+						Town.move("portalspot");
+					}
+				}
+
+				break;
+			case "3":
+				if (me.inTown) {
+					say("Running town chores.");
+					Town.doChores();
+					Town.move("portalspot");
+					say("Ready.");
+				}
+
+				break;
+			case "h":
+				if (me.classid === 4) {
+					Skill.cast(130);
+				}
+
+				break;
+			case "bo":
+				if (me.classid === 4) {
+					Precast.doPrecast(true);
+				}
+
+				break;
+			case "a2":
+			case "a3":
+			case "a4":
+			case "a5":
+				this.changeAct(parseInt(action[1], 10));
+
+				break;
+			case me.name + " tp":
+				unit = me.findItem("tbk", 0, 3);
+
+				if (unit && unit.getStat(70)) {
+					unit.interact();
+
 					break;
 				}
 
-				while (!this.getLeaderUnit(Config.Leader) && !me.dead) {
-					Attack.clear(10);
-					delay(200);
+				unit = me.findItem("tsc", 0, 3);
+
+				if (unit) {
+					unit.interact();
+
+					break;
 				}
-			}
 
-			break;
-		case "2":
-			if (!me.inTown) {
-				delay(150);
-				say("Going to town.");
-				Pather.usePortal(null, leader.name);
-
-				// do chores
-				Town.doChores();
-
-				// move to portal
-				Town.move("portalspot");
-			}
-			else
-			{
-				if (leader.inTown && this.checkLeaderAct(leader) !== me.act) {
-					say("Going to leader's town.");
-					Town.goToTown(this.checkLeaderAct(leader));
-					Town.move("portalspot");
-				}
-			}
-
-			break;
-		case "3":
-			if (me.inTown) {
-				say("Running town chores.");
-				Town.doChores();
-				Town.move("portalspot");
-				say("Ready.");
-			}
-
-			break;
-		case "h":
-			if (me.classid === 4) {
-				Skill.cast(130);
-			}
-
-			break;
-		case "bo":
-			if (me.classid === 4) {
-				Precast.doPrecast(true);
-			}
-
-			break;
-		case "a2":
-		case "a3":
-		case "a4":
-		case "a5":
-			this.changeAct(parseInt(action[1], 10));
-
-			break;
-		case me.name + " tp":
-			unit = me.findItem("tbk", 0, 3);
-
-			if (unit && unit.getStat(70)) {
-				unit.interact();
+				say("No TP scrolls or tomes.");
 
 				break;
-			}
-
-			unit = me.findItem("tsc", 0, 3);
-
-			if (unit) {
-				unit.interact();
-
-				break;
-			}
-
-			say("No TP scrolls or tomes.");
-
-			break;
 		}
 
 		if (action.indexOf("talk") > -1) {
