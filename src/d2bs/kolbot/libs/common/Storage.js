@@ -69,7 +69,8 @@ var Container = function (name, width, height, location) {
 
 		//Insure valid reference.
 		if (typeof (reference) !== "object" || reference.length !== this.buffer.length || reference[0].length !== this.buffer[0].length) {
-			throw new Error("Storage.IsLocked: Invalid inventory reference");
+			//throw new Error("Storage.IsLocked error! Item info: " + item.name + " " + item.y + " " + item.sizey + " " + item.x + " " + item.sizex + " " + item.mode + " " + item.location);
+			Storage.Cube.MoveTo(item);
 		}
 
 		try {

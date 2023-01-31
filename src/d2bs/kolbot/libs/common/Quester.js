@@ -120,7 +120,7 @@ var Quester = {
 		}
 
 		// if never found...
-		if (!find) this.error('Unable to find unit (' + type + ', ' + id + ').');
+		//if (!find) this.error('Unable to find unit (' + type + ', ' + id + ').');
 
 		// return
 		return find;
@@ -480,9 +480,9 @@ var Quester = {
 	/////////////////////////////////////////////////
 	/////////////////////////////////////////////////
 
-	act1_den_of_evil: function (progress)
+	act1_den_of_evil: function (progress, is_town_only)
 	{
-		if (!Config.QuestTownOnly)
+		if (!is_town_only)
 		{
 			// start at town
 			Town.goToTown(1);
@@ -506,9 +506,9 @@ var Quester = {
 		return true;
 	},
 
-	act1_sisters_burial_grounds: function (progress)
+	act1_sisters_burial_grounds: function (progress, is_town_only)
 	{
-		if (!Config.QuestTownOnly)
+		if (!is_town_only)
 		{
 			// start at blood moor
 			Town.goToTown(1);
@@ -533,7 +533,7 @@ var Quester = {
 		return true;
 	},
 
-	act1_search_for_cain: function (progress)
+	act1_search_for_cain: function (progress, is_town_only)
 	{
 		// if we have scroll of inifus...
 	 	if (!me.getItem(524))
@@ -541,7 +541,7 @@ var Quester = {
 			this.townAndTalk('akara');
 		}
 
-		if (!Config.QuestTownOnly)
+		if (!is_town_only)
 		{
 			// start at cold plains
 			Town.goToTown(1);
@@ -574,9 +574,9 @@ var Quester = {
 		return true;
 	},
 
-	act1_forgotten_tower: function (progress)
+	act1_forgotten_tower: function (progress, is_town_only)
 	{
-		if (!Config.QuestTownOnly)
+		if (!is_town_only)
 		{
 			// start at dark wood
 			Town.goToTown(1);
@@ -600,9 +600,9 @@ var Quester = {
 		return true;
 	},
 
-	act1_tools_of_the_trade: function (progress)
+	act1_tools_of_the_trade: function (progress, is_town_only)
 	{
-		if (!Config.QuestTownOnly)
+		if (!is_town_only)
 		{
 			// start at black marsh
 			Town.goToTown(1);
@@ -631,9 +631,9 @@ var Quester = {
 		return true;
 	},
 
-	act1_sisters_to_the_slaughter: function (progress)
+	act1_sisters_to_the_slaughter: function (progress, is_town_only)
 	{
-		if (!Config.QuestTownOnly)
+		if (!is_town_only)
 		{
 			// start at outer cloister
 			Town.goToTown(1);
@@ -671,21 +671,18 @@ var Quester = {
 		{
 			// travel to act 2
 			this.townAndTalk('warriv', 0x0D36);
-
-			// talk to jerhyn
-			this.townAndTalk('jerhyn');
 		}
 
 		// idle if questing
-		if (!Config.QuestTownOnly) this.idle();
+		if (!is_town_only) this.idle();
 
 		// return
 		return true;
 	},
 
-	act2_radaments_lair: function (progress)
+	act2_radaments_lair: function (progress, is_town_only)
 	{
-		if (!Config.QuestTownOnly)
+		if (!is_town_only)
 		{
 			// start at town
 			Town.goToTown(2);
@@ -715,9 +712,9 @@ var Quester = {
 		return true;
 	},
 
-	act2_horadric_staff: function (progress)
+	act2_horadric_staff: function (progress, is_town_only)
 	{
-		if (!Config.QuestTownOnly)
+		if (!is_town_only)
 		{
 			// start at town
 			Town.goToTown(2);
@@ -804,9 +801,9 @@ var Quester = {
 		return true;
 	},
 
-	act2_arcane_sanctuary: function (progress)
+	act2_arcane_sanctuary: function (progress, is_town_only)
 	{
-		if (!Config.QuestTownOnly)
+		if (!is_town_only)
 		{
 			// start at town
 			Town.goToTown(2);
@@ -845,9 +842,9 @@ var Quester = {
 		return true;
 	},
 
-	act2_seven_tombs: function (progress)
+	act2_seven_tombs: function (progress, is_town_only)
 	{
-		if (!Config.QuestTownOnly)
+		if (!is_town_only)
 		{
 			// start at town
 			Town.goToTown(2);
@@ -899,15 +896,15 @@ var Quester = {
 		}
 
 		// idle if questing
-		if (!Config.QuestTownOnly) this.idle();
+		if (!is_town_only) this.idle();
 
 		// return
 		return true;
 	},
 
-	act3_khalims_will: function (progress)
+	act3_khalims_will: function (progress, is_town_only)
 	{
-		if (!Config.QuestTownOnly)
+		if (!is_town_only)
 		{
 			// start at town
 			Town.goToTown(3);
@@ -982,7 +979,7 @@ var Quester = {
 			this.cubeAndCreate(174, 553, 554, 555, 173);
 		}
 
-		if (!Config.QuestTownOnly)
+		if (!is_town_only)
 		{
 			// if we have khalim's will...
 			if (me.getItem(174))
@@ -1005,9 +1002,9 @@ var Quester = {
 		return true;
 	},
 
-	act3_blade_of_the_old_religion: function (progress)
+	act3_blade_of_the_old_religion: function (progress, is_town_only)
 	{
-		if (!Config.QuestTownOnly)
+		if (!is_town_only)
 		{
 			// start at town
 			Town.goToTown(3);
@@ -1038,9 +1035,9 @@ var Quester = {
 		return true;
 	},
 
-	act3_lam_esens_tome: function (progress)
+	act3_lam_esens_tome: function (progress, is_town_only)
 	{
-		if (!Config.QuestTownOnly)
+		if (!is_town_only)
 		{
 			// start at town
 			Town.goToTown(3);
@@ -1068,9 +1065,9 @@ var Quester = {
 		return true;
 	},
 
-	act3_guardian: function (progress)
+	act3_guardian: function (progress, is_town_only)
 	{
-		if (!Config.QuestTownOnly)
+		if (!is_town_only)
 		{
 			// start at town
 			Town.goToTown(3);
@@ -1094,15 +1091,15 @@ var Quester = {
 		}
 
 		// idle if questing
-		if (!Config.QuestTownOnly) this.idle();
+		if (!is_town_only) this.idle();
 
 		// return
 		return true;
 	},
 
-	act4_fallen_angel: function (progress)
+	act4_fallen_angel: function (progress, is_town_only)
 	{
-		if (!Config.QuestTownOnly)
+		if (!is_town_only)
 		{
 			// start at town
 			Town.goToTown(4);
@@ -1124,7 +1121,7 @@ var Quester = {
 
 		if (progress >= 50) this.talkToNPC('tyrael');
 
-		if (!Config.QuestTownOnly)
+		if (!is_town_only)
 		{
 			// clear plains of despair
 			this.clearAndCapture(105);
@@ -1137,9 +1134,9 @@ var Quester = {
 		return true;
 	},
 
-	act4_hells_forge: function (progress)
+	act4_hells_forge: function (progress, is_town_only)
 	{
-		if (!Config.QuestTownOnly)
+		if (!is_town_only)
 		{
 			// start at town
 			Town.goToTown(4);
@@ -1171,9 +1168,9 @@ var Quester = {
 		return true;
 	},
 
-	act4_terrors_end: function (progress)
+	act4_terrors_end: function (progress, is_town_only)
 	{
-		if (!Config.QuestTownOnly)
+		if (!is_town_only)
 		{
 			// start at town
 			Town.goToTown(4);
@@ -1197,15 +1194,15 @@ var Quester = {
 		}
 
 		// idle if questing
-		if (!Config.QuestTownOnly) this.idle();
+		if (!is_town_only) this.idle();
 
 		// return
 		return true;
 	},
 
-	act5_seige_on_haggorath: function (progress)
+	act5_seige_on_haggorath: function (progress, is_town_only)
 	{
-		if (!Config.QuestTownOnly)
+		if (!is_town_only)
 		{
 			// start at town
 			Town.goToTown(5);
@@ -1218,9 +1215,9 @@ var Quester = {
 		return true;
 	},
 
-	act5_rescue_on_mount_arreat: function (progress)
+	act5_rescue_on_mount_arreat: function (progress, is_town_only)
 	{
-		if (!Config.QuestTownOnly)
+		if (!is_town_only)
 		{
 			// start at town
 			Town.goToTown(5);
@@ -1266,9 +1263,9 @@ var Quester = {
 		return true;
 	},
 
-	act5_prison_of_ice: function (progress)
+	act5_prison_of_ice: function (progress, is_town_only)
 	{
-		if (!Config.QuestTownOnly)
+		if (!is_town_only)
 		{
 			// start at town
 			Town.goToTown(5);
@@ -1323,15 +1320,18 @@ var Quester = {
 			var scroll = me.getItem(646);
 			if (scroll)
 				clickItem(1, scroll);
+
+			// talk to anya
+			this.townAndTalk('anya');
 		}
 
 		// return
 		return true;
 	},
 
-	act5_betrayal_of_haggorath: function (progress)
+	act5_betrayal_of_haggorath: function (progress, is_town_only)
 	{
-		if (!Config.QuestTownOnly)
+		if (!is_town_only)
 		{
 			// start at town
 			Town.goToTown(5);
@@ -1362,9 +1362,9 @@ var Quester = {
 		return true;
 	},
 
-	act5_rite_of_passage: function (progress)
+	act5_rite_of_passage: function (progress, is_town_only)
 	{
-		if (!Config.QuestTownOnly)
+		if (!is_town_only)
 		{
 			// start at town
 			Town.goToTown(5);
@@ -1394,9 +1394,9 @@ var Quester = {
 		return true;
 	},
 
-	act5_eve_of_destruction: function (progress)
+	act5_eve_of_destruction: function (progress, is_town_only)
 	{
-		if (!Config.QuestTownOnly)
+		if (!is_town_only)
 		{
 			// start at town
 			Town.goToTown(5);
@@ -1425,7 +1425,7 @@ var Quester = {
 	/////////////////////////////////////////////////
 	/////////////////////////////////////////////////
 
-	runQuests: function (is_status_only = false)
+	runQuests: function (is_town_only = false, is_status_only = false)
 	{
 		var i, j;
 
@@ -1453,14 +1453,17 @@ var Quester = {
 			else if (quest_act == 3) town_area = 75;
 			else if (quest_act == 4) town_area = 103;
 			else if (quest_act == 5) town_area = 109;
-			if (Config.QuestTownOnly && me.area != town_area) pass = false;
+			if (is_town_only && me.area != town_area) pass = false;
 
 			if (pass)
 			{
 				var progress = this.getQuestProgress(quest_id);
 
 				if (is_status_only)
-					say('Act ' + quest_act + ' - Quest #' + quest_num + ' - "' + quest_title + '" is ' + progress + ' complete.');
+				{
+					if (progress >= 100)
+						say('Act ' + quest_act + ' - #' + quest_num + ' - "' + quest_title + '" is complete.');
+				}
 
 				// if quest already complete, skip
 				if (progress >= 100) pass = false;
@@ -1489,7 +1492,7 @@ var Quester = {
 				// attempt to do it 3 times...
 				for (j = 0; j < 3; j += 1) {
 					try {
-						if (this[quest_script](progress)) {
+						if (this[quest_script](progress, is_town_only)) {
 							break;
 						}
 					} catch (e) {
@@ -1500,7 +1503,7 @@ var Quester = {
 				// if completed, report
 				if (this.getQuestProgress(quest_id) >= 100)
 				{
-					say('Act ' + quest_act + ' - Quest #' + quest_num + ' - "' + quest_title + '" is complete.');
+					say('Act ' + quest_act + ' - #' + quest_num + ' - "' + quest_title + '" is complete.');
 				}
 			}
 		}

@@ -9,6 +9,7 @@ include("Gambling.js");
 include("CraftingSystem.js");
 include("TorchSystem.js");
 include("MuleLogger.js");
+include("modules/sdk.js"); // the only scripts that use this are AutoSkill and AutoStat
 include("common/Attack.js");
 include("common/Cubing.js");
 include("common/CollMap.js");
@@ -169,6 +170,15 @@ function main() {
 	// Next game = drop keys
 	if (TorchSystem.keyCheck()) {
 		scriptBroadcast("torch");
+	}
+
+	// Auto skill and stat
+	if (Config.AutoSkill.Enabled && include("common/AutoSkill.js")) {
+		AutoSkill.init(Config.AutoSkill.Build, Config.AutoSkill.Save);
+	}
+
+	if (Config.AutoStat.Enabled && include("common/AutoStat.js")) {
+		AutoStat.init(Config.AutoStat.Build, Config.AutoStat.Save, Config.AutoStat.BlockChance, Config.AutoStat.UseBulk);
 	}
 
 	// Go

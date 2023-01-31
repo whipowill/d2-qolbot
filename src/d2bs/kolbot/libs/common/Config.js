@@ -160,6 +160,11 @@ var Config = {
 		[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
 		[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 	],
+	InfiniteStash: false, // whipowill - if using plugy or not
+	StorageSizeInventory: [10, 4], // whipowill - default is 10x4
+	StorageSizeTrade: [10, 4], // whipowill - default is 10x4
+	StorageSizeStash: [6, 8], // whipowill - default is 6x8
+	StorageSizeCube: [3, 4], //whipowill -  default is 3x4
 	PublicMode: false,
 	PartyAfterScript: false,
 	Greetings: [],
@@ -407,7 +412,12 @@ var Config = {
 		GameLength: 3
 	},
 	Follower: {
-		Leader: ""
+		Leader: "",
+		LeaderOptions: [], // whipowill - only will allow a leader of this group
+		DarkQuotes: false // whipowill - allows gallows humor comments
+	},
+	Quester: {
+		Questing: false // whipowill - instructs instance scripts to not do certain things
 	},
 	Mephisto: {
 		MoatTrick: false,
@@ -484,6 +494,18 @@ var Config = {
 	Rushee: {
 		Quester: false,
 		Bumper: false
+	},
+	AutoSkill: {
+		Enabled: false,
+		Build: [],
+		Save: 0
+	},
+	AutoStat: {
+		Enabled: false,
+		Build: [],
+		Save: 0,
+		BlockChance: 0,
+		UseBulk: true
 	},
 	AutoBuild: {
 		Enabled: false,

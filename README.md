@@ -10,20 +10,20 @@ This is a fork of an old version of Kolbot w/ some bug fixes.
 
 ## Vision
 
-Most of my work on this code involves the ``Follower.js`` and ``Quester.js`` files.  My goal is to create an experience where the bots will join your games and play with you and automatically do the things a normal person would do.  They crack jokes, they gather waypoints, they complete quests, they gear up, they choose skills, they gamble, etc.
+Most of my work on this code involves the ``Follower.js`` and ``Quester.js`` files.  My goal is to create an experience where the bots will join your games and play with you and automatically do the things a normal person would do.  They crack jokes, gather waypoints, complete quests, gear up, choose skills, gamble, etc.
 
 ### Features
 
-- Gallows humor remarks as you play
-- Capture waypoints as you go
-- Pickup quest items as you go
+- Gallows humor remarks as they play
+- Capture waypoints as they play
+- Pickup quest items as they play
+- Allocate stat/skill points as they play
 - Complete quests as they are able in town
 - Custom inventory sizes to accomodate your mods
 - Infinite stash support for PlugY
 
 ### Todo
 
-- Experiment w/ AutoBuild abilities
 - Experiment w/ AutoEquip abilities
 
 ## Install

@@ -58,6 +58,9 @@ function LoadConfig()
 	Config.Dodge = true; // Move away from monsters that get too close. Don't use with short-ranged attacks like Poison Dagger.
 	Config.DodgeRange = 15; // Distance to keep from monsters.
 
-	Config.AutoBuild.Enabled = false;
-	Config.AutoBuild.Template = "BuildName";
+	Config.AutoSkill.Enabled = false; // Enable or disable AutoSkill system
+	Config.AutoSkill.Build = [];
+
+	Config.AutoStat.Enabled = false; // Enable or disable AutoStat system
+	Config.AutoStat.Build = Config.AutoStat.preset_caster; // prefilled options are "Config.AutoStat.preset_melee" or "Config.AutoStat.preset_caster"
 }

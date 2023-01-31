@@ -57,6 +57,32 @@ function Follower() {
 	// https://www.quoteambition.com/darkest-dungeon-quotes/
 	var quotetime = 0;
 	var quotes = JSON.parse(FileTools.readText("libs/config/Quotes/quotes.json"));
+	this.doChores = function () {
+		say("Running town chores.");
+
+		// do chores
+		Town.doChores();
+
+		// do quest chores
+		Quester.runQuests(true);
+
+		// check skill points to spend
+		if (Config.AutoSkill.Enabled) {
+			AutoSkill.init(Config.AutoSkill.Build, Config.AutoSkill.Save);
+		}
+
+		// check stat points to spend
+		if (Config.AutoStat.Enabled) {
+			AutoStat.init(Config.AutoStat.Build, Config.AutoStat.Save, Config.AutoStat.BlockChance, Config.AutoStat.UseBulk);
+		}
+
+		// move to portal
+		Town.move("portalspot");
+
+		// report
+		say("Ready.");
+	}
+
 
 	// Get leader's Party Unit
 	this.getLeader = function (name) {
@@ -522,12 +548,7 @@ function Follower() {
 				break;
 			case "town":
 				Pather.makePortal(true); // take the portal to town
-				// do chores
-				Town.doChores();
-				// do quest chores
-				Config.QuestTownOnly = true;
-				Quester.runQuests();
-				Town.move("portalspot");
+				this.doChores();
 				break;
 			case "quit":
 			case me.name + " quit":
@@ -885,8 +906,7 @@ function Follower() {
 	//say("Partied.");
 
 	if (me.inTown) {
-		Town.doChores();
-		Town.move("portalspot");
+		this.doChores();
 	}
 
 	// Main Loop
@@ -1004,8 +1024,7 @@ function Follower() {
 				this.gatherWaypoint();
 				break;
 			case "status":
-				Config.QuestTownOnly = true;
-				Quester.runQuests(true); // flag true to only display status
+				Quester.runQuests(true, true); // flag true to only display status
 				break;
 			case "reload":
 				say("Reloading.");
@@ -1053,16 +1072,7 @@ function Follower() {
 					delay(150);
 					say("Going to town.");
 					Pather.usePortal(null, leader.name);
-
-					// do chores
-					Town.doChores();
-
-					// do quest chores
-					Config.QuestTownOnly = true;
-					Quester.runQuests();
-
-					// move to portal
-					Town.move("portalspot");
+					this.doChores();
 				}
 				else
 				{
@@ -1076,10 +1086,7 @@ function Follower() {
 				break;
 			case "3":
 				if (me.inTown) {
-					say("Running town chores.");
-					Town.doChores();
-					Town.move("portalspot");
-					say("Ready.");
+					this.doChores();
 				}
 
 				break;
