@@ -47,16 +47,15 @@ function LoadDefaultConfig()
 	// INVENTORY
 	/////////////////////////////////////////////////
 
-	Config.Inventory[0] = [1,1,1,1,1,1,1,1,1,1]; // if you don't leave any spots open, bots won't pickup quest items
+	Config.Inventory[0] = [0,0,0,0,0,1,1,1,1,1]; // if you don't leave any spots open, bots won't pickup quest items
 	Config.Inventory[1] = Config.Inventory[0];
 	Config.Inventory[2] = Config.Inventory[0];
 	Config.Inventory[3] = Config.Inventory[0];
 	Config.Inventory[4] = Config.Inventory[0];
 	Config.Inventory[5] = Config.Inventory[0];
-	Config.Inventory[6] = Config.Inventory[0];
 
-	Config.InfiniteStash = false; // if using plugy or not
-	Config.StorageSizeInventory = [10, 8]; // default is 10x4
+	Config.InfiniteStash = true; // if using plugy or not
+	Config.StorageSizeInventory = [10, 6]; // default is 10x4
 	Config.StorageSizeTrade = [10, 4]; // default is 10x4
 	Config.StorageSizeStash = [10, 10]; // default is 6x8
 	Config.StorageSizeCube = [3, 4]; // default is 3x4
@@ -76,6 +75,9 @@ function LoadDefaultConfig()
 	// looting
 	Config.PickitFiles.push("QOL/Quest.nip");
 	Config.PickitFiles.push("QOL/Potions.nip");
+	Config.PickitFiles.push("QOL/Misc.nip");
+	Config.PickitFiles.push("QOL/Rares.nip");
+	//Config.PickitFiles.push("QOL/Ladder.nip");
 	Config.PickRange = 40; // Pick radius
 	Config.FastPick = true; // Check and pick items between attacks
 
@@ -191,40 +193,6 @@ function LoadDefaultConfig()
 	 *
 	 *	See libs/config/Templates/AutoStatExampleBuilds.txt for Config.AutoStat.Build examples.
 	 */
-	Config.AutoStat.preset_caster = [
-		["s", 12], // stat strength for quilt armor
-		["v", 28], // spend in vitality until it reaches 28 (level 5)
-		["e", 50], // spend in energy until 50 (level 8)
-		["v", 50], // spend more in vitality
-		["s", 15], // get up to 15 strength (level 13)
-		["v", 65], // spend in vitality (level 18)
-		["s", 35], // get up to 25 strength (level 20)
-		["e", 75], // spend in energy (level 25)
-		["v", 75], // level 27
-		["s", 55], // level 31
-		["v", 100], // level 36
-		["s", 80], // level 41
-		["v", 125], // level 46
-		["s", 95], // level 49 (less if done stat quests)
-		["v", "all"], // put rest of the points in vitality
-	];
-	Config.AutoStat.preset_melee = [
-		["s", 12], // stat strength for quilt armor
-		["v", 28], // spend in vitality until it reaches 28 (level 5)
-		["d", 50], // spend in energy until 50 (level 8)
-		["v", 50], // spend more in vitality
-		["s", 15], // get up to 15 strength (level 13)
-		["v", 65], // spend in vitality (level 18)
-		["s", 35], // get up to 25 strength (level 20)
-		["d", 75], // spend in energy (level 25)
-		["v", 75], // level 27
-		["s", 55], // level 31
-		["v", 100], // level 36
-		["s", 80], // level 41
-		["v", 125], // level 46
-		["s", 95], // level 49 (less if done stat quests)
-		["v", "all"], // put rest of the points in vitality
-	];
 	Config.AutoStat.Enabled = false; // Enable or disable AutoStat system
 	Config.AutoStat.Save = 0; // Number stat points that will not be spent and saved.
 	Config.AutoStat.BlockChance = 0; // An integer value set to desired block chance. This is ignored in classic.

@@ -39,19 +39,19 @@
 // =================================================
 
 // unique
-//[name] == mesharmor && [quality] == unique // shaftstop
-//[name] == krakenshell && [quality] == unique // leviathan
-//[name] == cuirass && [quality] == unique // duriel's shell
-//[name] == duskshroud && [quality] == unique // ormus' robes
+[name] == mesharmor && [quality] == unique // shaftstop
+[name] == krakenshell && [quality] == unique // leviathan
+[name] == cuirass && [quality] == unique // duriel's shell
+[name] == duskshroud && [quality] == unique // ormus' robes
 [name] == sacredarmor && [quality] == unique // tyrael's might
-//[name] == studdedleather && [quality] == unique // twitchthroe
+[name] == studdedleather && [quality] == unique // twitchthroe
 [name] == russetarmor && [quality] == unique // skullder's ire
 [name] == templarcoat && [quality] == unique // guardian angel
 [name] == balrogskin && [quality] == unique // arkaine's valor
 [name] == sacredarmor && [quality] == unique // templar's might
-//[name] == ghostarmor && [quality] == unique // the spirit shroud
-//[name] == wirefleece && [quality] == unique // the gladiator's bane
-//[name] == serpentskinarmor && [quality] == unique // skin of the vipermagi
+[name] == ghostarmor && [quality] == unique // the spirit shroud
+[name] == wirefleece && [quality] == unique // the gladiator's bane
+[name] == serpentskinarmor && [quality] == unique // skin of the vipermagi
 
 // set
 [name] == ornateplate && [quality] == set // griswold's heart
@@ -64,17 +64,17 @@
 // =================================================
 
 // unique
-//[name] == ward && [quality] == unique // spirit ward
+[name] == ward && [quality] == unique // spirit ward
 [name] == monarch && [quality] == unique // stormshield
-//[name] == kiteshield && [quality] == unique // steelclash
-//[name] == gothicshield && [quality] == unique // the ward
-//[name] == grimshield && [quality] == unique // lidless wall
-//[name] == sacredrondache && [quality] == unique // alma negra
-//[name] == hierophanttrophy && [quality] == unique // homunculus
-//[name] == trollnest && [quality] == unique // head hunter's glory
-//[name] == bloodlordskull && [quality] == unique // darkforce spawn
+[name] == kiteshield && [quality] == unique // steelclash
+[name] == gothicshield && [quality] == unique // the ward
+[name] == grimshield && [quality] == unique // lidless wall
+[name] == sacredrondache && [quality] == unique // alma negra
+[name] == hierophanttrophy && [quality] == unique // homunculus
+[name] == trollnest && [quality] == unique // head hunter's glory
+[name] == bloodlordskull && [quality] == unique // darkforce spawn
 [name] == gildedshield && [quality] == unique // herald of zakarum
-//[name] == roundshield && [quality] == unique // moser's blessed circle
+[name] == roundshield && [quality] == unique // moser's blessed circle
 
 // set
 [name] == cantortrophy && [quality] == set // trang-oul's wing
@@ -91,9 +91,9 @@
 // =================================================
 
 // unique
-//[name] == lightgauntlets && [quality] == unique // magefist
+[name] == lightgauntlets && [quality] == unique // magefist
 [name] == ogregauntlets && [quality] == unique // steelrend
-//[name] == chaingloves && [quality] == unique // chance guards
+[name] == chaingloves && [quality] == unique // chance guards
 [name] == vampirebonegloves && [quality] == unique // dracul's grasp
 
 // set
@@ -109,21 +109,21 @@
 // =================================================
 
 // unique
-//[name] == greaves && [quality] == unique // tearhaunch
-//[name] == meshboots && [quality] == unique // silkweave
+[name] == greaves && [quality] == unique // tearhaunch
+[name] == meshboots && [quality] == unique // silkweave
 [name] == warboots && [quality] == unique // gore rider
 [name] == battleboots && [quality] == unique // war traveler
-//[name] == sharkskinboots && [quality] == unique // waterwalk
-//[name] == boneweaveboots && [quality] == unique // marrowwalk
-//[name] == lightplatedboots && [quality] == unique // goblin toe
+[name] == sharkskinboots && [quality] == unique // waterwalk
+[name] == boneweaveboots && [quality] == unique // marrowwalk
+[name] == lightplatedboots && [quality] == unique // goblin toe
 [name] == demonhideboots && [quality] == unique // infernostride
 [name] == myrmidongreaves && [quality] == unique // shadow dancer
 [name] == scarabshellboots && [quality] == unique // sandstorm trek
 
 // set
-//[name] == meshboots && [quality] == set // natalya's soul
-//[name] == heavyboots && [quality] == set // sander's riprap
-//[name] == battleboots && [quality] == set // aldur's advance
+[name] == meshboots && [quality] == set // natalya's soul
+[name] == heavyboots && [quality] == set // sander's riprap
+[name] == battleboots && [quality] == set // aldur's advance
 [name] == warboots && [quality] == set // immortal king's pillar
 
 // =================================================
@@ -131,14 +131,14 @@
 // =================================================
 
 // unique
-//[name] == belt && [quality] == unique // nightsmoke
+[name] == belt && [quality] == unique // nightsmoke
 [name] == heavybelt && [quality] == unique // goldwrap
-//[name] == battlebelt && [quality] == unique // snowclash
-//[name] == platedbelt && [quality] == unique // bladebuckle
+[name] == battlebelt && [quality] == unique // snowclash
+[name] == platedbelt && [quality] == unique // bladebuckle
 [name] == sharkskinbelt && [quality] == unique // razortail
 [name] == warbelt && [quality] == unique // thundergod's vigor
 [name] == spiderwebsash && [quality] == unique // arachnid mesh
-//[name] == demonhidesash && [quality] == unique // string of ears
+[name] == demonhidesash && [quality] == unique // string of ears
 [name] == vampirefangbelt && [quality] == unique // nosferatu's coil
 [name] == mithrilcoil && [quality] == unique // verdungo's hearty cord
 
@@ -164,26 +164,26 @@
 [name] == tyrantclub && [quality] == unique // demon limb
 [name] == phaseblade && [quality] == unique // azurewrath
 [name] == crypticaxe && [quality] == unique // tomb reaver
-//[name] == tulwar && [quality] == unique // blade of ali baba
-//[name] == burntwand && [quality] == unique // suicide branch
+[name] == tulwar && [quality] == unique // blade of ali baba
+[name] == burntwand && [quality] == unique // suicide branch
 [name] == petrifiedwand && [quality] == unique // carin shard
-//[name] == elderstaff && [quality] == unique // ondal's wisdom
+[name] == elderstaff && [quality] == unique // ondal's wisdom
 [name] == unearthedwand && [quality] == unique // death's web
 [name] == swirlingcrystal && [quality] == unique // the oculus
 [name] == thresher && [quality] == unique // the reaper's toll
 [name] == berserkeraxe && [quality] == unique // death cleaver
-//[name] == tombwand && [quality] == unique // arm of king leoric
+[name] == tombwand && [quality] == unique // arm of king leoric
 [name] == mightyscepter && [quality] == unique // heaven's light
 [name] == eldritchorb && [quality] == unique // eschuta's temper
 [name] == hyperionspear && [quality] == unique // arioc's needle
 [name] == colossusblade && [quality] == unique // the grandfather
-//[name] == thundermaul && [quality] == unique // the cranium basher
-//[name] == shortsiegebow && [quality] == unique // witchwild string
-//[name] == archonstaff && [quality] == unique // mang song's lesson
+[name] == thundermaul && [quality] == unique // the cranium basher
+[name] == shortsiegebow && [quality] == unique // witchwild string
+[name] == archonstaff && [quality] == unique // mang song's lesson
 [name] == dimensionalshard && [quality] == unique // death's fathom
 [name] == matriarchaljavelin && [quality] == unique // thunderstroke
 [name] == ceremonialjavelin && [quality] == unique // titan's revenge
-//[name] == greatertalons && [quality] == unique // bartuc's cut-throat
+[name] == greatertalons && [quality] == unique // bartuc's cut-throat
 
 // set
 [name] == caduceus && [quality] == set // griswold's redemption

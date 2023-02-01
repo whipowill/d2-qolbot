@@ -54,9 +54,6 @@ function Follower() {
 		classes = ["amazon", "sorceress", "necromancer", "paladin", "barbarian", "druid", "assassin"],
 		action = "";
 
-	// https://www.quoteambition.com/darkest-dungeon-quotes/
-	var quotetime = 0;
-	var quotes = JSON.parse(FileTools.readText("libs/config/Quotes/quotes.json"));
 	this.doChores = function () {
 		say("Running town chores.");
 
@@ -477,6 +474,7 @@ function Follower() {
 	};
 
 	this.chatEvent = function (nick, msg) {
+		Banter.delay(); // delay speaking
 		if (msg && nick === Config.Leader) {
 			switch (msg) {
 			case "tele":
@@ -662,43 +660,6 @@ function Follower() {
 				leaderUnit = this.getLeaderUnit(Config.Leader);
 			}
 		}
-	};
-
-	this.sayQuotes = function (quotetime, quotes)
-	{
-		// if quotes are turned off, bail
-		if (!Config.DarkQuotes) return 0;
-
-		// init
-		var speak = false;
-		var now = Date.now();
-
-		// if back to town, reset clock
-		if (!quotetime) return now + Math.floor(Math.random() * 120000); // 2 minutes
-
-		// if speak
-		if (quotetime - now < 0)
-		{
-			if (me.inTown)
-			{
-				quotetime = now + 60000 + Math.floor(Math.random() * 120000); // 1-3 minutes
-				var list = quotes.town;
-			}
-			else
-			{
-				quotetime = now + 60000 + Math.floor(Math.random() * 120000); // 1-3 minutes
-				var list = quotes.combat;
-			}
-
-			// roll the dice on what quote to use
-			var ran = Math.floor(Math.random() * list.length);
-
-			// say the quote
-			say(list[ran]);
-		}
-
-		// return
-		return quotetime;
 	};
 
 	// keep log of waypoint already gathered
@@ -913,7 +874,7 @@ function Follower() {
 	while (Misc.inMyParty(Config.Leader)) {
 
 		// say quote
-		quotetime = this.sayQuotes(quotetime, quotes);
+		Banter.speak();
 
 		if (me.mode === 17) {
 			while (!me.inTown) {
@@ -1017,11 +978,6 @@ function Follower() {
 				break;
 			case "move":
 				Pather.moveTo(me.x + rand(-5, 5), me.y + rand(-5, 5));
-				break;
-			case "wp":
-			case me.name + "wp":
-				say("Gathering waypoint.");
-				this.gatherWaypoint();
 				break;
 			case "status":
 				Quester.runQuests(true, true); // flag true to only display status

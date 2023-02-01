@@ -24,6 +24,7 @@ include("common/Runewords.js");
 include("common/Storage.js");
 include("common/Town.js");
 include("common/Quester.js");
+include("common/Banter.js");
 
 function main() {
 	D2Bot.init(); // Get D2Bot# handle
@@ -101,6 +102,7 @@ function main() {
 	CraftingSystem.buildLists();
 	Runewords.init();
 	Cubing.init();
+	Banter.init();
 
 	// AutoMule handler
 	if (AutoMule.inGameCheck()) {

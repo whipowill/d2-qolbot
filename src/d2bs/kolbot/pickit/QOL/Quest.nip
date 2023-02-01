@@ -10,21 +10,21 @@
 // act2
 [name] == bookofskill # # [maxquantity] == 1
 [name] == horadriccube # # [maxquantity] == 1
-//[name] == shaftofthehoradricstaff # # [maxquantity] == 1
-//[name] == topofthehoradricstaff # # [maxquantity] == 1
-//[name] == horadricstaff # # [maxquantity] == 1
+[name] == shaftofthehoradricstaff # # [maxquantity] == 1
+[name] == topofthehoradricstaff # # [maxquantity] == 1
+[name] == horadricstaff # # [maxquantity] == 1
 
 // act3
 //[name] == ajadefigurine # # [maxquantity] == 1
 //[name] == thegoldenbird # # [maxquantity] == 1
-//[name] == potionoflife # # [maxquantity] == 1
+[name] == potionoflife # # [maxquantity] == 1
 //[name] == thegidbinn # # [maxquantity] == 1
 //[name] == lamesen'stome # # [maxquantity] == 1
 [name] == khalim'seye # # [maxquantity] == 1
 [name] == khalim'sheart # # [maxquantity] == 1
 [name] == khalim'sbrain # # [maxquantity] == 1
 [name] == khalim'sflail # # [maxquantity] == 1
-//[name] == khalim'swill # # [maxquantity] == 1
+[name] == khalim'swill # # [maxquantity] == 1
 [name] == mephisto'ssoulstone # # [maxquantity] == 1
 
 // act4
@@ -32,7 +32,7 @@
 
 // act5
 //[name] == malah'spotion # # [maxquantity] == 1
-//[name] == scrollofresistance # # [maxquantity] == 1
+[name] == scrollofresistance # # [maxquantity] == 1
 
 // pandemonium
 [name] == keyofhate # # [maxquantity] == 3

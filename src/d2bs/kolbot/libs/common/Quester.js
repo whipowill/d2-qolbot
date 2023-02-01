@@ -31,11 +31,11 @@ var Quester = {
 		[2, 5, "Summoner", 13, "act2_summoner"],
 		[2, 6, "Seven Tombs", 14, "act2_seven_tombs"],
 
-		[3, 1, "Golden Bird", 20, "act3_golden_bird"],
+		//[3, 1, "Golden Bird", 20, "act3_golden_bird"],
 		[3, 2, "Blade of the Old Religion", 19, "act3_blade_of_the_old_religion"],
 		[3, 3, "Khalim's Will", 18, "act3_khalims_will"],
 		[3, 4, "Lam Essen's Tome", 17, "act3_lam_esens_tome"],
-		[3, 5, "Blackened Temple", 21, "act3_blackened_temple"],
+		//[3, 5, "Blackened Temple", 21, "act3_blackened_temple"],
 		[3, 6, "The Guardian", 22, "act3_guardian"],
 
 		[4, 1, "Fallen Angel", 25, "act4_fallen_angel"],
@@ -225,11 +225,6 @@ var Quester = {
 			npc.openMenu();
 			delay(1000);
 			me.cancel();
-			npc.openMenu();
-			delay(1000);
-			me.cancel();
-			npc.openMenu();
-			delay(1000);
 
 			// travel or cancel
 			if (travel_code)
@@ -318,7 +313,7 @@ var Quester = {
 
 				if (is_consume_item)
 				{
-					clickItem(1, item);
+					//clickItem(1, item);
 				}
 			}
 			else this.error('Unable to find item.');
@@ -670,7 +665,7 @@ var Quester = {
 		if (progress >= 50)
 		{
 			// travel to act 2
-			this.townAndTalk('warriv', 0x0D36);
+			//this.townAndTalk('warriv', 0x0D36);
 		}
 
 		// idle if questing
@@ -889,10 +884,10 @@ var Quester = {
 		{
 		 	// travel to act 3
 		 	this.townAndTalk('jerhyn');
-		 	this.townAndTalk('meshif', 0x0D38);
+		 	//this.townAndTalk('meshif', 0x0D38);
 
 		 	// talk to hratil
-			this.townAndTalk('hratli');
+			//this.townAndTalk('hratli');
 		}
 
 		// idle if questing
@@ -1317,9 +1312,9 @@ var Quester = {
 			delay(500);
 
 			// consume the scroll
-			var scroll = me.getItem(646);
-			if (scroll)
-				clickItem(1, scroll);
+			//var scroll = me.getItem(646);
+			//if (scroll)
+				//clickItem(1, scroll);
 
 			// talk to anya
 			this.townAndTalk('anya');
