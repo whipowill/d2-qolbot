@@ -1,0 +1,8 @@
+// =================================================
+// CUSTOM
+// =================================================
+
+[name] == wingedhelm && [quality] == set // guillaume's face
+[name] == sharkskingloves && [quality] == set // magnus' skin
+[name] == battlebelt && [quality] == set // wilhelm's pride
+[type] == amulet && [quality] == set # [itemallskills] == 1 && [coldresist] == 18 // telling of beads

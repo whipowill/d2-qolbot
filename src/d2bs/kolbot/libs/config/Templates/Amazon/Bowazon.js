@@ -1,4 +1,4 @@
-function LoadConfig()
+function LoadTemplate()
 {
 	Config.SkipImmune = []; // "fire", "cold", "lightning", "poison", "physical", "magic"
 	Config.SkipEnchant = []; // "extra strong", "extra fast", "cursed", "magic resistant", "fire enchanted", "lightning enchanted", "cold enchanted", "mana burn", "teleportation", "spectral hit", "stone skin", "multiple shots"

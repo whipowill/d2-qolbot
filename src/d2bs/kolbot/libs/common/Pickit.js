@@ -28,8 +28,8 @@ var Pickit = {
 	// 2 - Cubing wants
 	// 3 - Runeword wants
 	// 4 - Pickup to sell (triggered when low on gold)
-	checkItem: function (unit) {
-		var rval = NTIP.CheckItem(unit, false, true);
+	checkItem: function (unit, is_use_notier = false) {
+		var rval = NTIP.CheckItem(unit, is_use_notier ? false : NTIP_CheckListNoTier, true);
 
 		if ((unit.classid === 617 || unit.classid === 618) && Town.repairIngredientCheck(unit)) {
 			return {
@@ -138,7 +138,7 @@ var Pickit = {
 							if (Town.visitTown()) {
 								// Recursive check after going to town. We need to remake item list because gids can change.
 								// Called only if room can be made so it shouldn't error out or block anything.
-
+								Town.doChores(); // do this to actually make room? -whipowill
 								return this.pickItems();
 							}
 

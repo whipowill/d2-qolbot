@@ -18,7 +18,15 @@ var Banter = {
 
 	delay: function ()
 	{
-		this.time = now + 30000 + Math.floor(Math.random() * 30000); // 30sec-1min
+		// init
+		var now = Date.now();
+
+		// if you were going to speak in the next 15 seconds...
+		if (this.time - now <= 15000)
+		{
+			// delay a little longer
+			this.time = now + 60000 + Math.floor(Math.random() * 120000); // 1-3 minute
+		}
 
 		return null;
 	},
@@ -29,18 +37,17 @@ var Banter = {
 		if (!Config.DarkQuotes) return null;
 
 		// init
-		var speak = false;
 		var now = Date.now();
 
-		// if back to town, reset clock
-		if (!this.time) this.time = now + Math.floor(Math.random() * 60000); // 0-1 minute
+		// if just entered chat, reset clock
+		if (!this.time) this.time = now + 60000 + Math.floor(Math.random() * 120000); // 1-3 minute
 
 		// if speak
-		if (this.time - now < 0)
+		if (now > this.time)
 		{
 			if (me.inTown)
 			{
-				this.time = now + 60000 + Math.floor(Math.random() * 120000); // 1-3 minutes
+				this.time = now + 15000 + Math.floor(Math.random() * 60000); // 15sec-1min
 				var list = this.quotes.town;
 			}
 			else

@@ -1,0 +1,46 @@
+[19:25:36] <Meir - Solo> <Kept> (rare) Kite Shield | Defense: 16 | Chance to Block: 28% | Durability: 27 of 30 | Required Strength: 47 | Unidentified
+[19:26:35] <Meir - Solo> <Kept> (rare) Cost: 9478 | Carrion Badge | Kite Shield | Defense: 16 | Chance to Block: 28% | Durability: 27 of 30 | Required Strength: 47 | Required Level: 18 | +17% Faster Hit Recovery | +4 to Mana | Lightning Resist +16% | Damage Reduced by 2 | Repairs 1 durability in 20 seconds
+[19:28:08] <Meir - Solo> <Kept> (rare) Demonhide Armor | Defense: 137 | Durability: 24 of 28 | Required Strength: 50 | Unidentified
+[19:28:08] <Meir - Solo> <Kept> (unique) Gothic Plate | Defense: 128 | Durability: 30 of 55 | Required Strength: 70 | Unidentified
+[19:28:43] <Meir - Solo> <Kept> (unique) Rattlecage | Gothic Plate | Defense: 328 | Durability: 30 of 55 | Required Strength: 70 | Required Level: 29 | +45 to Attack Rating | 25% Chance of Crushing Blow | Hit Causes Monster to Flee 40% | +200 Defense
+[19:28:44] <Meir - Solo> <Kept> (rare) Imp Shell | Demonhide Armor | Defense: 350 | Durability: 24 of 28 | Required Strength: 50 | Required Level: 43 | +24% Faster Hit Recovery | +156% Enhanced Defense | +1 to Strength | +6 to Life | Poison Resist +28%
+[19:29:45] <Meir - Solo> <Kept> (rare) Helm | Defense: 19 | Durability: 13 of 24 | Required Strength: 26 | Unidentified
+[19:29:51] <Meir - Solo> <Kept> (rare) Gale Shell | Helm | Defense: 30 | Durability: 13 of 24 | Required Strength: 26 | Required Level: 18 | +15 to Attack Rating | +63% Enhanced Defense | +2 to Energy | +4 to Life | Lightning Resist +26% | Fire Resist +30% | +1 to Light Radius
+[19:33:37] <Meir - Solo> <Kept> (set) War Sword | One-Hand Damage: 8 to 20 | Durability: 30 of 44 | Required Dexterity: 45 | Required Strength: 71 | Sword Class - Normal Attack Speed | Unidentified
+[19:33:37] <Meir - Solo> <Kept> (rare) Plated Belt | Defense: 9 | Durability: 21 of 24 | Required Strength: 60 | Unidentified
+[19:33:37] <Meir - Solo> <Kept> (rare) Breast Plate | Defense: 69 | Durability: 29 of 50 | Required Strength: 30 | Unidentified
+[19:34:13] <Meir - Solo> <Kept> (rare) Cost: 39106 | Spirit Suit | Breast Plate | Defense: 119 | Durability: 29 of 50 | Required Strength: 30 | Required Level: 33 | +73% Enhanced Defense | +9 to Strength | +15 to Life | Fire Resist +8% | Poison Resist +10% | Damage Reduced by 6
+[19:34:14] <Meir - Solo> <Kept> (rare) Cost: 7663 | Raven Chain | Plated Belt | Defense: 9 | Durability: 21 of 24 | Required Strength: 60 | Required Level: 12 | 12% Chance to cast level 4 Charged Bolt when struck | +10% Faster Hit Recovery | +16 to Mana | Fire Resist +5% | Poison Resist +5%
+[19:34:16] <Meir - Solo> <Stashed> (set) War Sword
+[19:35:20] <Meir - Solo> <Dropped> (rare) Plague Crest | War Hat | Defense: 59 | Durability: 9 of 12 | Required Strength: 20 | Required Level: 22 | 10% Chance to cast level 3 Nova when struck | +11% Enhanced Defense | +2 to Energy | +2 to Life | Cold Resist +20% | Fire Resist +30% {clearInventory}
+[19:35:20] <Meir - Solo> <Dropped> (rare) Carrion Badge | Kite Shield | Defense: 16 | Chance to Block: 28% | Durability: 30 of 30 | Required Strength: 47 | Required Level: 18 | +17% Faster Hit Recovery | +4 to Mana | Lightning Resist +16% | Damage Reduced by 2 | Repairs 1 durability in 20 seconds {clearInventory}
+[19:35:21] <Meir - Solo> <Dropped> (rare) Spirit Suit | Breast Plate | Defense: 119 | Durability: 29 of 50 | Required Strength: 30 | Required Level: 33 | +73% Enhanced Defense | +9 to Strength | +15 to Life | Fire Resist +8% | Poison Resist +10% | Damage Reduced by 6 {clearInventory}
+[19:35:22] <Meir - Solo> <Dropped> (unique) Rattlecage | Gothic Plate | Defense: 328 | Durability: 30 of 55 | Required Strength: 70 | Required Level: 29 | +45 to Attack Rating | 25% Chance of Crushing Blow | Hit Causes Monster to Flee 40% | +200 Defense {clearInventory}
+[19:35:22] <Meir - Solo> <Dropped> (rare) Imp Shell | Demonhide Armor | Defense: 350 | Durability: 24 of 28 | Required Strength: 50 | Required Level: 43 | +24% Faster Hit Recovery | +156% Enhanced Defense | +1 to Strength | +6 to Life | Poison Resist +28% {clearInventory}
+[19:35:23] <Meir - Solo> <Dropped> (rare) Raven Chain | Plated Belt | Defense: 9 | Durability: 21 of 24 | Required Strength: 60 | Required Level: 12 | 12% Chance to cast level 4 Charged Bolt when struck | +10% Faster Hit Recovery | +16 to Mana | Fire Resist +5% | Poison Resist +5% {clearInventory}
+[19:36:27] <Meir - Solo> <Kept> (normal) Flawless Diamond | Can be Inserted into Socketed Items |  | Weapons: +54% Damage to Undead | Armor: +80 to Attack Rating | Helms: +80 to Attack Rating | Shields: All Resistances +14 |  | Required Level: 15 {Cubing 1}
+[19:36:27] <Meir - Solo> <Kept> (rare) Cloudy Sphere | One-Hand Damage: 11 to 29 | Durability: 25 of 35 | (Sorceress Only) | Staff Class - Normal Attack Speed | Unidentified
+[19:36:27] <Meir - Solo> <Kept> (set) Double Axe | One-Hand Damage: 5 to 13 | Durability: 16 of 24 | Required Strength: 43 | Axe Class - Normal Attack Speed | Unidentified
+[19:36:28] <Meir - Solo> <Kept> (unique) Flail | One-Hand Damage: 1 to 24 | Durability: 17 of 30 | Required Dexterity: 35 | Required Strength: 41 | Mace Class - Fast Attack Speed | Unidentified
+[19:37:21] <Meir - Solo> <Stashed> (rare) Cloudy Sphere
+[19:37:21] <Meir - Solo> <Stashed> (set) Double Axe
+[19:37:22] <Meir - Solo> <Stashed> (normal) Flawless Diamond
+[19:37:22] <Meir - Solo> <Stashed> (unique) Flail
+[19:38:18] <Meir - Solo> <Kept> (rare) Sacred Globe | One-Hand Damage: 3 to 8 | Durability: 16 of 30 | (Sorceress Only) | Staff Class - Fast Attack Speed | Unidentified
+[19:38:19] <Meir - Solo> <Kept> (unique) Stiletto | One-Hand Damage: 19 to 36 | Durability: 15 of 24 | Required Dexterity: 97 | Required Strength: 47 | Dagger Class - Fast Attack Speed | Unidentified
+[19:38:59] <Meir - Solo> <Stashed> (rare) Sacred Globe
+[19:39:00] <Meir - Solo> <Stashed> (unique) Stiletto
+[19:40:00] <Meir - Solo> <Kept> (set) Breast Plate | Defense: 66 | Durability: 27 of 50 | Required Strength: 30 | Unidentified
+[19:40:00] <Meir - Solo> <Kept> (normal) Flawless Sapphire | Can be Inserted into Socketed Items |  | Weapons: Adds 6-10 cold damage | Armor: +31 to Mana | Helms: +31 to Mana | Shields: Cold Resist +28% |  | Required Level: 15 {Cubing 1}
+[19:40:41] <Meir - Solo> <Stashed> (normal) Flawless Sapphire
+[19:40:41] <Meir - Solo> <Stashed> (set) Breast Plate
+[19:41:38] <Meir - Solo> <Kept> (set) Chain Gloves | Defense: 8 | Durability: 15 of 16 | Required Strength: 25 | Unidentified
+[19:41:38] <Meir - Solo> <Kept> (set) Broad Sword | One-Hand Damage: 7 to 14 | Durability: 18 of 32 | Required Strength: 48 | Sword Class - Normal Attack Speed | Unidentified
+[19:42:17] <Meir - Solo> <Stashed> (set) Broad Sword
+[19:42:18] <Meir - Solo> <Stashed> (set) Chain Gloves
+[19:45:01] <Meir - Solo> <Kept> (unique) Amulet | Unidentified
+[19:45:01] <Meir - Solo> <Kept> (rare) Ring | Unidentified
+[19:45:41] <Meir - Solo> <Stashed> (rare) Ring
+[19:45:41] <Meir - Solo> <Stashed> (unique) Amulet
+[19:46:38] <Meir - Solo> <Kept> (unique) Pike | Two-Hand Damage: 14 to 63 | Durability: 20 of 25 | Required Dexterity: 45 | Required Strength: 60 | Spear Class - Very Slow Attack Speed | Unidentified
+[19:46:38] <Meir - Solo> <Kept> (unique) Gnarled Staff | Two-Hand Damage: 4 to 12 | Durability: 19 of 35 | Staff Class - Normal Attack Speed | Unidentified

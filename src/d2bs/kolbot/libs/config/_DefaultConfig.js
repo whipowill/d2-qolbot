@@ -7,12 +7,14 @@ function LoadDefaultConfig()
 	/////////////////////////////////////////////////
 	Scripts.Follower = true; // Script that follows a manually played leader around like a merc. For a list of commands, see Follower.js
 	Config.PublicMode = 2; // 1 = invite and accept, 2 = accept only, 3 = invite only, 0 = disable
-	Config.Leader = "Vanity"; // Leader's ingame character name. Leave blank to try auto-detection (works in AutoBaal, Wakka, MFHelper)
+	Config.Leader = "Reform"; // Leader's ingame character name. Leave blank to try auto-detection (works in AutoBaal, Wakka, MFHelper)
 	Config.LeaderOptions = ["Reform", "Vanity", "Meir", "Barabas", "Judah", "Xena"]; // list of names that can be leader
 	Config.QuitList = [""]; // List of character names to quit with. Example: Config.QuitList = ["MySorc", "MyDin"];
 	Config.QuitListMode = 0; // 0 = use character names; 1 = use profile names (all profiles must run on the same computer).
 	Config.DarkQuotes = true; // use dark quotes
 	//Scripts.ForceSave = true; // force periodic saves (PlugY /save command)
+
+	Config.AutoEquip = false; // this is cool for levels under 50
 
 	/////////////////////////////////////////////////
 	// HEALTH & SAFETY
@@ -60,7 +62,7 @@ function LoadDefaultConfig()
 	Config.StorageSizeStash = [10, 10]; // default is 6x8
 	Config.StorageSizeCube = [3, 4]; // default is 3x4
 
-	Config.StashGold = 100000; // minimum amount of gold to stash
+	Config.StashGold = 1000000; // minimum amount of gold to stash
 
 	// "hp", "mp", "rv"
 	Config.BeltColumn[0] = "hp";
@@ -73,11 +75,13 @@ function LoadDefaultConfig()
 	Config.MinColumn[3] = 0; // rp columns to 0 bc they can't be bought
 
 	// looting
+	Config.PickitFiles.push("autoequip/charms_exp.nip"); // <-- for autoequip
+	Config.PickitFiles.push("autoequip/sonic_exp.nip"); // <-- for autoequip
 	Config.PickitFiles.push("QOL/Quest.nip");
 	Config.PickitFiles.push("QOL/Potions.nip");
 	Config.PickitFiles.push("QOL/Misc.nip");
 	Config.PickitFiles.push("QOL/Rares.nip");
-	//Config.PickitFiles.push("QOL/Ladder.nip");
+	Config.PickitFiles.push("QOL/Bases.nip");
 	Config.PickRange = 40; // Pick radius
 	Config.FastPick = true; // Check and pick items between attacks
 
@@ -85,10 +89,10 @@ function LoadDefaultConfig()
 	Config.ItemInfoQuality = []; // The quality of sold items to log. See NTItemAlias.dbl for values. Example: Config.ItemInfoQuality = [6, 7, 8];
 
 	Config.CainID.Enable = false; // Identify items at Cain
-	Config.CainID.MinGold = 2500000; // Minimum gold (stash + character) to have in order to use Cain.
-	Config.CainID.MinUnids = 3; // Minimum number of unid items in order to use Cain.
+	Config.CainID.MinGold = 0; // Minimum gold (stash + character) to have in order to use Cain.
+	Config.CainID.MinUnids = 2; // Minimum number of unid items in order to use Cain.
 	Config.FieldID = false; // Identify items in the field instead of going to town.
-	Config.DroppedItemsAnnounce.Enable = false;	// Announce Dropped Items to in-game newbs
+	Config.DroppedItemsAnnounce.Enable = true;	// Announce Dropped Items to in-game newbs
 	Config.DroppedItemsAnnounce.Quality = []; // Quality of item to announce. See NTItemAlias.dbl for values. Example: Config.DroppedItemsAnnounce.Quality = [6, 7, 8];
 
 	Config.CubeRepair = false; // Repair weapons with Ort and armor with Ral rune. Don't use it if you don't understand the risk of losing items.
@@ -111,9 +115,9 @@ function LoadDefaultConfig()
 	Config.MaxGameTime = 0; // Maximum game time in seconds. Quit game when limit is reached.
 	Config.TeleSwitch = false; // Switch to slot II when teleporting more than 1 node.
 	Config.OpenChests = false; // Open chests. Controls key buying.
-	Config.MiniShopBot = true; // Scan items in NPC shops.
+	Config.MiniShopBot = false; // Scan items in NPC shops.
 	Config.PacketShopping = false; // Use packets to shop. Improves shopping speed.
-	Config.TownCheck = true; // Go to town if out of potions
+	Config.TownCheck = false; // Go to town if out of potions
 	Config.LogExperience = false; // Print experience statistics in the manager.
 	Config.PingQuit = [{Ping: 0, Duration: 0}]; // Quit if ping is over the given value for over the given time period in seconds.
 	Config.ScanShrines = [15,1,2,3,4,5,6,8,9,10,11,12,13,14];
@@ -463,4 +467,7 @@ function LoadDefaultConfig()
 		Config.BaalAssistant.SafeTPMessage = ["Safe", "Clear"]; // Configure safe TP messages.
 		Config.BaalAssistant.BaalMessage = ["Baal"]; // Configure baal messages, this is a precautionary measure.
 		Config.BaalAssistant.NextGameMessage = ["Next Game", "Next", "New Game"];	// Next Game message, this is a precautionary quit command, Reccomended setting up: Config.QuitList
+
+		// force save
+		Scripts.ForceSave = true; // for reasons I don't understand, on TCP/IP games, you must have this or your inventory won't save
 }

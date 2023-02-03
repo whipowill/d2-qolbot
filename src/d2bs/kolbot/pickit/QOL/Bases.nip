@@ -3,6 +3,8 @@
 // by whipowill
 // .................................................
 
+[flag] == runeword // keep any runeword
+
 // helms
 //[type] == circlet && [quality] == normal # [sockets] == 2
 [type] == circlet && [quality] == normal # [sockets] == 3

@@ -1576,7 +1576,7 @@ MainLoop:
 					if (Config.AutoEquip && Pickit.checkItem(items[i]).result === 1) {
 						tier = NTIP.GetTier(items[i]);
 
-						if (tier > 0 && tier < 100) {
+						if (tier > 0) {
 							result = false;
 						}
 					}

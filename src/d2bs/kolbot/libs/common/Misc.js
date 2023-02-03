@@ -622,7 +622,7 @@ var Item = {
 
 	autoEquipCheck: function (item) {
 		if (!Config.AutoEquip) {
-			return true;
+			return Pickit.checkItem(item, true).result;
 		}
 
 		var i,
@@ -639,14 +639,20 @@ var Item = {
 		}
 
 		// Sell/ignore low tier items, keep high tier
-		if (tier > 0 && tier < 100) {
-			return false;
+		if (tier > 0)
+		{
+			// the only reason we get here is when the Town class checks
+			// to see if it should sell an item it already picked up.  So lets
+			// just make sure it's not an item any of the other non-tier pickit
+			// files wanted. -whipowill
+
+			return Pickit.checkItem(item, true).result; // flag true to reference notier list
 		}
 
-		return true;
+		return false;
 	},
 
-	// returns true if the item should be kept+logged, false if not
+	// return value is irrelevant, this only scans and equips better tiered items in inventory -whipowill
 	autoEquip: function () {
 		if (!Config.AutoEquip) {
 			return true;
@@ -673,7 +679,7 @@ var Item = {
 
 		me.cancel();
 
-		// Remove items without tier
+		// remove items from consideration w/out tier
 		for (i = 0; i < items.length; i += 1) {
 			if (NTIP.GetTier(items[i]) === 0) {
 				items.splice(i, 1);
@@ -688,10 +694,16 @@ var Item = {
 			tier = NTIP.GetTier(items[0]);
 			bodyLoc = this.getBodyLoc(items[0]);
 
-			if (tier > 0 && bodyLoc) {
-				for (j = 0; j < bodyLoc.length; j += 1) {
-					if ([3, 7].indexOf(items[0].location) > -1 && tier > this.getEquippedItem(bodyLoc[j]).tier && this.getEquippedItem(bodyLoc[j]).classid !== 174) { // khalim's will adjustment
-						if (!items[0].getFlag(0x10)) { // unid
+			if (tier > 0 && bodyLoc)
+			{
+				for (j = 0; j < bodyLoc.length; j += 1)
+				{
+					// if ?? and new item is better and old item is not khalims will
+					if ([3, 7].indexOf(items[0].location) > -1 && tier > this.getEquippedItem(bodyLoc[j]).tier && this.getEquippedItem(bodyLoc[j]).classid !== 174)
+					{
+						// if needs identification...
+						if (!items[0].getFlag(0x10))
+						{
 							tome = me.findItem(519, 0, 3);
 
 							if (tome && tome.getStat(70) > 0) {
@@ -705,8 +717,9 @@ var Item = {
 
 						gid = items[0].gid;
 
-						print(items[0].name);
+						say("Equiping " + items[0].name + ".");
 
+						// equip the item
 						if (this.equip(items[0], bodyLoc[j])) {
 							Misc.logItem("Equipped", me.getItem(-1, -1, gid));
 						}

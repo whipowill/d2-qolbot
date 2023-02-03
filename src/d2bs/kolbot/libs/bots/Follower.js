@@ -474,7 +474,9 @@ function Follower() {
 	};
 
 	this.chatEvent = function (nick, msg) {
+
 		Banter.delay(); // delay speaking
+
 		if (msg && nick === Config.Leader) {
 			switch (msg) {
 			case "tele":
@@ -995,6 +997,7 @@ function Follower() {
 				}
 
 				break;
+			case "pick":
 			case "p":
 				say("!Picking items.");
 				Pickit.pickItems();
@@ -1003,7 +1006,7 @@ function Follower() {
 					this.openContainers(20);
 				}
 
-				say("!Done picking.");
+				//say("!Done picking.");
 
 				break;
 			case "1":
