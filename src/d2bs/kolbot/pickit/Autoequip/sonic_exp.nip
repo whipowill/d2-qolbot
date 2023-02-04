@@ -51,3 +51,31 @@ me.diff == 0 && [type] == gloves && [quality] <= unique && [flag] != ethereal # 
 me.diff == 0 && [type] == shield && [quality] <= magic && [flag] != ethereal # [itemchargedskill] == 0 # [tier] == /*fr+cr+lr+pr*/((item.getStatEx(39) + item.getStatEx(41) + item.getStatEx(43) + item.getStatEx(45)) * 100) + /*defense*/(item.getStatEx(31) * 1)
 [type] == shield && [quality] >= rare && [flag] != ethereal # [itemchargedskill] == 0 # [tier] == /*fr+cr+lr+pr*/((item.getStatEx(39) + item.getStatEx(41) + item.getStatEx(43) + item.getStatEx(45)) * 100) + /*defense*/(item.getStatEx(31) * 1)
 
+//// a1 mercenary ////
+//////////////////////
+
+// weapon
+// amplify > ias > damage
+me.diff == 0 && me.act == 1 && [type] == bow # [itemchargedskill] == 0 # [merctier] == /*secondarymaxdamage*/(item.getStatEx(24) * 1)
+
+
+//// a2 mercenary ////
+//////////////////////
+
+// weapon
+// tested stats -
+me.diff == 0 && ([type] == spear || [type] == polearm) && [quality] <= unique # [itemchargedskill] == 0 # [merctier] == /*secondarymaxdamage*/(item.getStatEx(24) * 1)
+([type] == spear || [type] == polearm) && [quality] >= normal # [itemchargedskill] == 0 # [merctier] == /*secondarymaxdamage*/(item.getStatEx(24) * 1)
+//me.diff == 2 && ([type] == spear || [type] == polearm) && ([quality] >= set || [flag] == runeword) # [itemchargedskill] == 0 # [merctier] == /*meditationaura*/((item.getStatEx(151,120)) * 100000) + /*lifeleech*/((item.getStatEx(60)) * 100000) + /*ias*/((item.getStatEx(93)) * 10000) + /*fr+cr+lr*/((item.getStatEx(39) + item.getStatEx(41) + item.getStatEx(43)) * 1000) + /*maxdamage*/((item.getStatEx(24)) * 1)
+
+
+//// all clothes ////
+/////////////////////
+
+// head
+// ll > allsk > ias > str+dex > def
+[type] == helm && [quality] <= rare && [flag] != runeword # [itemchargedskill] == 0 # [merctier] == /*fr+cr+lr*/((item.getStatEx(39) + item.getStatEx(41) + item.getStatEx(43)) * 1000)
+
+// armor
+// skill > ias > res > def
+[type] == armor && [quality] <= rare && [flag] != runeword # [itemchargedskill] == 0 # [merctier] == /*fr+cr+lr*/((item.getStatEx(39) + item.getStatEx(41) + item.getStatEx(43)) * 1000)

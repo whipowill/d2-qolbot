@@ -41,10 +41,10 @@ function LoadTemplate()
 	// 65	Cold Mastery
 
 	Config.AttackSkill[0] = -1; // Preattack skill.
-	Config.AttackSkill[1] = 59; // Primary skill to bosses.
-	Config.AttackSkill[2] = 55; // Primary untimed skill to bosses. Keep at -1 if Config.AttackSkill[1] is untimed skill.
-	Config.AttackSkill[3] = 59; // Primary skill to others.
-	Config.AttackSkill[4] = 55; // Primary untimed skill to others. Keep at -1 if Config.AttackSkill[3] is untimed skill.
+	Config.AttackSkill[1] = me.getSkill(59, 1) ? 59 : 0; // Primary skill to bosses.
+	Config.AttackSkill[2] = me.getSkill(55, 1) ? 55 : 0; // Primary untimed skill to bosses. Keep at -1 if Config.AttackSkill[1] is untimed skill.
+	Config.AttackSkill[3] = me.getSkill(59, 1) ? 59 : 0; // Primary skill to others.
+	Config.AttackSkill[4] = me.getSkill(55, 1) ? 55 : 0; // Primary untimed skill to others. Keep at -1 if Config.AttackSkill[3] is untimed skill.
 	Config.AttackSkill[5] = -1; // Secondary skill if monster is immune to primary.
 	Config.AttackSkill[6] = -1; // Secondary untimed skill if monster is immune to primary untimed.
 	Config.ClearPath = false; // means don't use teleport

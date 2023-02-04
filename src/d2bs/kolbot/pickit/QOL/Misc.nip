@@ -27,11 +27,11 @@
 //[name] == solrune
 //[name] == shaelrune
 //[name] == dolrune
-//[name] == helrune
-//[name] == iorune
-//[name] == lumrune
-//[name] == korune
-//[name] == falrune
+[name] == helrune
+[name] == iorune
+[name] == lumrune
+[name] == korune
+[name] == falrune
 [name] == lemrune
 [name] == pulrune
 [name] == umrune
@@ -72,13 +72,13 @@
 //[name] == skull # # [maxquantity] == 3
 //[name] == sapphire # # [maxquantity] == 3
 //[name] == topaz # # [maxquantity] == 3
-[name] == flawlessamethyst # # [maxquantity] == 3
-[name] == flawlessdiamond # # [maxquantity] == 3
-[name] == flawlessemerald # # [maxquantity] == 3
-[name] == flawlessruby # # [maxquantity] == 3
-[name] == flawlesssapphire # # [maxquantity] == 3
-[name] == flawlessskull # # [maxquantity] == 3
-[name] == flawlesstopaz # # [maxquantity] == 3
+//[name] == flawlessamethyst # # [maxquantity] == 3
+//[name] == flawlessdiamond # # [maxquantity] == 3
+//[name] == flawlessemerald # # [maxquantity] == 3
+//[name] == flawlessruby # # [maxquantity] == 3
+//[name] == flawlesssapphire # # [maxquantity] == 3
+//[name] == flawlessskull # # [maxquantity] == 3
+//[name] == flawlesstopaz # # [maxquantity] == 3
 [name] == perfectamethyst # # [maxquantity] == 3
 [name] == perfectdiamond # # [maxquantity] == 3
 [name] == perfectemerald # # [maxquantity] == 3
@@ -203,9 +203,6 @@
 // =================================================
 // QUIVERS
 // =================================================
-
-// any at all
-//[name] == arrows && [quality] >= magic
 
 // good ones?
 //[name] == arrows && [quality] >= magic # [ias] >= 10 || ([amazonskills] >= 1 || [bowandcrossbowskilltab] >= 1)

@@ -41,9 +41,9 @@ function LoadTemplate()
 	// 280	Royal Strike
 
 	Config.AttackSkill[0] = -1; // Preattack skill.
-	Config.AttackSkill[1] = 0; // Primary skill to bosses.
+	Config.AttackSkill[1] = me.getSkill(255, 1) ? 255 : 0; // Primary skill to bosses.
 	Config.AttackSkill[2] = 0; // Primary untimed skill to bosses. Keep at -1 if Config.AttackSkill[1] is untimed skill.
-	Config.AttackSkill[3] = 0; // Primary skill to others.
+	Config.AttackSkill[3] = me.getSkill(255, 1) ? 255 : 0; // Primary skill to others.
 	Config.AttackSkill[4] = 0; // Primary untimed skill to others. Keep at -1 if Config.AttackSkill[3] is untimed skill.
 	Config.AttackSkill[5] = 0; // Secondary skill if monster is immune to primary.
 	Config.AttackSkill[6] = 0; // Secondary untimed skill if monster is immune to primary untimed.
@@ -57,15 +57,25 @@ function LoadTemplate()
 
 	Config.SummonShadow = "Master"; // 0 = don't summon, 1 or "Warrior" = summon Shadow Warrior, 2 or "Master" = summon Shadow Master
 	Config.UseFade = true; // Set to true to use Fade prebuff.
-	Config.UseBoS = false; // Set to true to use Burst of Speed prebuff. TODO: Casting in town + UseFade compatibility
-	Config.UseVenom = false; // Set to true to use Venom prebuff. Set to false if you don't have the skill and have Arachnid Mesh - it will cause connection drop otherwise.
+	Config.UseBoS = true; // Set to true to use Burst of Speed prebuff. TODO: Casting in town + UseFade compatibility
+	Config.UseVenom = true; // Set to true to use Venom prebuff. Set to false if you don't have the skill and have Arachnid Mesh - it will cause connection drop otherwise.
 	Config.UseCloakofShadows = true; // Set to true to use Cloak of Shadows while fighting. Useful for blinding regular monsters/minions.
 	
 	Config.Dodge = false; // Move away from monsters that get too close. Don't use with short-ranged attacks like Poison Dagger.
 	Config.DodgeRange = 15; // Distance to keep from monsters.
 
-	Config.AutoSkill.Enabled = false; // Enable or disable AutoSkill system
-	Config.AutoSkill.Build = [];
+	Config.AutoSkill.Enabled = true; // Enable or disable AutoSkill system
+	Config.AutoSkill.Build = [
+		[255, 5, false], // dragon talon
+		[275, 1, false], // dragon flight
+		[279, 1, false], // shadow master
+		[273, 1, false], // mind blast
+		[278, 100, false], // venom
+		[276, 100, false], // death sentry
+		[271, 100, false], // lightning sentry
+		[261, 100, false], // charged-bolt sentry
+		[255, 100, false], // dragon talon
+	];
 
 	Config.AutoStat.Enabled = true; // Enable or disable AutoStat system
 	Config.AutoStat.Build = [

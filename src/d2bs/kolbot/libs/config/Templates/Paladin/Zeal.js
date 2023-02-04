@@ -41,26 +41,31 @@ function LoadTemplate()
 	// 125	Salvation
 
 	Config.AttackSkill[0] = -1; // Preattack skill.
-	Config.AttackSkill[1] = 0; // Primary skill to bosses.
-	Config.AttackSkill[2] = -1; // Primary aura to bosses
-	Config.AttackSkill[3] = 0; // Primary skill to others.
-	Config.AttackSkill[4] = 0; // Primary aura to others.
+	Config.AttackSkill[1] = me.getSkill(117, 1) ? 117 : 0; // Primary skill to bosses.
+	Config.AttackSkill[2] = me.getSkill(122, 1) ? 122 : 98; // Primary aura to bosses
+	Config.AttackSkill[3] = me.getSkill(106, 1) ? 106 : 0; // Primary skill to others.
+	Config.AttackSkill[4] = me.getSkill(122, 1) ? 122 : 98; // Primary aura to others.
 	Config.AttackSkill[5] = 0; // Secondary skill if monster is immune to primary.
-	Config.AttackSkill[6] = =1; // Secondary aura.
+	Config.AttackSkill[6] = -1; // Secondary aura.
 
 	Config.LowManaSkill[0] = 0; // Low mana skill.
 	Config.LowManaSkill[1] = -1; // Low mana aura.
 
 	Config.AvoidDolls = false; // Try to attack Soul Killers from a greater distance with hammerdins.
-	Config.Vigor = false; // Swith to Vigor when running
+	Config.Vigor = true; // Swith to Vigor when running
 	Config.Charge = false; // Use Charge when running
 	Config.Redemption = [50, 50]; // Switch to Redemption after clearing an area if under designated life or mana. Format: [lifepercent, manapercent]
 
 	Config.Dodge = false; // Move away from monsters that get too close. Don't use with short-ranged attacks like Poison Dagger.
 	Config.DodgeRange = 15; // Distance to keep from monsters.
 
-	Config.AutoSkill.Enabled = false; // Enable or disable AutoSkill system
-	Config.AutoSkill.Build = [];
+	Config.AutoSkill.Enabled = true; // Enable or disable AutoSkill system
+	Config.AutoSkill.Build = [
+		[124, 1, false], // redemption
+		[122, 100, false], // fanatacism
+		[117, 100, false], // holy shield
+		[106, 100, false], // zeal
+	];
 
 	Config.AutoStat.Enabled = true; // Enable or disable AutoStat system
 	Config.AutoStat.Build = [

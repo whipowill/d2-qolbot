@@ -7,14 +7,15 @@ function LoadDefaultConfig()
 	/////////////////////////////////////////////////
 	Scripts.Follower = true; // Script that follows a manually played leader around like a merc. For a list of commands, see Follower.js
 	Config.PublicMode = 2; // 1 = invite and accept, 2 = accept only, 3 = invite only, 0 = disable
-	Config.Leader = "Reform"; // Leader's ingame character name. Leave blank to try auto-detection (works in AutoBaal, Wakka, MFHelper)
+	Config.Leader = "Sankt"; // Leader's ingame character name. Leave blank to try auto-detection (works in AutoBaal, Wakka, MFHelper)
 	Config.LeaderOptions = ["Reform", "Vanity", "Meir", "Barabas", "Judah", "Xena"]; // list of names that can be leader
 	Config.QuitList = [""]; // List of character names to quit with. Example: Config.QuitList = ["MySorc", "MyDin"];
 	Config.QuitListMode = 0; // 0 = use character names; 1 = use profile names (all profiles must run on the same computer).
 	Config.DarkQuotes = true; // use dark quotes
 	//Scripts.ForceSave = true; // force periodic saves (PlugY /save command)
 
-	Config.AutoEquip = false; // this is cool for levels under 50
+	Config.AutoEquip = true;
+	Config.AutoMercEquip = true;
 
 	/////////////////////////////////////////////////
 	// HEALTH & SAFETY
@@ -75,13 +76,17 @@ function LoadDefaultConfig()
 	Config.MinColumn[3] = 0; // rp columns to 0 bc they can't be bought
 
 	// looting
-	Config.PickitFiles.push("autoequip/charms_exp.nip"); // <-- for autoequip
+	Config.PickitFiles.push("autoequip/charms_exp.nip"); // <-- for autoequip (not sure if this works)
 	Config.PickitFiles.push("autoequip/sonic_exp.nip"); // <-- for autoequip
-	Config.PickitFiles.push("QOL/Quest.nip");
 	Config.PickitFiles.push("QOL/Potions.nip");
-	Config.PickitFiles.push("QOL/Misc.nip");
+	Config.PickitFiles.push("QOL/Quest.nip");
 	Config.PickitFiles.push("QOL/Rares.nip");
+	Config.PickitFiles.push("QOL/Ladder.nip");
+	Config.PickitFiles.push("QOL/Grailer.nip");// <-- every set and uniq item in the game
+	Config.PickitFiles.push("QOL/Custom.nip");
+	Config.PickitFiles.push("QOL/Jewelry.nip");
 	Config.PickitFiles.push("QOL/Bases.nip");
+	Config.PickitFiles.push("QOL/Misc.nip");
 	Config.PickRange = 40; // Pick radius
 	Config.FastPick = true; // Check and pick items between attacks
 

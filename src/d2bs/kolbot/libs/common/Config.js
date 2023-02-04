@@ -238,6 +238,7 @@ var Config = {
 	// Experimental
 	FastParty: false,
 	AutoEquip: false,
+	AutoMercEquip: false,
 
 	// Attack specific
 	Dodge: false,

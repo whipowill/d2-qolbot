@@ -41,9 +41,9 @@ function LoadTemplate()
 	// 95	Revive
 
 	Config.AttackSkill[0] = -1; // Preattack skill.
-	Config.AttackSkill[1] = -1; // Primary skill to bosses.
+	Config.AttackSkill[1] = 0; // Primary skill to bosses.
 	Config.AttackSkill[2] = -1; // Primary untimed skill to bosses. Keep at -1 if Config.AttackSkill[1] is untimed skill.
-	Config.AttackSkill[3] = -1; // Primary skill to others.
+	Config.AttackSkill[3] = 0; // Primary skill to others.
 	Config.AttackSkill[4] = -1; // Primary untimed skill to others. Keep at -1 if Config.AttackSkill[3] is untimed skill.
 	Config.AttackSkill[5] = -1; // Secondary skill if monster is immune to primary.
 	Config.AttackSkill[6] = -1; // Secondary untimed skill if monster is immune to primary untimed.
@@ -54,7 +54,7 @@ function LoadTemplate()
 	Config.Curse[0] = 0; // Boss curse. Use skill number or set to 0 to disable.
 	Config.Curse[1] = 0; // Other monsters curse. Use skill number or set to 0 to disable.
 
-	Config.ExplodeCorpses = 0; // Explode corpses. Use skill number or 0 to disable. 74 = Corpse Explosion, 83 = Poison Explosion
+	Config.ExplodeCorpses = 74; // Explode corpses. Use skill number or 0 to disable. 74 = Corpse Explosion, 83 = Poison Explosion
 	Config.Golem = "None"; // Golem. 0 or "None" = don't summon, 1 or "Clay" = Clay Golem, 2 or "Blood" = Blood Golem, 3 or "Fire" = Fire Golem
 	Config.Skeletons = 0; // Number of skeletons to raise. Set to "max" to auto detect, set to 0 to disable.
 	Config.SkeletonMages = 0; // Number of skeleton mages to raise. Set to "max" to auto detect, set to 0 to disable.
@@ -68,7 +68,9 @@ function LoadTemplate()
 	Config.DodgeRange = 15; // Distance to keep from monsters.
 
 	Config.AutoSkill.Enabled = false; // Enable or disable AutoSkill system
-	Config.AutoSkill.Build = [];
+	Config.AutoSkill.Build = [
+
+	];
 
 	Config.AutoStat.Enabled = true; // Enable or disable AutoStat system
 	Config.AutoStat.Build = [

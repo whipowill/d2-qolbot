@@ -93,6 +93,7 @@ var Town = {
 		this.buyPotions();
 		this.clearInventory();
 		Item.autoEquip();
+		Item.autoMercEquip();
 		this.buyKeys();
 		this.repair();
 		this.gamble();
@@ -557,7 +558,7 @@ MainLoop:
 				result = Pickit.checkItem(item);
 
 				// Force ID for unid items matching autoEquip criteria
-				if (result.result === 1 && !item.getFlag(0x10) && Item.hasTier(item)) {
+				if (result.result === 1 && !item.getFlag(0x10) && (Item.hasTier(item) || Item.hasMercTier(item))) {
 					result.result = -1;
 				}
 
@@ -613,6 +614,10 @@ MainLoop:
 					case 1:
 						// Couldn't id autoEquip item. Don't log it.
 						if (result.result === 1 && Config.AutoEquip && !item.getFlag(0x10) && Item.autoEquipCheck(item)) {
+							break;
+						}
+
+						if (result.result === 1 && Config.AutoMercEquip && !item.getFlag(0x10) && Item.autoMercEquipCheck(item)) {
 							break;
 						}
 
@@ -708,7 +713,7 @@ MainLoop:
 			for (i = 0; i < unids.length; i += 1) {
 				result = Pickit.checkItem(unids[i]);
 
-				if (!Item.autoEquipCheck(unids[i])) {
+				if (!Item.autoEquipCheck(unids[i]) && !Item.autoMercEquipCheck(unids[i])) {
 					result = 0;
 				}
 
@@ -753,6 +758,10 @@ MainLoop:
 
 			// Force ID for unid items matching autoEquip criteria
 			if (result.result === 1 && !item.getFlag(0x10) && Item.hasTier(item)) {
+				result.result = -1;
+			}
+
+			if (result.result === 1 && !item.getFlag(0x10) && Item.hasMercTier(item)) {
 				result.result = -1;
 			}
 
@@ -906,7 +915,7 @@ CursorLoop:
 		for (i = 0; i < items.length; i += 1) {
 			result = Pickit.checkItem(items[i]);
 
-			if (result.result === 1 && Item.autoEquipCheck(items[i])) {
+			if (result.result === 1 && (Item.autoEquipCheck(items[i]) || Item.autoMercEquipCheck(items[i]))) {
 				try {
 					if (Storage.Inventory.CanFit(items[i]) && me.getStat(14) + me.getStat(15) >= items[i].getItemCost(0)) {
 						Misc.itemLogger("Shopped", items[i]);
@@ -998,7 +1007,7 @@ CursorLoop:
 					if (newItem) {
 						result = Pickit.checkItem(newItem);
 
-						if (!Item.autoEquipCheck(newItem)) {
+						if (!Item.autoEquipCheck(newItem) && !Item.autoMercEquipCheck(newItem)) {
 							result = 0;
 						}
 
@@ -1581,6 +1590,14 @@ MainLoop:
 						}
 					}
 
+					if (Config.AutoMercEquip && Pickit.checkItem(items[i]).result === 1) {
+						tier = NTIP.GetMercTier(items[i]);
+
+						if (tier > 0) {
+							result = false;
+						}
+					}
+
 					if (result) {
 						Misc.itemLogger("Stashed", items[i]);
 						Storage.Stash.MoveTo(items[i]);
@@ -1963,7 +1980,7 @@ MainLoop:
 					) {
 				result = Pickit.checkItem(items[i]).result;
 
-				if (!Item.autoEquipCheck(items[i])) {
+				if (!Item.autoEquipCheck(items[i]) || !Item.autoMercEquipCheck(items[i])) {
 					result = 0;
 				}
 

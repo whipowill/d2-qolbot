@@ -41,9 +41,9 @@ function LoadTemplate()
 	// 35	Lightning Fury
 
 	Config.AttackSkill[0] = -1; // Preattack skill.
-	Config.AttackSkill[1] = 22; // Primary skill to bosses.
+	Config.AttackSkill[1] = me.getSkill(22, 1) ? 22 : 0; // Primary skill to bosses.
 	Config.AttackSkill[2] = -1; // Primary untimed skill to bosses. Keep at -1 if Config.AttackSkill[1] is untimed skill.
-	Config.AttackSkill[3] = 12; // Primary skill to others.
+	Config.AttackSkill[3] = me.getSkill(12, 1) ? 12 : 0; // Primary skill to others.
 	Config.AttackSkill[4] = -1; // Primary untimed skill to others. Keep at -1 if Config.AttackSkill[3] is untimed skill.
 	Config.AttackSkill[5] = 0; // Secondary skill if monster is immune to primary.
 	Config.AttackSkill[6] = 0; // Secondary untimed skill if monster is immune to primary untimed.
