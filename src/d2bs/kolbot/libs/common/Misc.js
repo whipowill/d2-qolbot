@@ -497,6 +497,7 @@ var Item = {
 	// Equips an item and throws away the old equipped item
 	equip: function (item, bodyLoc) {
 		if (!this.canEquip(item)) {
+			this.dropItem(item);
 			return false;
 		}
 
@@ -541,6 +542,7 @@ var Item = {
 
 	mercEquip: function (item, bodyLoc) {
 		if (!this.canMercEquip(item)) {
+			this.dropItem(item);
 			return false;
 		}
 
@@ -591,7 +593,8 @@ var Item = {
 				if (item.bodylocation === bodyLoc) {
 					return {
 						classid: item.classid,
-						tier: NTIP.GetTier(item)
+						tier: NTIP.GetTier(item),
+						isReplacable: (item.quality == 5 || item.quality == 7 || item.getFlag(0x4000000)) ? false : true,
 					};
 				}
 			} while (item.getNext());
@@ -600,7 +603,8 @@ var Item = {
 		// Don't have anything equipped in there
 		return {
 			classid: -1,
-			tier: -1
+			tier: -1,
+			isReplacable: true,
 		};
 	},
 
@@ -614,7 +618,8 @@ var Item = {
 					if (item.bodylocation === bodyLoc) {
 						return {
 							classid: item.classid,
-							tier: NTIP.GetMercTier(item)
+							tier: NTIP.GetMercTier(item),
+							isReplacable: (item.quality == 5 || item.quality == 7 || item.getFlag(0x4000000)) ? false : true,
 						};
 					}
 				} while (item.getNext());
@@ -624,7 +629,8 @@ var Item = {
 		// Don't have anything equipped in there
 		return {
 			classid: -1,
-			tier: -1
+			tier: -1,
+			isReplacable: true,
 		};
 	},
 
@@ -722,7 +728,7 @@ var Item = {
 		if (tier > 0 && bodyLoc) {
 			for (i = 0; i < bodyLoc.length; i += 1) {
 				// Low tier items shouldn't be kept if they can't be equipped
-				if (tier > this.getEquippedItem(bodyLoc[i]).tier && (this.canEquip(item) || !item.getFlag(0x10))) {
+				if (tier > this.getEquippedItem(bodyLoc[i]).tier && (this.canEquip(item) || !item.getFlag(0x10)) && this.getEquippedItem(bodyLoc[i]).isReplacable) {
 					return true;
 				}
 			}
@@ -754,7 +760,7 @@ var Item = {
 		if (tier > 0 && bodyLoc) {
 			for (i = 0; i < bodyLoc.length; i += 1) {
 				// Low tier items shouldn't be kept if they can't be equipped
-				if (tier > this.getMercEquippedItem(bodyLoc[i]).tier && (this.canMercEquip(item) || !item.getFlag(0x10))) {
+				if (tier > this.getMercEquippedItem(bodyLoc[i]).tier && (this.canMercEquip(item) || !item.getFlag(0x10)) && this.getMercEquippedItem(bodyLoc[i]).isReplacable) {
 					return true;
 				}
 			}
@@ -765,7 +771,7 @@ var Item = {
 			return Pickit.checkItem(item).result;
 		}
 
-		return true;
+		return false;
 	},
 
 	// return value is irrelevant, this only scans and equips better tiered items in inventory -whipowill
@@ -815,7 +821,7 @@ var Item = {
 				for (j = 0; j < bodyLoc.length; j += 1)
 				{
 					// if ?? and new item is better and old item is not khalims will
-					if ([3, 7].indexOf(items[0].location) > -1 && tier > this.getEquippedItem(bodyLoc[j]).tier && this.getEquippedItem(bodyLoc[j]).classid !== 174 && this.getEquippedItem(bodyLoc[j]).quality !== 5 && this.getEquippedItem(bodyLoc[j]).quality !== 7 && !this.getEquippedItem(bodyLoc[j]).isRuneword)
+					if ([3, 7].indexOf(items[0].location) > -1 && tier > this.getEquippedItem(bodyLoc[j]).tier && this.getEquippedItem(bodyLoc[j]).classid !== 174)
 					{
 						// if needs identification...
 						if (!items[0].getFlag(0x10))
@@ -891,7 +897,7 @@ var Item = {
 
 			if (tier > 0 && bodyLoc) {
 				for (j = 0; j < bodyLoc.length; j += 1) {
-					if ([3, 7].indexOf(items[0].location) > -1 && tier > this.getMercEquippedItem(bodyLoc[j]).tier && this.getMercEquippedItem(bodyLoc[j]).classid !== 174 && this.getMercEquippedItem(bodyLoc[j]).quality !== 5 && this.getMercEquippedItem(bodyLoc[j]).quality !== 7 && !this.getMercEquippedItem(bodyLoc[j]).isRuneword) { // khalim's will adjustment
+					if ([3, 7].indexOf(items[0].location) > -1 && tier > this.getMercEquippedItem(bodyLoc[j]).tier && this.getMercEquippedItem(bodyLoc[j]).classid !== 174) { // khalim's will adjustment
 						if (!items[0].getFlag(0x10)) { // unid
 							tome = me.findItem(519, 0, 3);
 
