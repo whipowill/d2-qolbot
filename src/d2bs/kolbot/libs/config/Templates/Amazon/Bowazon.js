@@ -59,7 +59,15 @@ function LoadTemplate()
 
 	Config.AutoSkill.Enabled = false; // Enable or disable AutoSkill system
 	Config.AutoSkill.Build = [
-
+		[29, 1, false], // evade
+		[18, 1, false], // avoid
+		[13, 1, false], // dodge
+		[26, 100, false], // strafe
+		[22, 100, false], // guided arrow
+		[12, 10, false], // multiple shot
+		[33, 1, false], // pierce
+		[23, 100, false], // penetrate
+		[9, 100, false], // critical strike
 	];
 
 	Config.AutoStat.Enabled = true; // Enable or disable AutoStat system

@@ -7,7 +7,7 @@ function LoadDefaultConfig()
 	/////////////////////////////////////////////////
 	Scripts.Follower = true; // Script that follows a manually played leader around like a merc. For a list of commands, see Follower.js
 	Config.PublicMode = 2; // 1 = invite and accept, 2 = accept only, 3 = invite only, 0 = disable
-	Config.Leader = "Sankt"; // Leader's ingame character name. Leave blank to try auto-detection (works in AutoBaal, Wakka, MFHelper)
+	Config.Leader = "Reform"; // Leader's ingame character name. Leave blank to try auto-detection (works in AutoBaal, Wakka, MFHelper)
 	Config.LeaderOptions = ["Reform", "Vanity", "Meir", "Barabas", "Judah", "Xena"]; // list of names that can be leader
 	Config.QuitList = [""]; // List of character names to quit with. Example: Config.QuitList = ["MySorc", "MyDin"];
 	Config.QuitListMode = 0; // 0 = use character names; 1 = use profile names (all profiles must run on the same computer).
@@ -76,21 +76,15 @@ function LoadDefaultConfig()
 	Config.MinColumn[3] = 0; // rp columns to 0 bc they can't be bought
 
 	// looting
-	Config.PickitFiles.push("autoequip/charms_exp.nip"); // <-- for autoequip (not sure if this works)
-	Config.PickitFiles.push("autoequip/sonic_exp.nip"); // <-- for autoequip
+	Config.PickitFiles.push("Autoequip/char.nip"); // <-- for autoequip
+	Config.PickitFiles.push("Autoequip/merc.nip"); // <-- for autoequip
 	Config.PickitFiles.push("QOL/Potions.nip");
 	Config.PickitFiles.push("QOL/Quest.nip");
-	Config.PickitFiles.push("QOL/Rares.nip");
-	Config.PickitFiles.push("QOL/Ladder.nip");
-	Config.PickitFiles.push("QOL/Grailer.nip");// <-- every set and uniq item in the game
-	Config.PickitFiles.push("QOL/Custom.nip");
-	Config.PickitFiles.push("QOL/Jewelry.nip");
-	Config.PickitFiles.push("QOL/Bases.nip");
-	Config.PickitFiles.push("QOL/Misc.nip");
 	Config.PickRange = 40; // Pick radius
 	Config.FastPick = true; // Check and pick items between attacks
+	//Config.LowGold = 1000000; // I found this in Pickit.js, but was missing from config -whipowill
 
-	Config.ItemInfo = false; // Log stashed, skipped (due to no space) or sold items.
+	Config.ItemInfo = true; // Log stashed, skipped (due to no space) or sold items.
 	Config.ItemInfoQuality = []; // The quality of sold items to log. See NTItemAlias.dbl for values. Example: Config.ItemInfoQuality = [6, 7, 8];
 
 	Config.CainID.Enable = false; // Identify items at Cain
@@ -108,9 +102,9 @@ function LoadDefaultConfig()
 	/////////////////////////////////////////////////
 
 	// $name, $level, $class and $killer are replaced by the player's name, level, class and killer
-	Config.Greetings = ["Hello, $name!"]; // Example: ["Hello, $name (level $level $class)"]
+	//Config.Greetings = ["Hello, $name!"]; // Example: ["Hello, $name (level $level $class)"]
 	Config.DeathMessages = ["They killed $name!"]; // Example: ["Watch out for that $killer, $name!"]
-	Config.Congratulations = ["Congrats on level $level, $name!"]; // Example: ["Congrats on level $level, $name!"]
+	//Config.Congratulations = ["Congrats on level $level, $name!"]; // Example: ["Congrats on level $level, $name!"]
 	Config.ShitList = false; // Blacklist hostile players so they don't get invited to party.
 	Config.UnpartyShitlisted = false; // Leave party if someone invited a blacklisted player.
 

@@ -197,7 +197,7 @@ var Quester = {
 			case 'alkor':
 				Pather.moveTo(5083, 5018);
 				break;
-			case 'deckard cain':
+			case 'cain':
 				Pather.moveTo(5021, 5033);
 				break;
 			case 'qual-kehk':
@@ -804,7 +804,7 @@ var Quester = {
 			Town.goToTown(2);
 
 			// talk to jerhyn
-			this.townAndTalk('jerhyn');
+			//this.townAndTalk('jerhyn');
 			//this.townAndTalk('kaelan');
 
 			// clear harem
@@ -830,7 +830,7 @@ var Quester = {
 		}
 
 		// talk to jerhyn
-		if (progress >= 50) this.townAndTalk('jerhyn');
+		//if (progress >= 50) this.townAndTalk('jerhyn');
 		//this.townAndTalk('kaelan');
 
 		// return
@@ -883,7 +883,7 @@ var Quester = {
 		if (progress >= 50)
 		{
 		 	// travel to act 3
-		 	this.townAndTalk('jerhyn');
+		 	//this.townAndTalk('jerhyn');
 		 	//this.townAndTalk('meshif', 0x0D38);
 
 		 	// talk to hratil
@@ -1114,7 +1114,11 @@ var Quester = {
 			progress = 100;
 		}
 
-		if (progress >= 50) this.talkToNPC('tyrael');
+		if (progress >= 50)
+		{
+			Pather.moveTo(5021, 5033);
+			this.talkToNPC('tyrael');
+		}
 
 		if (!is_town_only)
 		{
@@ -1137,7 +1141,7 @@ var Quester = {
 			Town.goToTown(4);
 
 			// talk to cain
-			this.townAndTalk('deckard cain');
+			//this.townAndTalk('cain');
 
 			// run hephasto script
 			//include('bots/Hephasto.js');

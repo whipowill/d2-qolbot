@@ -1,0 +1,34 @@
+// ====================================================================== //
+// ======================== (c) 2016 dzik ====== #d2bs@irc.synirc.org === //
+// ====================================================================== //
+// targeting for max res in hell + stats + skills
+
+// wep
+//me.diff == 0 && ([type] == wand || [type] == orb || [type] == knife) && [quality] < rare # && [secondarymaxdamage] == 0 # [tier] == /*fr+cr+lr+pr*/((item.getStatEx(39) + item.getStatEx(41) + item.getStatEx(43) + item.getStatEx(45)) * 1000) + /*maxmana*/(item.getStatEx(9) * 1)
+//([type] == wand || [type] == orb || [type] == knife) && [quality] >= rare # && [secondarymaxdamage] == 0 # [tier] == /*fr+cr+lr+pr*/((item.getStatEx(39) + item.getStatEx(41) + item.getStatEx(43) + item.getStatEx(45)) * 1000)
+//[name] == swirlingcrystal && [quality] == unique # # [tier] == /*mf*/(item.getStatEx(80) * 10e10)
+
+// amulet
+[type] == amulet && ([quality] == normal || [quality] == magic || [quality] == rare) #  # [tier] == /*fr+cr+lr*/((item.getStatEx(39) + item.getStatEx(41) + item.getStatEx(43)) * 1000)
+
+// ring
+[name] == ring && ([quality] == normal || [quality] == magic || [quality] == rare) # # [tier] == /*fr+pr+lr*/((item.getStatEx(39) + item.getStatEx(45) + item.getStatEx(43)) * 1000)
+
+// helm
+[type] == helm && ([quality] == normal || [quality] == magic || [quality] == rare) && [flag] != ethereal # # [tier] == /*fr+cr+lr*/((item.getStatEx(39) + item.getStatEx(41) + item.getStatEx(43)) * 100) + /*defense*/(item.getStatEx(31) * 1)
+
+// armor
+[type] == armor && ([quality] == normal || [quality] == magic || [quality] == rare) && [flag] != ethereal # # [tier] == /*fr+cr+lr*/((item.getStatEx(39) + item.getStatEx(41) + item.getStatEx(43)) * 100) + /*defense*/(item.getStatEx(31) * 1)
+
+// belt
+[type] == belt && ([quality] == normal || [quality] == magic || [quality] == rare) && [flag] != ethereal # # [tier] == /*fr+cr+lr*/((item.getStatEx(39) + item.getStatEx(41) + item.getStatEx(43)) * 100) + /*defense*/(item.getStatEx(31) * 1)
+
+// boots
+[type] == boots && ([quality] == normal || [quality] == magic || [quality] == rare) && [flag] != ethereal # # [tier] == /*fr+cr+lr*/((item.getStatEx(39) + item.getStatEx(41) + item.getStatEx(43)) * 100) + /*defense*/(item.getStatEx(31) * 1)
+
+// gloves
+[type] == gloves && ([quality] == normal || [quality] == magic || [quality] == rare) && [flag] != ethereal # # [tier] == /*fr+cr+lr*/((item.getStatEx(39) + item.getStatEx(41) + item.getStatEx(43)) * 100) + /*defense*/(item.getStatEx(31) * 1)
+
+// shield
+//me.diff == 0 && [type] == shield && [quality] <= magic && [flag] != ethereal # # [tier] == /*fr+cr+lr+pr*/((item.getStatEx(39) + item.getStatEx(41) + item.getStatEx(43) + item.getStatEx(45)) * 100) + /*defense*/(item.getStatEx(31) * 1)
+//[type] == shield && [quality] >= rare && [flag] != ethereal # # [tier] == /*fr+cr+lr+pr*/((item.getStatEx(39) + item.getStatEx(41) + item.getStatEx(43) + item.getStatEx(45)) * 100) + /*defense*/(item.getStatEx(31) * 1)

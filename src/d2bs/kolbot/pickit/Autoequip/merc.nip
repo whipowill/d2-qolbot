@@ -1,0 +1,5 @@
+// head
+[type] == helm && ([quality] == normal || [quality] == magic || [quality] == rare) && [flag] != runeword # # [merctier] == /*fr+cr+lr*/((item.getStatEx(39) + item.getStatEx(41) + item.getStatEx(43)) * 1000) + /*defense*/(item.getStatEx(31) * 1)
+
+// armor
+[type] == armor && ([quality] == normal || [quality] == magic || [quality] == rare) && [flag] != runeword # # [merctier] == /*fr+cr+lr*/((item.getStatEx(39) + item.getStatEx(41) + item.getStatEx(43)) * 1000) + /*defense*/(item.getStatEx(31) * 1)

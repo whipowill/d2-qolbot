@@ -28,8 +28,9 @@ var Pickit = {
 	// 2 - Cubing wants
 	// 3 - Runeword wants
 	// 4 - Pickup to sell (triggered when low on gold)
-	checkItem: function (unit, is_use_notier = false) {
-		var rval = NTIP.CheckItem(unit, is_use_notier ? false : NTIP_CheckListNoTier, true);
+	checkItem: function (unit, is_include_tiered_items = false) {
+		var rval = NTIP.CheckItem(unit, is_include_tiered_items ? false : NTIP_CheckListNoTier, true);
+		//var rval = NTIP.CheckItem(unit, false, true);
 
 		if ((unit.classid === 617 || unit.classid === 618) && Town.repairIngredientCheck(unit)) {
 			return {
@@ -117,7 +118,7 @@ var Pickit = {
 			if (copyUnit(pickList[0]).x !== undefined && (pickList[0].mode === 3 || pickList[0].mode === 5) &&
 					(Pather.useTeleport || me.inTown || !checkCollision(me, pickList[0], 0x1))) { // Don't pick items behind walls/obstacles when walking
 				// Check if the item should be picked
-				status = this.checkItem(pickList[0]);
+				status = this.checkItem(pickList[0], true); // flag true to include tiered items too -whipowill
 
 				if (status.result && this.canPick(pickList[0]) && (Item.autoEquipCheck(pickList[0]) || Item.autoMercEquipCheck(pickList[0]))) {
 					// Override canFit for scrolls, potions and gold

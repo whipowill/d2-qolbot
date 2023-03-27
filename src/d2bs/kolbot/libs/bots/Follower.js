@@ -966,6 +966,10 @@ function Follower() {
 
 			// look for nearby waypoints
 			this.gatherWaypoint();
+
+			// autoequip any items if you can
+			Item.autoEquip();
+			Item.autoMercEquip();
 		}
 
 		switch (action) {

@@ -52,7 +52,7 @@ function LoadTemplate()
 	Config.LowManaSkill[1] = -1; // Low mana aura.
 
 	Config.AvoidDolls = false; // Try to attack Soul Killers from a greater distance with hammerdins.
-	Config.Vigor = true; // Swith to Vigor when running
+	Config.Vigor = false; // Swith to Vigor when running
 	Config.Charge = false; // Use Charge when running
 	Config.Redemption = [50, 50]; // Switch to Redemption after clearing an area if under designated life or mana. Format: [lifepercent, manapercent]
 

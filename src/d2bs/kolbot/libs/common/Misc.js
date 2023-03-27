@@ -712,7 +712,7 @@ var Item = {
 
 	autoEquipCheck: function (item) {
 		if (!Config.AutoEquip) {
-			return Pickit.checkItem(item, true).result;
+			return Pickit.checkItem(item).result;
 		}
 
 		var i,
@@ -736,7 +736,7 @@ var Item = {
 			// just make sure it's not an item any of the other non-tier pickit
 			// files wanted. -whipowill
 
-			return Pickit.checkItem(item, true).result; // flag true to reference notier list
+			return Pickit.checkItem(item).result;
 		}
 
 		return false;
@@ -744,7 +744,7 @@ var Item = {
 
 	autoMercEquipCheck: function (item) {
 		if (!Config.AutoMercEquip) {
-			return Pickit.checkItem(item, true).result; // flag true to reference notier list
+			return Pickit.checkItem(item).result;
 		}
 
 		var i,
@@ -762,7 +762,7 @@ var Item = {
 
 		// Sell/ignore low tier items, keep high tier
 		if (tier > 0) {
-			return Pickit.checkItem(item, true).result; // flag true to reference notier list
+			return Pickit.checkItem(item).result;
 		}
 
 		return true;
@@ -815,7 +815,7 @@ var Item = {
 				for (j = 0; j < bodyLoc.length; j += 1)
 				{
 					// if ?? and new item is better and old item is not khalims will
-					if ([3, 7].indexOf(items[0].location) > -1 && tier > this.getEquippedItem(bodyLoc[j]).tier && this.getEquippedItem(bodyLoc[j]).classid !== 174)
+					if ([3, 7].indexOf(items[0].location) > -1 && tier > this.getEquippedItem(bodyLoc[j]).tier && this.getEquippedItem(bodyLoc[j]).classid !== 174 && this.getEquippedItem(bodyLoc[j]).quality !== 5 && this.getEquippedItem(bodyLoc[j]).quality !== 7 && !this.getEquippedItem(bodyLoc[j]).isRuneword)
 					{
 						// if needs identification...
 						if (!items[0].getFlag(0x10))
@@ -831,12 +831,10 @@ var Item = {
 							}
 						}
 
-						gid = items[0].gid;
-
 						// equip the item
 						if (this.equip(items[0], bodyLoc[j])) {
-							say("Equiping " + items[0].name + ".");
-							Misc.logItem("Equipped", me.getItem(-1, -1, gid));
+							say("Equipping " + items[0].name + ".");
+							Misc.logItem("Equipped", me.getItem(-1, -1, items[0].gid));
 						}
 
 						break;
@@ -893,7 +891,7 @@ var Item = {
 
 			if (tier > 0 && bodyLoc) {
 				for (j = 0; j < bodyLoc.length; j += 1) {
-					if ([3, 7].indexOf(items[0].location) > -1 && tier > this.getMercEquippedItem(bodyLoc[j]).tier && this.getMercEquippedItem(bodyLoc[j]).classid !== 174) { // khalim's will adjustment
+					if ([3, 7].indexOf(items[0].location) > -1 && tier > this.getMercEquippedItem(bodyLoc[j]).tier && this.getMercEquippedItem(bodyLoc[j]).classid !== 174 && this.getMercEquippedItem(bodyLoc[j]).quality !== 5 && this.getMercEquippedItem(bodyLoc[j]).quality !== 7 && !this.getMercEquippedItem(bodyLoc[j]).isRuneword) { // khalim's will adjustment
 						if (!items[0].getFlag(0x10)) { // unid
 							tome = me.findItem(519, 0, 3);
 
@@ -906,13 +904,10 @@ var Item = {
 							}
 						}
 
-						gid = items[0].gid;
-
-						print(items[0].name);
-
+						// equip the item
 						if (this.mercEquip(items[0], bodyLoc[j])) {
-							say("Equiping merc w/ " + items[0].name + ".");
-							Misc.logItem("Merc Equipped", me.getItem(-1, -1, gid));
+							say("Equipping merc w/ " + items[0].name + ".");
+							Misc.logItem("Merc Equipped", me.getItem(-1, -1, items[0].gid));
 						}
 
 						break;

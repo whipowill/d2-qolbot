@@ -10,13 +10,14 @@ This is a fork of an old version of Kolbot w/ some bug fixes.
 
 ## Vision
 
-Most of my work on this code involves the ``Follower.js`` and ``Quester.js`` files.  My goal is to create an experience where the bots will join your games and play with you and automatically do the things a normal person would do.  They crack jokes, gather waypoints, complete quests, gear up, choose skills, gamble, etc.
+Most of my work on this code involves the ``Follower.js`` and ``Quester.js`` files.  My goal was to create an experience where the bots will join your games and play with you and automatically do the things a normal person would do.  They crack jokes, gather waypoints, complete quests, gear up, choose skills, gamble, etc.
 
 ### Features
 
 - Gallows humor remarks as they play
 - Capture waypoints as they play
 - Pickup quest items as they play
+- AutoEquip items as they play
 - Allocate stat/skill points as they play
 - Complete quests as they are able in town
 - Custom inventory sizes to accomodate your mods
@@ -24,7 +25,9 @@ Most of my work on this code involves the ``Follower.js`` and ``Quester.js`` fil
 
 ### Todo
 
-- Experiment w/ AutoEquip abilities
+- Fix AutoEquip issues
+	- Armor only, no weapons
+	- Only considers resistences
 
 ## Install
 
@@ -71,10 +74,14 @@ Most of my work on this code involves the ``Follower.js`` and ``Quester.js`` fil
 - ``1`` - take the portal opened into the wild
 - ``2`` - take the portal opened back to town
 - ``3`` - perform town chores
+- ``a2`` - move to act 2
+- ``a3`` - move to act 3
+- ``a4`` - move to act 4
+- ``a5`` - move to act 5
 - ``save`` - bots will issue PlugY ``/save`` to force save
 - ``town`` - bots will go to town from wherever they are (use when lost)
 - ``move`` - bots will shuffle around (use when stuck)
-- ``prep`` - bots will get prepared for battle (use for summons that take time)
+- ``prep`` - bots will get prepared for battle (use in town for summon Druid)
 - ``status`` - bots will report quest progress
 - ``<BOTNAME> portal <DESTINATION>`` - dispatch a Sorceress to a desired place and open a portal there
 	- Act 1 - ``countess``, ``mausoleum``, ``pit``, ``andariel``

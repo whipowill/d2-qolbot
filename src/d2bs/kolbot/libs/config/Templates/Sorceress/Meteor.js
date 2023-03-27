@@ -41,13 +41,13 @@ function LoadTemplate()
 	// 65	Cold Mastery
 
 	Config.AttackSkill[0] = -1; // Preattack skill.
-	Config.AttackSkill[1] = me.getSkill(56, 1) ? 56 : 0; // Primary skill to bosses.
-	Config.AttackSkill[2] = me.getSkill(47, 1) ? 47 : 0; // Primary untimed skill to bosses. Keep at -1 if Config.AttackSkill[1] is untimed skill.
-	Config.AttackSkill[3] = me.getSkill(56, 1) ? 56 : 0; // Primary skill to others.
-	Config.AttackSkill[4] = me.getSkill(47, 1) ? 47 : 0; // Primary untimed skill to others. Keep at -1 if Config.AttackSkill[3] is untimed skill.
+	Config.AttackSkill[1] = me.getSkill(56, 1) ? 56 : (me.getSkill(47, 1) ? 47 : -1); // Primary skill to bosses.
+	Config.AttackSkill[2] = me.getSkill(47, 1) ? 47 : -1; // Primary untimed skill to bosses. Keep at -1 if Config.AttackSkill[1] is untimed skill.
+	Config.AttackSkill[3] = me.getSkill(56, 1) ? 56 : (me.getSkill(47, 1) ? 47 : -1); // Primary skill to others.
+	Config.AttackSkill[4] = me.getSkill(47, 1) ? 47 : -1; // Primary untimed skill to others. Keep at -1 if Config.AttackSkill[3] is untimed skill.
 	Config.AttackSkill[5] = -1; // Secondary skill if monster is immune to primary.
 	Config.AttackSkill[6] = -1; // Secondary untimed skill if monster is immune to primary untimed.
-	Config.ClearPath = false; // means don't use teleport
+	Config.ClearPath = me.charlvl < 30 ? true : false; // means don't use teleport
 
 	Config.LowManaSkill[0] = -1; // Timed low mana skill.
 	Config.LowManaSkill[1] = -1; // Untimed low mana skill.
