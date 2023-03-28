@@ -41,7 +41,7 @@ function LoadTemplate()
 	// 125	Salvation
 
 	Config.AttackSkill[0] = -1; // Preattack skill.
-	Config.AttackSkill[1] = me.getSkill(117, 1) ? 117 : 0; // Primary skill to bosses.
+	Config.AttackSkill[1] = me.getSkill(97, 1) ? 97 : (me.getSkill(106, 1) ? 106 : 0); // Primary skill to bosses.
 	Config.AttackSkill[2] = me.getSkill(122, 1) ? 122 : 98; // Primary aura to bosses
 	Config.AttackSkill[3] = me.getSkill(106, 1) ? 106 : 0; // Primary skill to others.
 	Config.AttackSkill[4] = me.getSkill(122, 1) ? 122 : 98; // Primary aura to others.
@@ -61,10 +61,15 @@ function LoadTemplate()
 
 	Config.AutoSkill.Enabled = true; // Enable or disable AutoSkill system
 	Config.AutoSkill.Build = [
-		[124, 1, false], // redemption
+		[125, 1, false], // salvation
+		[122, 10, false], // fanatacism
+		[117, 10, false], // holy shield
+		[106, 10, false], // zeal
+		[97, 10, false], // smite
 		[122, 100, false], // fanatacism
 		[117, 100, false], // holy shield
 		[106, 100, false], // zeal
+		[97, 100, false], // smite
 	];
 
 	Config.AutoStat.Enabled = true; // Enable or disable AutoStat system
