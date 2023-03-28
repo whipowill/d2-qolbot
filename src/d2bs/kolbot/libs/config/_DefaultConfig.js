@@ -229,7 +229,7 @@ function LoadDefaultConfig()
 	/* Cubing config. All recipe names are available in Templates/Cubing.txt. For item names/classids check NTItemAlias.dbl
 	 * The format is Config.Recipes.push([recipe_name, item_name_or_classid, etherealness]). Etherealness is optional and only applies to some recipes.
 	 */
-	Config.Cubing = true; // Set to true to enable cubing.
+	Config.Cubing = false; // Set to true to enable cubing.
 	Config.Recipes.push([Recipe.Gem, "Flawless Amethyst"]); // Make Perfect Amethyst
 	Config.Recipes.push([Recipe.Gem, "Flawless Topaz"]); // Make Perfect Topaz
 	Config.Recipes.push([Recipe.Gem, "Flawless Sapphire"]); // Make Perfect Sapphire

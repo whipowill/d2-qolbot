@@ -26,11 +26,9 @@ Most of my work on this code involves the ``Follower.js`` and ``Quester.js`` fil
 ### Notes
 
 - AutoEquip
-	- Files found in ``src/d2bs/kolbot/pickit/autoequip/``
 	- Will never replace a Unique, Set, or Runeword item
 	- Currently doesn't work for merc weapons
 - AutoAllocate
-	- Files found in ``src/d2bs/kolbot/libs/config/``
 	- Uses an easy templating system of my design
 	- Includes templates for the most common builds
 
