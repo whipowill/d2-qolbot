@@ -41,10 +41,10 @@ function LoadTemplate()
 	// 155	Battle Command
 
 	Config.AttackSkill[0] = -1; // Preattack skill.
-	Config.AttackSkill[1] = me.getSkill(147, 1) ? 147 : (me.getSkill(133, 1) ? 133 : 0); // Primary skill for bosses.
-	Config.AttackSkill[2] = 0; // Backup/Immune skill for bosses.
-	Config.AttackSkill[3] = me.getSkill(147, 1) ? 147 : (me.getSkill(133, 1) ? 133 : 0); // Primary skill for others.
-	Config.AttackSkill[4] = 0; // Backup/Immune skill for others.
+	Config.AttackSkill[1] = me.getSkill(140, 1) ? 140 : (me.getSkill(133, 1) ? 133 : 0); // Primary skill for bosses.
+	Config.AttackSkill[2] = -1; // Backup/Immune skill for bosses.
+	Config.AttackSkill[3] = me.getSkill(133, 1) ? 133 : 0; // Primary skill for others.
+	Config.AttackSkill[4] = -1; // Backup/Immune skill for others.
 
 	Config.LowManaSkill[0] = 0; // Low mana skill.
 
@@ -63,9 +63,13 @@ function LoadTemplate()
 		[132, 1, false], // leap
 		[138, 1, false], // shout
 		[155, 1, false], // battle command
-		[149, 100, false], // battle orders
-		[147, 100, false], // frenzy
+		[149, 1, false], // battle orders
+		[133, 10, false], // double swing
+		[140, 100, false], // double throw
+		[135, 10, false], // throw mastery
 		[133, 100, false], // double swing
+		[149, 100, false], // battle orders
+		[135, 100, false], // throw mastery
 	];
 
 	Config.AutoStat.Enabled = true; // Enable or disable AutoStat system

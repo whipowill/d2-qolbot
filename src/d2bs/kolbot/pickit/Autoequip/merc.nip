@@ -1,5 +1,14 @@
-// head
-[type] == helm && ([quality] == normal || [quality] == magic || [quality] == rare) && [flag] != runeword # # [merctier] == /*fr+cr+lr*/((item.getStatEx(39) + item.getStatEx(41) + item.getStatEx(43)) * 1000) + /*defense*/(item.getStatEx(31) * 1)
+// .................................................
+// QOL AutoEquip Merc Ruleset
+// by whipowill
+// .................................................
 
-// armor
-[type] == armor && ([quality] == normal || [quality] == magic || [quality] == rare) && [flag] != runeword # # [merctier] == /*fr+cr+lr*/((item.getStatEx(39) + item.getStatEx(41) + item.getStatEx(43)) * 1000) + /*defense*/(item.getStatEx(31) * 1)
+// =================================================
+// ARMOR (all classes)
+// =================================================
+
+// if not using all-slots mod
+([type] == circlet || [type] == helm || [type] == armor) && ([quality] == normal || [quality] == magic || [quality] == rare) && [flag] != runeword # # [merctier] == /*fr+cr+lr+pr+ar*/((item.getStatEx(39) + item.getStatEx(41) + item.getStatEx(43) + item.getStatEx(45) + (item.getStatEx(555) * 4)) * 100) + /*defense*/(item.getStatEx(31) * 1)
+
+// if using all-slots mod (THIS NOT WORKING)
+//([type] == amulet || [name] == ring || [type] == circlet || [type] == helm || [type] == armor || [type] == belt || [type] == boots || [type] == gloves) && ([quality] == normal || [quality] == magic || [quality] == rare) && [flag] != runeword # # [merctier] == /*fr+cr+lr+pr+ar*/((item.getStatEx(39) + item.getStatEx(41) + item.getStatEx(43) + item.getStatEx(45) + (item.getStatEx(555) * 4)) * 100) + /*defense*/(item.getStatEx(31) * 1)

@@ -1981,7 +1981,7 @@ MainLoop:
 				result = Pickit.checkItem(items[i]).result;
 
 				if (!Item.autoEquipCheck(items[i]) || !Item.autoMercEquipCheck(items[i])) {
-					result = 4; // sell tier items that didn't get used
+					result = 0; // drop tier items that didn't get used (in theory, should never happen anyway) -whipowill
 				}
 
 				switch (result) {

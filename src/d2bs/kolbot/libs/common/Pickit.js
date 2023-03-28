@@ -83,7 +83,7 @@ var Pickit = {
 	},
 
 	pickItems: function () {
-		var status, item, canFit,
+		var status, status_tiers, item, canFit,
 			needMule = false,
 			pickList = [];
 
@@ -117,10 +117,13 @@ var Pickit = {
 			// Check if the item unit is still valid and if it's on ground or being dropped
 			if (copyUnit(pickList[0]).x !== undefined && (pickList[0].mode === 3 || pickList[0].mode === 5) &&
 					(Pather.useTeleport || me.inTown || !checkCollision(me, pickList[0], 0x1))) { // Don't pick items behind walls/obstacles when walking
-				// Check if the item should be picked
-				status = this.checkItem(pickList[0], true); // flag true to include tiered items too -whipowill
 
-				if (status.result && this.canPick(pickList[0]) && (Item.autoEquipCheck(pickList[0]) || Item.autoMercEquipCheck(pickList[0]))) {
+				// Check if the item should be picked
+				status = this.checkItem(pickList[0]);
+				status_tiers = this.checkItem(pickList[0], true); // flag true to include tiered items too -whipowill
+
+				// if you can pick the item, and the item is keepable, or item is equipable...
+				if (this.canPick(pickList[0]) && (status.result || (status_tiers.result && (Item.autoEquipCheck(pickList[0]) || Item.autoMercEquipCheck(pickList[0]))))) {
 					// Override canFit for scrolls, potions and gold
 					canFit = Storage.Inventory.CanFit(pickList[0]) || [4, 22, 76, 77, 78].indexOf(pickList[0].itemType) > -1;
 

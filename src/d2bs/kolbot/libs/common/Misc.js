@@ -497,7 +497,6 @@ var Item = {
 	// Equips an item and throws away the old equipped item
 	equip: function (item, bodyLoc) {
 		if (!this.canEquip(item)) {
-			this.dropItem(item);
 			return false;
 		}
 
@@ -509,6 +508,7 @@ var Item = {
 		var i, cursorItem;
 
 		if (item.location === 7) {
+			say("Going to town to retrieve an item.");
 			if (!Town.openStash()) {
 				return false;
 			}
@@ -542,7 +542,6 @@ var Item = {
 
 	mercEquip: function (item, bodyLoc) {
 		if (!this.canMercEquip(item)) {
-			this.dropItem(item);
 			return false;
 		}
 
@@ -554,6 +553,7 @@ var Item = {
 		var i, cursorItem;
 
 		if (item.location === 7) {
+			say("Going to town to retrieve an item.");
 			if (!Town.openStash()) {
 				return false;
 			}
@@ -594,7 +594,7 @@ var Item = {
 					return {
 						classid: item.classid,
 						tier: NTIP.GetTier(item),
-						isReplacable: (item.quality == 5 || item.quality == 7 || item.getFlag(0x4000000)) ? false : true,
+						isReplacable: (item.quality == 5 || item.quality == 7 || item.getStat(194) > 0) ? false : true,
 					};
 				}
 			} while (item.getNext());
@@ -619,7 +619,7 @@ var Item = {
 						return {
 							classid: item.classid,
 							tier: NTIP.GetMercTier(item),
-							isReplacable: (item.quality == 5 || item.quality == 7 || item.getFlag(0x4000000)) ? false : true,
+							isReplacable: (item.quality == 5 || item.quality == 7 || item.getStat(194) > 0) ? false : true,
 						};
 					}
 				} while (item.getNext());
@@ -718,7 +718,7 @@ var Item = {
 
 	autoEquipCheck: function (item) {
 		if (!Config.AutoEquip) {
-			return Pickit.checkItem(item).result;
+			return false;
 		}
 
 		var i,
@@ -734,23 +734,12 @@ var Item = {
 			}
 		}
 
-		// Sell/ignore low tier items, keep high tier
-		if (tier > 0)
-		{
-			// the only reason we get here is when the Town class checks
-			// to see if it should sell an item it already picked up.  So lets
-			// just make sure it's not an item any of the other non-tier pickit
-			// files wanted. -whipowill
-
-			return Pickit.checkItem(item).result;
-		}
-
 		return false;
 	},
 
 	autoMercEquipCheck: function (item) {
 		if (!Config.AutoMercEquip) {
-			return Pickit.checkItem(item).result;
+			return false;
 		}
 
 		var i,
@@ -764,11 +753,6 @@ var Item = {
 					return true;
 				}
 			}
-		}
-
-		// Sell/ignore low tier items, keep high tier
-		if (tier > 0) {
-			return Pickit.checkItem(item).result;
 		}
 
 		return false;
@@ -821,7 +805,7 @@ var Item = {
 				for (j = 0; j < bodyLoc.length; j += 1)
 				{
 					// if ?? and new item is better and old item is not khalims will
-					if ([3, 7].indexOf(items[0].location) > -1 && tier > this.getEquippedItem(bodyLoc[j]).tier && this.getEquippedItem(bodyLoc[j]).classid !== 174)
+					if ([3, 7].indexOf(items[0].location) > -1 && tier > this.getEquippedItem(bodyLoc[j]).tier && this.getEquippedItem(bodyLoc[j]).classid !== 174 && this.getEquippedItem(bodyLoc[j]).isReplacable)
 					{
 						// if needs identification...
 						if (!items[0].getFlag(0x10))
@@ -897,7 +881,7 @@ var Item = {
 
 			if (tier > 0 && bodyLoc) {
 				for (j = 0; j < bodyLoc.length; j += 1) {
-					if ([3, 7].indexOf(items[0].location) > -1 && tier > this.getMercEquippedItem(bodyLoc[j]).tier && this.getMercEquippedItem(bodyLoc[j]).classid !== 174) { // khalim's will adjustment
+					if ([3, 7].indexOf(items[0].location) > -1 && tier > this.getMercEquippedItem(bodyLoc[j]).tier && this.getMercEquippedItem(bodyLoc[j]).classid !== 174 && this.getMercEquippedItem(bodyLoc[j]).isReplacable) { // khalim's will adjustment
 						if (!items[0].getFlag(0x10)) { // unid
 							tome = me.findItem(519, 0, 3);
 

@@ -41,9 +41,9 @@ function LoadTemplate()
 	// 35	Lightning Fury
 
 	Config.AttackSkill[0] = -1; // Preattack skill.
-	Config.AttackSkill[1] = me.getSkill(22, 1) ? 22 : 0; // Primary skill to bosses.
+	Config.AttackSkill[1] = me.getSkill(24, 1) ? 24 : 0; // Primary skill to bosses.
 	Config.AttackSkill[2] = -1; // Primary untimed skill to bosses. Keep at -1 if Config.AttackSkill[1] is untimed skill.
-	Config.AttackSkill[3] = me.getSkill(12, 1) ? 12 : 0; // Primary skill to others.
+	Config.AttackSkill[3] = me.getSkill(35, 1) ? 35 : (me.getSkill(24, 1) ? 24 : 0); // Primary skill to others.
 	Config.AttackSkill[4] = -1; // Primary untimed skill to others. Keep at -1 if Config.AttackSkill[3] is untimed skill.
 	Config.AttackSkill[5] = 0; // Secondary skill if monster is immune to primary.
 	Config.AttackSkill[6] = 0; // Secondary untimed skill if monster is immune to primary untimed.
@@ -59,27 +59,23 @@ function LoadTemplate()
 
 	Config.AutoSkill.Enabled = true; // Enable or disable AutoSkill system
 	Config.AutoSkill.Build = [
-		[26, 100, false], // strafe
-		[22, 100, false], // guided arrow
-		[12, 10, false], // multiple shot
-		[33, 1, false], // pierce
-		[23, 100, false], // penetrate
-		[9, 100, false], // critical strike
-		[29, 1, false], // evade
-		[18, 1, false], // avoid
-		[13, 1, false], // dodge
+		[35, 100, false], // lightning fury
+		[24, 100, false], // charged strike
+		[34, 100, false], // lightning strike
+		[20, 100, false], // lightning bolt
+		[14, 100, false], // power strike
 	];
 
 	Config.AutoStat.Enabled = true; // Enable or disable AutoStat system
 	Config.AutoStat.Build = [
 		["s", 12], // stat strength for quilt armor
 		["v", 28], // spend in vitality until it reaches 28 (level 5)
-		["d", 50], // spend in energy until 50 (level 8)
+		["e", 50], // spend in energy until 50 (level 8)
 		["v", 50], // spend more in vitality
 		["s", 15], // get up to 15 strength (level 13)
 		["v", 65], // spend in vitality (level 18)
 		["s", 35], // get up to 25 strength (level 20)
-		["d", 75], // spend in energy (level 25)
+		["e", 75], // spend in energy (level 25)
 		["v", 75], // level 27
 		["s", 55], // level 31
 		["v", 100], // level 36

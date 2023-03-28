@@ -1,8 +1,8 @@
 function LoadConfig()
 {
 	// choose your build
-	include("config/Templates/Amazon/Bowazon.js");
-	//include("config/Templates/Barbarian/Javazon.js");
+	//include("config/Templates/Amazon/Bowazon.js");
+	include("config/Templates/Amazon/Javazon.js");
 
 	// run the build
 	LoadTemplate();

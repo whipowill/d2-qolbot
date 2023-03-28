@@ -1,34 +1,66 @@
-// ====================================================================== //
-// ======================== (c) 2016 dzik ====== #d2bs@irc.synirc.org === //
-// ====================================================================== //
-// targeting for max res in hell + stats + skills
+// .................................................
+// QOL AutoEquip Ruleset
+// by whipowill
+// .................................................
 
-// wep
-//me.diff == 0 && ([type] == wand || [type] == orb || [type] == knife) && [quality] < rare # && [secondarymaxdamage] == 0 # [tier] == /*fr+cr+lr+pr*/((item.getStatEx(39) + item.getStatEx(41) + item.getStatEx(43) + item.getStatEx(45)) * 1000) + /*maxmana*/(item.getStatEx(9) * 1)
-//([type] == wand || [type] == orb || [type] == knife) && [quality] >= rare # && [secondarymaxdamage] == 0 # [tier] == /*fr+cr+lr+pr*/((item.getStatEx(39) + item.getStatEx(41) + item.getStatEx(43) + item.getStatEx(45)) * 1000)
-//[name] == swirlingcrystal && [quality] == unique # # [tier] == /*mf*/(item.getStatEx(80) * 10e10)
+// NOTES
+// /*fr+cr+lr+pr+ar*/((item.getStatEx(39) + item.getStatEx(41) + item.getStatEx(43) + item.getStatEx(45) + (item.getStatEx(555) * 4)) * 100)
+// /*defense*/(item.getStatEx(31) * 1)
+// /*maxdamage*/(item.getStatEx(24) * 1)
+// /*lifeleech+manaleech*/((item.getStatEx(60) + item.getStatEx(62)) * 100)
 
-// amulet
-[type] == amulet && ([quality] == normal || [quality] == magic || [quality] == rare) #  # [tier] == /*fr+cr+lr*/((item.getStatEx(39) + item.getStatEx(41) + item.getStatEx(43)) * 1000)
+// =================================================
+// ARMOR (all classes)
+// =================================================
 
-// ring
-[name] == ring && ([quality] == normal || [quality] == magic || [quality] == rare) # # [tier] == /*fr+pr+lr*/((item.getStatEx(39) + item.getStatEx(45) + item.getStatEx(43)) * 1000)
+([type] == amulet || [name] == ring || [type] == circlet || [type] == helm || [type] == armor || [type] == belt || [type] == boots || [type] == gloves) && ([quality] == normal || [quality] == magic || [quality] == rare) && [flag] != ethereal && [flag] != runeword # # [tier] == /*fr+cr+lr+pr+ar*/((item.getStatEx(39) + item.getStatEx(41) + item.getStatEx(43) + item.getStatEx(45) + (item.getStatEx(555) * 4)) * 100) + /*defense*/(item.getStatEx(31) * 1)
 
-// helm
-[type] == helm && ([quality] == normal || [quality] == magic || [quality] == rare) && [flag] != ethereal # # [tier] == /*fr+cr+lr*/((item.getStatEx(39) + item.getStatEx(41) + item.getStatEx(43)) * 100) + /*defense*/(item.getStatEx(31) * 1)
+// =================================================
+// AMAZON (classid 0)
+// =================================================
 
-// armor
-[type] == armor && ([quality] == normal || [quality] == magic || [quality] == rare) && [flag] != ethereal # # [tier] == /*fr+cr+lr*/((item.getStatEx(39) + item.getStatEx(41) + item.getStatEx(43)) * 100) + /*defense*/(item.getStatEx(31) * 1)
+// javazon
+me.classid == 0 && ([type] == javelin) && ([quality] == normal || [quality] == magic || [quality] == rare) && [flag] != ethereal && [flag] != runeword # # [tier] == /*fr+cr+lr+pr+ar*/((item.getStatEx(39) + item.getStatEx(41) + item.getStatEx(43) + item.getStatEx(45) + (item.getStatEx(555) * 4)) * 100) + /*secondarymaxdamage*/(item.getStatEx(24) * 1)
+me.classid == 0 && [type] == shield && ([quality] == normal || [quality] == magic || [quality] == rare) && [flag] != ethereal && [flag] != runeword # # [tier] == /*fr+cr+lr+pr+ar*/((item.getStatEx(39) + item.getStatEx(41) + item.getStatEx(43) + item.getStatEx(45) + (item.getStatEx(555) * 4)) * 100)
 
-// belt
-[type] == belt && ([quality] == normal || [quality] == magic || [quality] == rare) && [flag] != ethereal # # [tier] == /*fr+cr+lr*/((item.getStatEx(39) + item.getStatEx(41) + item.getStatEx(43)) * 100) + /*defense*/(item.getStatEx(31) * 1)
+// =================================================
+// SORCERESS (classid 1)
+// =================================================
 
-// boots
-[type] == boots && ([quality] == normal || [quality] == magic || [quality] == rare) && [flag] != ethereal # # [tier] == /*fr+cr+lr*/((item.getStatEx(39) + item.getStatEx(41) + item.getStatEx(43)) * 100) + /*defense*/(item.getStatEx(31) * 1)
+me.classid == 1 && ([type] == wand || [type] == orb || [type] == knife) && ([quality] == normal || [quality] == magic || [quality] == rare) && [flag] != ethereal && [flag] != runeword # # [tier] == /*fr+cr+lr+pr+ar*/((item.getStatEx(39) + item.getStatEx(41) + item.getStatEx(43) + item.getStatEx(45) + (item.getStatEx(555) * 4)) * 100)
+me.classid == 1 && [type] == shield && ([quality] == normal || [quality] == magic || [quality] == rare) && [flag] != ethereal && [flag] != runeword # # [tier] == /*fr+cr+lr+pr+ar*/((item.getStatEx(39) + item.getStatEx(41) + item.getStatEx(43) + item.getStatEx(45) + (item.getStatEx(555) * 4)) * 100)
 
-// gloves
-[type] == gloves && ([quality] == normal || [quality] == magic || [quality] == rare) && [flag] != ethereal # # [tier] == /*fr+cr+lr*/((item.getStatEx(39) + item.getStatEx(41) + item.getStatEx(43)) * 100) + /*defense*/(item.getStatEx(31) * 1)
+// =================================================
+// NECROMANCER (classid 2)
+// =================================================
 
-// shield
-//me.diff == 0 && [type] == shield && [quality] <= magic && [flag] != ethereal # # [tier] == /*fr+cr+lr+pr*/((item.getStatEx(39) + item.getStatEx(41) + item.getStatEx(43) + item.getStatEx(45)) * 100) + /*defense*/(item.getStatEx(31) * 1)
-//[type] == shield && [quality] >= rare && [flag] != ethereal # # [tier] == /*fr+cr+lr+pr*/((item.getStatEx(39) + item.getStatEx(41) + item.getStatEx(43) + item.getStatEx(45)) * 100) + /*defense*/(item.getStatEx(31) * 1)
+// =================================================
+// PALADIN (classid 3)
+// =================================================
+
+me.classid == 3 && ([type] == scepter || [type] == hammer || [type] == mace) && ([quality] == normal || [quality] == magic || [quality] == rare) && [flag] != ethereal && [flag] != runeword # # [tier] == /*fr+cr+lr+pr+ar*/((item.getStatEx(39) + item.getStatEx(41) + item.getStatEx(43) + item.getStatEx(45) + (item.getStatEx(555) * 4)) * 100) + /*secondarymaxdamage*/(item.getStatEx(24) * 1)
+me.classid == 3 && ([type] == shield || [type] == auricshields) && ([quality] == normal || [quality] == magic || [quality] == rare) && [flag] != ethereal && [flag] != runeword # # [tier] == /*fr+cr+lr+pr+ar*/((item.getStatEx(39) + item.getStatEx(41) + item.getStatEx(43) + item.getStatEx(45) + (item.getStatEx(555) * 4)) * 100)
+
+// =================================================
+// BARBARIAN (classid 4)
+// =================================================
+
+// barb helms
+me.classid == 4 && [type] == primalhelm && ([quality] == normal || [quality] == magic || [quality] == rare) && [flag] != ethereal && [flag] != runeword # # [tier] == /*fr+cr+lr+pr+ar*/((item.getStatEx(39) + item.getStatEx(41) + item.getStatEx(43) + item.getStatEx(45) + (item.getStatEx(555) * 4)) * 100) + /*defense*/(item.getStatEx(31) * 1)
+
+// swords
+//me.classid == 4 && ([type] == sword) && ([quality] == normal || [quality] == magic || [quality] == rare) && [flag] != ethereal && [flag] != runeword # # [tier] == /*fr+cr+lr+pr+ar*/((item.getStatEx(39) + item.getStatEx(41) + item.getStatEx(43) + item.getStatEx(45) + (item.getStatEx(555) * 4)) * 100) + /*secondarymaxdamage*/(item.getStatEx(24) * 1)
+
+// throw
+me.classid == 4 && ([type] == thrownweapon) && ([quality] == normal || [quality] == magic || [quality] == rare) && [flag] != ethereal && [flag] != runeword # # [tier] == /*fr+cr+lr+pr+ar*/((item.getStatEx(39) + item.getStatEx(41) + item.getStatEx(43) + item.getStatEx(45) + (item.getStatEx(555) * 4)) * 100) + /*secondarymaxdamage*/(item.getStatEx(24) * 1)
+
+// =================================================
+// DRUID (classid 5)
+// =================================================
+
+// pelts
+me.classid == 5 && [type] == pelt && ([quality] == normal || [quality] == magic || [quality] == rare) && [flag] != ethereal && [flag] != runeword # # [tier] == /*fr+cr+lr+pr+ar*/((item.getStatEx(39) + item.getStatEx(41) + item.getStatEx(43) + item.getStatEx(45) + (item.getStatEx(555) * 4)) * 100) + /*defense*/(item.getStatEx(31) * 1)
+
+// =================================================
+// ASSASSIN (classid 6)
+// =================================================
